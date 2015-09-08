@@ -1,0 +1,12 @@
+/* 
+  push.strings
+  Demo
+
+  Created by huang.haiyang on 13-9-3.
+
+*/
+"test1" = "push content test item 1";
+"test2" = "push content test item %2$@ and %1$@";
+
+"button1" = "btn 1";
+"button2" = "btn 2";
