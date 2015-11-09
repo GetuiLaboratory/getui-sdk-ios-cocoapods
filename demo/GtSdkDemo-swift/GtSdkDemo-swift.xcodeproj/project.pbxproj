@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		953D7F061BF0926A0091AAF5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953D7F051BF0926A0091AAF5 /* CFNetwork.framework */; };
+		9543589C1BCB9646004E33DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589B1BCB9646004E33DF /* AppDelegate.swift */; };
+		9543589E1BCB9646004E33DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589D1BCB9646004E33DF /* ViewController.swift */; };
+		954358A11BCB9646004E33DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9543589F1BCB9646004E33DF /* Main.storyboard */; };
+		954358A31BCB9646004E33DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954358A21BCB9646004E33DF /* Assets.xcassets */; };
+		954358A61BCB9646004E33DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954358A41BCB9646004E33DF /* LaunchScreen.storyboard */; };
+		954358B01BCB971A004E33DF /* libGeTuiSdk-1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358AF1BCB971A004E33DF /* libGeTuiSdk-1.3.0.a */; };
+		954358B81BCB9CA1004E33DF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */; };
+		954358BA1BCB9CA8004E33DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358B91BCB9CA8004E33DF /* CoreLocation.framework */; };
+		954358BC1BCB9CAE004E33DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358BB1BCB9CAE004E33DF /* AVFoundation.framework */; };
+		954358BE1BCB9CB7004E33DF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358BD1BCB9CB7004E33DF /* CoreTelephony.framework */; };
+		954358C01BCB9CC2004E33DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358BF1BCB9CC2004E33DF /* SystemConfiguration.framework */; };
+		954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C11BCB9CCD004E33DF /* libsqlite3.tbd */; };
+		954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C31BCB9CD4004E33DF /* libz.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		953D7F051BF0926A0091AAF5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		954358981BCB9646004E33DF /* GtSdkDemo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GtSdkDemo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9543589B1BCB9646004E33DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9543589D1BCB9646004E33DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		954358A01BCB9646004E33DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		954358A21BCB9646004E33DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		954358A51BCB9646004E33DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		954358A71BCB9646004E33DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954358AE1BCB971A004E33DF /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
+		954358AF1BCB971A004E33DF /* libGeTuiSdk-1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.0.a"; sourceTree = "<group>"; };
+		954358B11BCB9AAD004E33DF /* GtSdkDemo-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GtSdkDemo-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		954358B91BCB9CA8004E33DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		954358BB1BCB9CAE004E33DF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		954358BD1BCB9CB7004E33DF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		954358BF1BCB9CC2004E33DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		954358C11BCB9CCD004E33DF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		954358C31BCB9CD4004E33DF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		954358951BCB9646004E33DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953D7F061BF0926A0091AAF5 /* CFNetwork.framework in Frameworks */,
+				954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */,
+				954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */,
+				954358C01BCB9CC2004E33DF /* SystemConfiguration.framework in Frameworks */,
+				954358BE1BCB9CB7004E33DF /* CoreTelephony.framework in Frameworks */,
+				954358BC1BCB9CAE004E33DF /* AVFoundation.framework in Frameworks */,
+				954358BA1BCB9CA8004E33DF /* CoreLocation.framework in Frameworks */,
+				954358B81BCB9CA1004E33DF /* CoreBluetooth.framework in Frameworks */,
+				954358B01BCB971A004E33DF /* libGeTuiSdk-1.3.0.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9543588F1BCB9646004E33DF = {
+			isa = PBXGroup;
+			children = (
+				9543589A1BCB9646004E33DF /* GtSdkDemo-swift */,
+				954358B61BCB9C7B004E33DF /* Frameworks */,
+				954358991BCB9646004E33DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		954358991BCB9646004E33DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				954358981BCB9646004E33DF /* GtSdkDemo-swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9543589A1BCB9646004E33DF /* GtSdkDemo-swift */ = {
+			isa = PBXGroup;
+			children = (
+				954358AD1BCB971A004E33DF /* GtSdkLib */,
+				9543589B1BCB9646004E33DF /* AppDelegate.swift */,
+				9543589D1BCB9646004E33DF /* ViewController.swift */,
+				9543589F1BCB9646004E33DF /* Main.storyboard */,
+				954358A21BCB9646004E33DF /* Assets.xcassets */,
+				954358A41BCB9646004E33DF /* LaunchScreen.storyboard */,
+				954358A71BCB9646004E33DF /* Info.plist */,
+				954358B11BCB9AAD004E33DF /* GtSdkDemo-swift-Bridging-Header.h */,
+			);
+			path = "GtSdkDemo-swift";
+			sourceTree = "<group>";
+		};
+		954358AD1BCB971A004E33DF /* GtSdkLib */ = {
+			isa = PBXGroup;
+			children = (
+				954358AE1BCB971A004E33DF /* GeTuiSdk.h */,
+				954358AF1BCB971A004E33DF /* libGeTuiSdk-1.3.0.a */,
+			);
+			name = GtSdkLib;
+			path = ../../GtSdkLib;
+			sourceTree = "<group>";
+		};
+		954358B61BCB9C7B004E33DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				954358C31BCB9CD4004E33DF /* libz.tbd */,
+				954358C11BCB9CCD004E33DF /* libsqlite3.tbd */,
+				953D7F051BF0926A0091AAF5 /* CFNetwork.framework */,
+				954358BF1BCB9CC2004E33DF /* SystemConfiguration.framework */,
+				954358BD1BCB9CB7004E33DF /* CoreTelephony.framework */,
+				954358BB1BCB9CAE004E33DF /* AVFoundation.framework */,
+				954358B91BCB9CA8004E33DF /* CoreLocation.framework */,
+				954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			path = "GtSdkDemo-swift";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		954358971BCB9646004E33DF /* GtSdkDemo-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954358AA1BCB9646004E33DF /* Build configuration list for PBXNativeTarget "GtSdkDemo-swift" */;
+			buildPhases = (
+				954358941BCB9646004E33DF /* Sources */,
+				954358951BCB9646004E33DF /* Frameworks */,
+				954358961BCB9646004E33DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GtSdkDemo-swift";
+			productName = "GtSdkDemo-swift";
+			productReference = 954358981BCB9646004E33DF /* GtSdkDemo-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		954358901BCB9646004E33DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "赵伟";
+				TargetAttributes = {
+					954358971BCB9646004E33DF = {
+						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 954358931BCB9646004E33DF /* Build configuration list for PBXProject "GtSdkDemo-swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9543588F1BCB9646004E33DF;
+			productRefGroup = 954358991BCB9646004E33DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				954358971BCB9646004E33DF /* GtSdkDemo-swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		954358961BCB9646004E33DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954358A61BCB9646004E33DF /* LaunchScreen.storyboard in Resources */,
+				954358A31BCB9646004E33DF /* Assets.xcassets in Resources */,
+				954358A11BCB9646004E33DF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		954358941BCB9646004E33DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9543589E1BCB9646004E33DF /* ViewController.swift in Sources */,
+				9543589C1BCB9646004E33DF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9543589F1BCB9646004E33DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954358A01BCB9646004E33DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		954358A41BCB9646004E33DF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954358A51BCB9646004E33DF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		954358A81BCB9646004E33DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		954358A91BCB9646004E33DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		954358AB1BCB9646004E33DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: fang yi (3Q7C63JGAB)";
+				INFOPLIST_FILE = "GtSdkDemo-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../GtSdkLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9437db07-ab37-469e-a0e1-9a4c1ddd49c4";
+				SWIFT_OBJC_BRIDGING_HEADER = "GtSdkDemo-swift/GtSdkDemo-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		954358AC1BCB9646004E33DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gexin Interactive (Beijing) Network Technology Co.,LTD (BFA3ZNR7Q2)";
+				INFOPLIST_FILE = "GtSdkDemo-swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../GtSdkLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ea3d2501-50f0-4bb1-bd0a-b7f949274e53";
+				SWIFT_OBJC_BRIDGING_HEADER = "GtSdkDemo-swift/GtSdkDemo-swift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		954358931BCB9646004E33DF /* Build configuration list for PBXProject "GtSdkDemo-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954358A81BCB9646004E33DF /* Debug */,
+				954358A91BCB9646004E33DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954358AA1BCB9646004E33DF /* Build configuration list for PBXNativeTarget "GtSdkDemo-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954358AB1BCB9646004E33DF /* Debug */,
+				954358AC1BCB9646004E33DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 954358901BCB9646004E33DF /* Project object */;
+}
