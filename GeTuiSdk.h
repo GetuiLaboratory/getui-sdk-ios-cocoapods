@@ -41,6 +41,15 @@ typedef enum {
 #pragma mark 发送消息
 + (NSString *)sendMessage:(NSData *)body error:(NSError **)error;
 
+#pragma mark 上行第三方自定义回执actionid
+/**
+ *actionId：用户自定义的actionid，int类型，取值90001-90999。
+ *taskId：下发任务的任务ID。
+ *msgId： 下发任务的消息ID。
+ *返回值：BOOL，YES表示该命令已经提交，NO表示该命令未提交成功。注：该结果不代表服务器收到该条命令
+ **/
++ (BOOL)sendFeedbackMessage:(NSInteger)actionId taskId:(NSString *)taskId msgId:(NSString *)msgId;
+
 #pragma mark 后台功能
 + (void)runBackgroundEnable:(BOOL)isEnable;
 + (void)resume; // 该方法需要在主线程中调用
