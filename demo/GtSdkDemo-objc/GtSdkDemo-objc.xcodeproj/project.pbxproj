@@ -12,7 +12,6 @@
 		95241A631BB90B2A00DEADD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95241A621BB90B2A00DEADD8 /* ViewController.m */; };
 		95241A661BB90B2A00DEADD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95241A641BB90B2A00DEADD8 /* Main.storyboard */; };
 		95241A681BB90B2A00DEADD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95241A671BB90B2A00DEADD8 /* Assets.xcassets */; };
-		95241A6B1BB90B2A00DEADD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95241A691BB90B2A00DEADD8 /* LaunchScreen.storyboard */; };
 		95241A851BB9186E00DEADD8 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95241A841BB9186E00DEADD8 /* CoreBluetooth.framework */; };
 		95241A8B1BB918B600DEADD8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95241A8A1BB918B600DEADD8 /* AVFoundation.framework */; };
 		95241A8D1BB918C100DEADD8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95241A8C1BB918C100DEADD8 /* CoreTelephony.framework */; };
@@ -20,8 +19,10 @@
 		95241A911BB9198200DEADD8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95241A901BB9198200DEADD8 /* libz.tbd */; };
 		95241A931BB919E000DEADD8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95241A921BB919E000DEADD8 /* libsqlite3.tbd */; };
 		953D7F081BF092960091AAF5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953D7F071BF092960091AAF5 /* CFNetwork.framework */; };
-		95639B951BDE1C0200C9E450 /* libGeTuiSdk-1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95639B941BDE1C0200C9E450 /* libGeTuiSdk-1.3.0.a */; };
+		958A54551C210E6A0015FD05 /* libGeTuiSdk-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958A54541C210E6A0015FD05 /* libGeTuiSdk-1.3.2.a */; };
 		95D7D8481BC76BF9004E1A42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D7D8471BC76BF9004E1A42 /* CoreLocation.framework */; };
+		95FE070D1C210BFB00EACC8B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FE070C1C210BFB00EACC8B /* libz.dylib */; };
+		95FE070F1C210C0200EACC8B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FE070E1C210C0200EACC8B /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,6 @@
 		95241A621BB90B2A00DEADD8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		95241A651BB90B2A00DEADD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95241A671BB90B2A00DEADD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95241A6A1BB90B2A00DEADD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95241A6C1BB90B2A00DEADD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95241A841BB9186E00DEADD8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		95241A8A1BB918B600DEADD8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -43,8 +43,10 @@
 		95241A921BB919E000DEADD8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		953D7F071BF092960091AAF5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		95639B931BDE1C0200C9E450 /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		95639B941BDE1C0200C9E450 /* libGeTuiSdk-1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.0.a"; sourceTree = "<group>"; };
+		958A54541C210E6A0015FD05 /* libGeTuiSdk-1.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.2.a"; sourceTree = "<group>"; };
 		95D7D8471BC76BF9004E1A42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		95FE070C1C210BFB00EACC8B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		95FE070E1C210C0200EACC8B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FE070F1C210C0200EACC8B /* libsqlite3.dylib in Frameworks */,
+				95FE070D1C210BFB00EACC8B /* libz.dylib in Frameworks */,
 				953D7F081BF092960091AAF5 /* CFNetwork.framework in Frameworks */,
 				95241A931BB919E000DEADD8 /* libsqlite3.tbd in Frameworks */,
 				95241A911BB9198200DEADD8 /* libz.tbd in Frameworks */,
@@ -59,8 +63,8 @@
 				95241A8D1BB918C100DEADD8 /* CoreTelephony.framework in Frameworks */,
 				95241A8B1BB918B600DEADD8 /* AVFoundation.framework in Frameworks */,
 				95D7D8481BC76BF9004E1A42 /* CoreLocation.framework in Frameworks */,
-				95639B951BDE1C0200C9E450 /* libGeTuiSdk-1.3.0.a in Frameworks */,
 				95241A851BB9186E00DEADD8 /* CoreBluetooth.framework in Frameworks */,
+				958A54551C210E6A0015FD05 /* libGeTuiSdk-1.3.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +98,6 @@
 				95241A621BB90B2A00DEADD8 /* ViewController.m */,
 				95241A641BB90B2A00DEADD8 /* Main.storyboard */,
 				95241A671BB90B2A00DEADD8 /* Assets.xcassets */,
-				95241A691BB90B2A00DEADD8 /* LaunchScreen.storyboard */,
 				95241A6C1BB90B2A00DEADD8 /* Info.plist */,
 				95241A5B1BB90B2A00DEADD8 /* Supporting Files */,
 			);
@@ -112,6 +115,8 @@
 		95241A831BB917C300DEADD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95FE070E1C210C0200EACC8B /* libsqlite3.dylib */,
+				95FE070C1C210BFB00EACC8B /* libz.dylib */,
 				95241A901BB9198200DEADD8 /* libz.tbd */,
 				95241A921BB919E000DEADD8 /* libsqlite3.tbd */,
 				953D7F071BF092960091AAF5 /* CFNetwork.framework */,
@@ -127,8 +132,8 @@
 		95639B921BDE1C0200C9E450 /* GtSdkLib */ = {
 			isa = PBXGroup;
 			children = (
+				958A54541C210E6A0015FD05 /* libGeTuiSdk-1.3.2.a */,
 				95639B931BDE1C0200C9E450 /* GeTuiSdk.h */,
-				95639B941BDE1C0200C9E450 /* libGeTuiSdk-1.3.0.a */,
 			);
 			name = GtSdkLib;
 			path = ../../GtSdkLib;
@@ -165,6 +170,7 @@
 				TargetAttributes = {
 					95241A571BB90B2A00DEADD8 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = BFA3ZNR7Q2;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -196,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95241A6B1BB90B2A00DEADD8 /* LaunchScreen.storyboard in Resources */,
 				95241A681BB90B2A00DEADD8 /* Assets.xcassets in Resources */,
 				95241A661BB90B2A00DEADD8 /* Main.storyboard in Resources */,
 			);
@@ -224,14 +229,6 @@
 				95241A651BB90B2A00DEADD8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		95241A691BB90B2A00DEADD8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95241A6A1BB90B2A00DEADD8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -322,7 +319,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer: fang yi (3Q7C63JGAB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "GtSdkDemo-objc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -331,7 +329,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo;
 				PRODUCT_NAME = "GtSdkDemo-objc";
-				PROVISIONING_PROFILE = "9437db07-ab37-469e-a0e1-9a4c1ddd49c4";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -340,7 +338,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gexin Interactive (Beijing) Network Technology Co.,LTD (BFA3ZNR7Q2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "GtSdkDemo-objc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -349,7 +348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo;
 				PRODUCT_NAME = "GtSdkDemo-objc";
-				PROVISIONING_PROFILE = "ea3d2501-50f0-4bb1-bd0a-b7f949274e53";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

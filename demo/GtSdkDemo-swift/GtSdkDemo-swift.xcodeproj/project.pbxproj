@@ -12,8 +12,6 @@
 		9543589E1BCB9646004E33DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589D1BCB9646004E33DF /* ViewController.swift */; };
 		954358A11BCB9646004E33DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9543589F1BCB9646004E33DF /* Main.storyboard */; };
 		954358A31BCB9646004E33DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954358A21BCB9646004E33DF /* Assets.xcassets */; };
-		954358A61BCB9646004E33DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954358A41BCB9646004E33DF /* LaunchScreen.storyboard */; };
-		954358B01BCB971A004E33DF /* libGeTuiSdk-1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358AF1BCB971A004E33DF /* libGeTuiSdk-1.3.0.a */; };
 		954358B81BCB9CA1004E33DF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */; };
 		954358BA1BCB9CA8004E33DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358B91BCB9CA8004E33DF /* CoreLocation.framework */; };
 		954358BC1BCB9CAE004E33DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358BB1BCB9CAE004E33DF /* AVFoundation.framework */; };
@@ -21,6 +19,9 @@
 		954358C01BCB9CC2004E33DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358BF1BCB9CC2004E33DF /* SystemConfiguration.framework */; };
 		954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C11BCB9CCD004E33DF /* libsqlite3.tbd */; };
 		954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C31BCB9CD4004E33DF /* libz.tbd */; };
+		958A54571C210E790015FD05 /* libGeTuiSdk-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958A54561C210E790015FD05 /* libGeTuiSdk-1.3.2.a */; };
+		95FE07111C210D0A00EACC8B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FE07101C210D0A00EACC8B /* libz.dylib */; };
+		95FE07131C210D1200EACC8B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FE07121C210D1200EACC8B /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,8 @@
 		9543589D1BCB9646004E33DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		954358A01BCB9646004E33DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954358A21BCB9646004E33DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		954358A51BCB9646004E33DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		954358A71BCB9646004E33DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		954358AE1BCB971A004E33DF /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		954358AF1BCB971A004E33DF /* libGeTuiSdk-1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.0.a"; sourceTree = "<group>"; };
 		954358B11BCB9AAD004E33DF /* GtSdkDemo-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GtSdkDemo-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		954358B91BCB9CA8004E33DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -42,6 +41,9 @@
 		954358BF1BCB9CC2004E33DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		954358C11BCB9CCD004E33DF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		954358C31BCB9CD4004E33DF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		958A54561C210E790015FD05 /* libGeTuiSdk-1.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.2.a"; sourceTree = "<group>"; };
+		95FE07101C210D0A00EACC8B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		95FE07121C210D1200EACC8B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,15 +51,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953D7F061BF0926A0091AAF5 /* CFNetwork.framework in Frameworks */,
+				95FE07131C210D1200EACC8B /* libsqlite3.dylib in Frameworks */,
+				95FE07111C210D0A00EACC8B /* libz.dylib in Frameworks */,
 				954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */,
 				954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */,
+				953D7F061BF0926A0091AAF5 /* CFNetwork.framework in Frameworks */,
 				954358C01BCB9CC2004E33DF /* SystemConfiguration.framework in Frameworks */,
 				954358BE1BCB9CB7004E33DF /* CoreTelephony.framework in Frameworks */,
 				954358BC1BCB9CAE004E33DF /* AVFoundation.framework in Frameworks */,
 				954358BA1BCB9CA8004E33DF /* CoreLocation.framework in Frameworks */,
 				954358B81BCB9CA1004E33DF /* CoreBluetooth.framework in Frameworks */,
-				954358B01BCB971A004E33DF /* libGeTuiSdk-1.3.0.a in Frameworks */,
+				958A54571C210E790015FD05 /* libGeTuiSdk-1.3.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +93,6 @@
 				9543589D1BCB9646004E33DF /* ViewController.swift */,
 				9543589F1BCB9646004E33DF /* Main.storyboard */,
 				954358A21BCB9646004E33DF /* Assets.xcassets */,
-				954358A41BCB9646004E33DF /* LaunchScreen.storyboard */,
 				954358A71BCB9646004E33DF /* Info.plist */,
 				954358B11BCB9AAD004E33DF /* GtSdkDemo-swift-Bridging-Header.h */,
 			);
@@ -99,8 +102,8 @@
 		954358AD1BCB971A004E33DF /* GtSdkLib */ = {
 			isa = PBXGroup;
 			children = (
+				958A54561C210E790015FD05 /* libGeTuiSdk-1.3.2.a */,
 				954358AE1BCB971A004E33DF /* GeTuiSdk.h */,
-				954358AF1BCB971A004E33DF /* libGeTuiSdk-1.3.0.a */,
 			);
 			name = GtSdkLib;
 			path = ../../GtSdkLib;
@@ -109,6 +112,8 @@
 		954358B61BCB9C7B004E33DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95FE07121C210D1200EACC8B /* libsqlite3.dylib */,
+				95FE07101C210D0A00EACC8B /* libz.dylib */,
 				954358C31BCB9CD4004E33DF /* libz.tbd */,
 				954358C11BCB9CCD004E33DF /* libsqlite3.tbd */,
 				953D7F051BF0926A0091AAF5 /* CFNetwork.framework */,
@@ -185,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954358A61BCB9646004E33DF /* LaunchScreen.storyboard in Resources */,
 				954358A31BCB9646004E33DF /* Assets.xcassets in Resources */,
 				954358A11BCB9646004E33DF /* Main.storyboard in Resources */,
 			);
@@ -212,14 +216,6 @@
 				954358A01BCB9646004E33DF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		954358A41BCB9646004E33DF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				954358A51BCB9646004E33DF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

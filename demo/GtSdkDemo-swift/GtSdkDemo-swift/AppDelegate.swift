@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate {
     // MARK: - 用户通知(推送) _自定义方法
     
     /** 注册用户通知(推送) */
-    func registerUserNotification(application: UIApplication) {
+    func registerUserNotification(application: UIApplication) {        
         let result = UIDevice.currentDevice().systemVersion.compare("8.0.0", options: NSStringCompareOptions.NumericSearch)
         if (result != NSComparisonResult.OrderedAscending) {
             UIApplication.sharedApplication().registerForRemoteNotifications()
@@ -83,6 +83,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate {
     func GeTuiSdkDidRegisterClient(clientId: String!) {
         // [4-EXT-1]: 个推SDK已注册，返回clientId
         NSLog("\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
+    }
+    
+    /** SDK收到透传消息回调 */
+    func GeTuiSdkDidReceivePayload(payloadId: String!, andTaskId taskId: String!, andMessageId aMsgId: String!, andOffLine offLine: Bool, fromApplication appId: String!) {
+        
+        /**
+        *汇报个推自定义事件
+        *actionId：用户自定义的actionid，int类型，取值90001-90999。
+        *taskId：下发任务的任务ID。
+        *msgId： 下发任务的消息ID。
+        *返回值：BOOL，YES表示该命令已经提交，NO表示该命令未提交成功。注：该结果不代表服务器收到该条命令
+        **/
+        GeTuiSdk .sendFeedbackMessage(90001, taskId: taskId, msgId: aMsgId);
     }
     
     /** SDK遇到错误回调 */

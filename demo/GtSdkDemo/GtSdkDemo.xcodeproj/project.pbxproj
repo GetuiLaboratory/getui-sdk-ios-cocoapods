@@ -7,22 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95260DAC1BE1E0D300DC5072 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95260DAA1BE1E0D300DC5072 /* Interface.storyboard */; };
-		95260DAE1BE1E0D300DC5072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95260DAD1BE1E0D300DC5072 /* Assets.xcassets */; };
-		95260DB51BE1E0D300DC5072 /* iWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 95260DB41BE1E0D300DC5072 /* iWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		95260DBD1BE1E0D300DC5072 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95260DBC1BE1E0D300DC5072 /* InterfaceController.m */; };
-		95260DC01BE1E0D300DC5072 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95260DBF1BE1E0D300DC5072 /* ExtensionDelegate.m */; };
-		95260DC31BE1E0D300DC5072 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95260DC21BE1E0D300DC5072 /* NotificationController.m */; };
-		95260DC51BE1E0D300DC5072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95260DC41BE1E0D300DC5072 /* Assets.xcassets */; };
-		95260DC91BE1E0D300DC5072 /* iWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 95260DA81BE1E0D300DC5072 /* iWatch.app */; };
-		953D7EFD1BF03F570091AAF5 /* gtsdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953D7EFC1BF03F570091AAF5 /* gtsdk.plist */; };
 		953D7F0A1BF092AA0091AAF5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953D7F091BF092AA0091AAF5 /* CFNetwork.framework */; };
+		9553490B1C02F8AA00E8E0C4 /* gtsdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9553490A1C02F8AA00E8E0C4 /* gtsdk.plist */; };
 		955D37991BCE54D50056559A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D37981BCE54D50056559A /* main.m */; };
 		955D379C1BCE54D50056559A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D379B1BCE54D50056559A /* AppDelegate.m */; };
 		955D379F1BCE54D50056559A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D379E1BCE54D50056559A /* ViewController.m */; };
-		955D37A21BCE54D50056559A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955D37A01BCE54D50056559A /* Main.storyboard */; };
 		955D37A41BCE54D50056559A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955D37A31BCE54D50056559A /* Assets.xcassets */; };
-		955D37A71BCE54D50056559A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955D37A51BCE54D50056559A /* LaunchScreen.storyboard */; };
 		955D37B21BCE57990056559A /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D37AF1BCE57990056559A /* TestViewController.m */; };
 		955D37B31BCE57990056559A /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955D37B01BCE57990056559A /* TestViewController.xib */; };
 		955D37B41BCE57990056559A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 955D37B11BCE57990056559A /* ViewController.xib */; };
@@ -36,45 +26,18 @@
 		955D37CA1BCE59D90056559A /* gxsdkconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 955D37C91BCE59D90056559A /* gxsdkconfig.plist */; };
 		955D37CF1BCE5A3F0056559A /* test1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 955D37CD1BCE5A3F0056559A /* test1.wav */; };
 		955D37D01BCE5A3F0056559A /* test2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 955D37CE1BCE5A3F0056559A /* test2.wav */; };
-		95AD16B11BEC99BB00264C17 /* libGeTuiSdk-1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AD16B01BEC99BB00264C17 /* libGeTuiSdk-1.3.0.a */; };
+		958A54531C210E5F0015FD05 /* libGeTuiSdk-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958A54521C210E5F0015FD05 /* libGeTuiSdk-1.3.2.a */; };
+		95BA97031C2E298700B9BC09 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BA97021C2E298700B9BC09 /* libz.dylib */; };
+		95BA97051C2E298F00B9BC09 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BA97041C2E298F00B9BC09 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		95260DB61BE1E0D300DC5072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 955D378C1BCE54D50056559A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95260DB31BE1E0D300DC5072;
-			remoteInfo = "iWatch Extension";
-		};
-		95260DC71BE1E0D300DC5072 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 955D378C1BCE54D50056559A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95260DA71BE1E0D300DC5072;
-			remoteInfo = iWatch;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		95260DCD1BE1E0D300DC5072 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				95260DB51BE1E0D300DC5072 /* iWatch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95260DD11BE1E0D300DC5072 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				95260DC91BE1E0D300DC5072 /* iWatch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,31 +45,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		95260DA81BE1E0D300DC5072 /* iWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		95260DAB1BE1E0D300DC5072 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		95260DAD1BE1E0D300DC5072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95260DAF1BE1E0D300DC5072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95260DB41BE1E0D300DC5072 /* iWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95260DBA1BE1E0D300DC5072 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		95260DBB1BE1E0D300DC5072 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		95260DBC1BE1E0D300DC5072 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		95260DBE1BE1E0D300DC5072 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
-		95260DBF1BE1E0D300DC5072 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
-		95260DC11BE1E0D300DC5072 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		95260DC21BE1E0D300DC5072 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
-		95260DC41BE1E0D300DC5072 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		95260DC61BE1E0D300DC5072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953D7EFC1BF03F570091AAF5 /* gtsdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gtsdk.plist; sourceTree = "<group>"; };
 		953D7F091BF092AA0091AAF5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9553490A1C02F8AA00E8E0C4 /* gtsdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gtsdk.plist; sourceTree = "<group>"; };
 		955D37941BCE54D50056559A /* GtSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GtSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955D37981BCE54D50056559A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		955D379A1BCE54D50056559A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		955D379B1BCE54D50056559A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		955D379D1BCE54D50056559A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		955D379E1BCE54D50056559A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		955D37A11BCE54D50056559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		955D37A31BCE54D50056559A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		955D37A61BCE54D50056559A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955D37A81BCE54D50056559A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		955D37AE1BCE57990056559A /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		955D37AF1BCE57990056559A /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
@@ -123,21 +70,18 @@
 		955D37CD1BCE5A3F0056559A /* test1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test1.wav; sourceTree = "<group>"; };
 		955D37CE1BCE5A3F0056559A /* test2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test2.wav; sourceTree = "<group>"; };
 		955D37D31BCE5B350056559A /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		95AD16B01BEC99BB00264C17 /* libGeTuiSdk-1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.0.a"; sourceTree = "<group>"; };
+		958A54521C210E5F0015FD05 /* libGeTuiSdk-1.3.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.3.2.a"; sourceTree = "<group>"; };
+		95BA97021C2E298700B9BC09 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		95BA97041C2E298F00B9BC09 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95260DB11BE1E0D300DC5072 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		955D37911BCE54D50056559A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BA97051C2E298F00B9BC09 /* libsqlite3.dylib in Frameworks */,
+				95BA97031C2E298700B9BC09 /* libz.dylib in Frameworks */,
 				953D7F0A1BF092AA0091AAF5 /* CFNetwork.framework in Frameworks */,
 				955D37C81BCE58F20056559A /* libz.tbd in Frameworks */,
 				955D37C61BCE58EC0056559A /* libsqlite3.tbd in Frameworks */,
@@ -145,7 +89,7 @@
 				955D37C21BCE58DD0056559A /* CoreTelephony.framework in Frameworks */,
 				955D37C01BCE58D50056559A /* AVFoundation.framework in Frameworks */,
 				955D37BE1BCE58C90056559A /* CoreLocation.framework in Frameworks */,
-				95AD16B11BEC99BB00264C17 /* libGeTuiSdk-1.3.0.a in Frameworks */,
+				958A54531C210E5F0015FD05 /* libGeTuiSdk-1.3.2.a in Frameworks */,
 				955D37BC1BCE58C10056559A /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,46 +97,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95260DA91BE1E0D300DC5072 /* iWatch */ = {
-			isa = PBXGroup;
-			children = (
-				95260DAA1BE1E0D300DC5072 /* Interface.storyboard */,
-				95260DAD1BE1E0D300DC5072 /* Assets.xcassets */,
-				95260DAF1BE1E0D300DC5072 /* Info.plist */,
-			);
-			path = iWatch;
-			sourceTree = "<group>";
-		};
-		95260DB81BE1E0D300DC5072 /* iWatch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				95260DBE1BE1E0D300DC5072 /* ExtensionDelegate.h */,
-				95260DBF1BE1E0D300DC5072 /* ExtensionDelegate.m */,
-				95260DBB1BE1E0D300DC5072 /* InterfaceController.h */,
-				95260DBC1BE1E0D300DC5072 /* InterfaceController.m */,
-				95260DC11BE1E0D300DC5072 /* NotificationController.h */,
-				95260DC21BE1E0D300DC5072 /* NotificationController.m */,
-				95260DC41BE1E0D300DC5072 /* Assets.xcassets */,
-				95260DC61BE1E0D300DC5072 /* Info.plist */,
-				95260DB91BE1E0D300DC5072 /* Supporting Files */,
-			);
-			path = "iWatch Extension";
-			sourceTree = "<group>";
-		};
-		95260DB91BE1E0D300DC5072 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				95260DBA1BE1E0D300DC5072 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		955D378B1BCE54D50056559A = {
 			isa = PBXGroup;
 			children = (
 				955D37961BCE54D50056559A /* GtSdkDemo */,
-				95260DA91BE1E0D300DC5072 /* iWatch */,
-				95260DB81BE1E0D300DC5072 /* iWatch Extension */,
 				955D37B91BCE58910056559A /* Frameworks */,
 				955D37951BCE54D50056559A /* Products */,
 			);
@@ -202,8 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				955D37941BCE54D50056559A /* GtSdkDemo.app */,
-				95260DA81BE1E0D300DC5072 /* iWatch.app */,
-				95260DB41BE1E0D300DC5072 /* iWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,11 +126,9 @@
 				955D37AE1BCE57990056559A /* TestViewController.h */,
 				955D37AF1BCE57990056559A /* TestViewController.m */,
 				955D37B01BCE57990056559A /* TestViewController.xib */,
-				955D37A01BCE54D50056559A /* Main.storyboard */,
 				955D37A31BCE54D50056559A /* Assets.xcassets */,
-				955D37A51BCE54D50056559A /* LaunchScreen.storyboard */,
 				955D37C91BCE59D90056559A /* gxsdkconfig.plist */,
-				953D7EFC1BF03F570091AAF5 /* gtsdk.plist */,
+				9553490A1C02F8AA00E8E0C4 /* gtsdk.plist */,
 				955D37A81BCE54D50056559A /* Info.plist */,
 				955D37CC1BCE5A3F0056559A /* Resources */,
 				955D37971BCE54D50056559A /* Supporting Files */,
@@ -243,6 +147,8 @@
 		955D37B91BCE58910056559A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95BA97041C2E298F00B9BC09 /* libsqlite3.dylib */,
+				95BA97021C2E298700B9BC09 /* libz.dylib */,
 				955D37C71BCE58F20056559A /* libz.tbd */,
 				955D37C51BCE58EC0056559A /* libsqlite3.tbd */,
 				953D7F091BF092AA0091AAF5 /* CFNetwork.framework */,
@@ -268,7 +174,7 @@
 		955D37D21BCE5B350056559A /* GtSdkLib */ = {
 			isa = PBXGroup;
 			children = (
-				95AD16B01BEC99BB00264C17 /* libGeTuiSdk-1.3.0.a */,
+				958A54521C210E5F0015FD05 /* libGeTuiSdk-1.3.2.a */,
 				955D37D31BCE5B350056559A /* GeTuiSdk.h */,
 			);
 			name = GtSdkLib;
@@ -278,40 +184,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95260DA71BE1E0D300DC5072 /* iWatch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95260DCE1BE1E0D300DC5072 /* Build configuration list for PBXNativeTarget "iWatch" */;
-			buildPhases = (
-				95260DA61BE1E0D300DC5072 /* Resources */,
-				95260DCD1BE1E0D300DC5072 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				95260DB71BE1E0D300DC5072 /* PBXTargetDependency */,
-			);
-			name = iWatch;
-			productName = iWatch;
-			productReference = 95260DA81BE1E0D300DC5072 /* iWatch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		95260DB31BE1E0D300DC5072 /* iWatch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95260DCA1BE1E0D300DC5072 /* Build configuration list for PBXNativeTarget "iWatch Extension" */;
-			buildPhases = (
-				95260DB01BE1E0D300DC5072 /* Sources */,
-				95260DB11BE1E0D300DC5072 /* Frameworks */,
-				95260DB21BE1E0D300DC5072 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "iWatch Extension";
-			productName = "iWatch Extension";
-			productReference = 95260DB41BE1E0D300DC5072 /* iWatch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		955D37931BCE54D50056559A /* GtSdkDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 955D37AB1BCE54D50056559A /* Build configuration list for PBXNativeTarget "GtSdkDemo" */;
@@ -324,7 +196,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				95260DC81BE1E0D300DC5072 /* PBXTargetDependency */,
 			);
 			name = GtSdkDemo;
 			productName = GtSdkDemo;
@@ -340,13 +211,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "赵伟";
 				TargetAttributes = {
-					95260DA71BE1E0D300DC5072 = {
-						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = BFA3ZNR7Q2;
-					};
-					95260DB31BE1E0D300DC5072 = {
-						CreatedOnToolsVersion = 7.1;
-					};
 					955D37931BCE54D50056559A = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = BFA3ZNR7Q2;
@@ -372,42 +236,21 @@
 			projectRoot = "";
 			targets = (
 				955D37931BCE54D50056559A /* GtSdkDemo */,
-				95260DA71BE1E0D300DC5072 /* iWatch */,
-				95260DB31BE1E0D300DC5072 /* iWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		95260DA61BE1E0D300DC5072 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95260DAE1BE1E0D300DC5072 /* Assets.xcassets in Resources */,
-				95260DAC1BE1E0D300DC5072 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95260DB21BE1E0D300DC5072 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95260DC51BE1E0D300DC5072 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		955D37921BCE54D50056559A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953D7EFD1BF03F570091AAF5 /* gtsdk.plist in Resources */,
+				9553490B1C02F8AA00E8E0C4 /* gtsdk.plist in Resources */,
 				955D37CA1BCE59D90056559A /* gxsdkconfig.plist in Resources */,
 				955D37B41BCE57990056559A /* ViewController.xib in Resources */,
-				955D37A71BCE54D50056559A /* LaunchScreen.storyboard in Resources */,
 				955D37CF1BCE5A3F0056559A /* test1.wav in Resources */,
 				955D37A41BCE54D50056559A /* Assets.xcassets in Resources */,
 				955D37B31BCE57990056559A /* TestViewController.xib in Resources */,
-				955D37A21BCE54D50056559A /* Main.storyboard in Resources */,
 				955D37D01BCE5A3F0056559A /* test2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,16 +258,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		95260DB01BE1E0D300DC5072 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95260DC01BE1E0D300DC5072 /* ExtensionDelegate.m in Sources */,
-				95260DBD1BE1E0D300DC5072 /* InterfaceController.m in Sources */,
-				95260DC31BE1E0D300DC5072 /* NotificationController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		955D37901BCE54D50056559A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,119 +271,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		95260DB71BE1E0D300DC5072 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95260DB31BE1E0D300DC5072 /* iWatch Extension */;
-			targetProxy = 95260DB61BE1E0D300DC5072 /* PBXContainerItemProxy */;
-		};
-		95260DC81BE1E0D300DC5072 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95260DA71BE1E0D300DC5072 /* iWatch */;
-			targetProxy = 95260DC71BE1E0D300DC5072 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		95260DAA1BE1E0D300DC5072 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95260DAB1BE1E0D300DC5072 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		955D37A01BCE54D50056559A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				955D37A11BCE54D50056559A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		955D37A51BCE54D50056559A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				955D37A61BCE54D50056559A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		95260DCB1BE1E0D300DC5072 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "iWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		95260DCC1BE1E0D300DC5072 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "iWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		95260DCF1BE1E0D300DC5072 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_BITCODE = YES;
-				IBSC_MODULE = iWatch_Extension;
-				INFOPLIST_FILE = iWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		95260DD01BE1E0D300DC5072 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				ENABLE_BITCODE = YES;
-				IBSC_MODULE = iWatch_Extension;
-				INFOPLIST_FILE = iWatch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
 		955D37A91BCE54D50056559A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -641,6 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer: fang yi (3Q7C63JGAB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GtSdkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -650,7 +372,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9437db07-ab37-469e-a0e1-9a4c1ddd49c4";
+				PROVISIONING_PROFILE = "b5409445-71d6-407a-8b47-b1bc0f2e02f2";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
@@ -661,6 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Gexin Interactive (Beijing) Network Technology Co.,LTD (BFA3ZNR7Q2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = GtSdkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -670,7 +393,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.igexin.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ea3d2501-50f0-4bb1-bd0a-b7f949274e53";
+				PROVISIONING_PROFILE = "eeeba7f1-5eef-4a4c-acac-8797c07d24f7";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
@@ -678,24 +401,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95260DCA1BE1E0D300DC5072 /* Build configuration list for PBXNativeTarget "iWatch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95260DCB1BE1E0D300DC5072 /* Debug */,
-				95260DCC1BE1E0D300DC5072 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95260DCE1BE1E0D300DC5072 /* Build configuration list for PBXNativeTarget "iWatch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95260DCF1BE1E0D300DC5072 /* Debug */,
-				95260DD01BE1E0D300DC5072 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		955D378F1BCE54D50056559A /* Build configuration list for PBXProject "GtSdkDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

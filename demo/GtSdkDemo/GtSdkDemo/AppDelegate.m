@@ -19,16 +19,16 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.viewController.title = [NSString stringWithFormat:@"个推开发平台测试客户端V%@", [GeTuiSdk version]];
-    
+
     _naviController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     _naviController.navigationBar.translucent = NO;
     self.window.rootViewController = _naviController;
     [self.window makeKeyAndVisible];
-    
+
     // [1]:使用APPID/APPKEY/APPSECRENT创建个推实例
     // 注：该代码写法仅适用演示Demo，正式集成可简化，请参考“集成Demo”
     // 该方法需要在主线程中调用
@@ -43,47 +43,10 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
         NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
         [_viewController logMsg:record];
     }
-    
-    if ([WCSession isSupported]) {
-        [WCSession defaultSession].delegate = self;
-        [[WCSession defaultSession] activateSession];
-    }
-    
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+
+    //    [ExceptionHandler installExceptionHandler];
+
     return YES;
-}
-
-static void uncaughtExceptionHandler(NSException *exception) {
-    NSLog(@"CRASH: %@", exception);
-    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
-
-    //异常的堆栈信息
-    NSArray *stackArray = [exception callStackSymbols];
-    //出现异常的原因
-    NSString *reason = [exception reason];
-    //异常名称
-    NSString *name = [exception name];
-    NSString *exceptionInfo = [NSString stringWithFormat:@"Exceptionreason：%@\nExceptionname：%@\nExceptionstack：%@", name, reason, stackArray];
-    NSLog(@"%@", exceptionInfo);
-
-    //保存到本地--当然你可以在下次启动的时候，上传这个log
-    [exceptionInfo writeToFile:[NSString stringWithFormat:@"%@/Documents/error.log", NSHomeDirectory()] atomically:YES encoding:NSUTF8StringEncoding error:nil];
-}
-
-#pragma mark - iWatch
-
-- (void)session:(nonnull WCSession *)session didReceiveMessage:(nonnull NSDictionary<NSString *,id> *)message replyHandler:(nonnull void (^)(NSDictionary<NSString *,id> * __nonnull))replyHandler {
-    
-    NSString *action = message[@"SdkOn"];
-    if ([@"YES" isEqualToString:action]) {
-        // 通过个推平台分配的appId、 appKey 、appSecret 启动SDK，注：该方法需要在主线程中调用
-        [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
-    }else {
-        [GeTuiSdk stopSdk];
-    }
-    
-    NSLog(@"Message: %@", message);
-    replyHandler(@{@"Confirmation" : @"Text was received."});
 }
 
 #pragma mark - background fetch  唤醒
@@ -91,7 +54,7 @@ static void uncaughtExceptionHandler(NSException *exception) {
 
     //[5] Background Fetch 恢复SDK 运行
     [GeTuiSdk resume];
-    
+
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
@@ -196,7 +159,7 @@ static void uncaughtExceptionHandler(NSException *exception) {
  */
 + (NSString *)getGtAppId {
     NSString *reValue = kGtAppId;
-    
+
     // 添加额外代码，方便测试修改App配置
     NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
     NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
@@ -207,12 +170,12 @@ static void uncaughtExceptionHandler(NSException *exception) {
             reValue = appid;
         }
     }
-    
+
     return reValue;
 }
 + (NSString *)getGtAppKey {
     NSString *reValue = kGtAppKey;
-    
+
     // 添加额外代码，方便测试修改App配置
     NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
     NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
@@ -223,12 +186,12 @@ static void uncaughtExceptionHandler(NSException *exception) {
             reValue = appkey;
         }
     }
-    
+
     return reValue;
 }
 + (NSString *)getGtAppSecret {
     NSString *reValue = kGtAppSecret;
-    
+
     // 添加额外代码，方便测试修改App配置
     NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
     NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
@@ -239,12 +202,12 @@ static void uncaughtExceptionHandler(NSException *exception) {
             reValue = appsecret;
         }
     }
-    
+
     return reValue;
 }
 
 - (void)startSdkWith:(NSString *)appID appKey:(NSString *)appKey appSecret:(NSString *)appSecret {
-    
+
     // 添加额外代码，方便测试修改App配置
     NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
     NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
@@ -254,25 +217,22 @@ static void uncaughtExceptionHandler(NSException *exception) {
         if (appid && [appid isKindOfClass:[NSString class]] && appid.length) {
             appID = appid;
         }
-        
+
         NSString *appkey = configs[@"com.getui.kGTAppKey"];
         if (appkey && [appkey isKindOfClass:[NSString class]] && appkey.length) {
             appKey = appkey;
         }
-        
+
         NSString *appsecret = configs[@"com.getui.kGTAppSecret"];
         if (appsecret && [appsecret isKindOfClass:[NSString class]] && appsecret.length) {
             appSecret = appsecret;
         }
     }
-    
+
     //[1-1]:通过 AppId、 appKey 、appSecret 启动SDK
     //该方法需要在主线程中调用
     [GeTuiSdk startSdkWithAppId:appID appKey:appKey appSecret:appSecret delegate:self];
-
-    //[1-2]:设置是否后台运行开关
     [GeTuiSdk runBackgroundEnable:YES];
-    //[1-3]:设置电子围栏功能，开启LBS定位服务 和 是否允许SDK 弹出用户定位请求
     [GeTuiSdk lbsLocationEnable:YES andUserVerify:YES];
 }
 
@@ -300,6 +260,15 @@ static void uncaughtExceptionHandler(NSException *exception) {
 
     NSString *msg = [NSString stringWithFormat:@"%@ : %@%@", [self formateTime:[NSDate date]], payloadMsg, offLine ? @"<离线消息>" : @""];
     NSLog(@"GexinSdkReceivePayload : %@, taskId: %@, msgId :%@", msg, taskId, aMsgId);
+
+    /**
+     *汇报个推自定义事件
+     *actionId：用户自定义的actionid，int类型，取值90001-90999。
+     *taskId：下发任务的任务ID。
+     *msgId： 下发任务的消息ID。
+     *返回值：BOOL，YES表示该命令已经提交，NO表示该命令未提交成功。注：该结果不代表服务器收到该条命令
+     **/
+    [GeTuiSdk sendFeedbackMessage:90001 taskId:taskId msgId:aMsgId];
 }
 
 /** SDK收到sendMessage消息回调 */

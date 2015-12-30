@@ -28,7 +28,7 @@ class ViewController: UIViewController {
                 GeTuiSdk .startSdkWithAppId(kGtAppId, appKey: kGtAppKey, appSecret: kGtAppSecret, delegate: delegate);
                 
                 NSLog("\n\n>>>[GeTui]:%@\n\n","启动APP");
-            }else if (GeTuiSdk.status() == SdkStatusStarted) {
+            }else if (GeTuiSdk.status() == SdkStatusStarted || GeTuiSdk.status() == SdkStatusStarting) {
                 [GeTuiSdk.stopSdk()];
                 
                 NSLog("\n\n>>>[GeTui]:%@\n\n","停止APP");
