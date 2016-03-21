@@ -28,8 +28,8 @@ class ViewController: UIViewController {
                 GeTuiSdk .startSdkWithAppId(kGtAppId, appKey: kGtAppKey, appSecret: kGtAppSecret, delegate: delegate);
                 
                 NSLog("\n\n>>>[GeTui]:%@\n\n","启动APP");
-            }else if (GeTuiSdk.status() == SdkStatusStarted || GeTuiSdk.status() == SdkStatusStarting) {
-                [GeTuiSdk.stopSdk()];
+            }else if (GeTuiSdk.status() == SdkStatusStarted) {
+                [GeTuiSdk.destroy()];
                 
                 NSLog("\n\n>>>[GeTui]:%@\n\n","停止APP");
             }
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             break
             
         case 24:           // 注册DeviceToken
-            GeTuiSdk.registerDeviceToken("");
+            GeTuiSdk.registerDeviceToken(nil);
             NSLog("调用注册DeviceToken");
             
             break
@@ -103,6 +103,15 @@ class ViewController: UIViewController {
             
             NSLog("调用发送消息");
             
+            break
+        case 29:
+            let badgeValue :UInt = 1
+            GeTuiSdk.setBadge(badgeValue)
+            UIApplication.sharedApplication().applicationIconBadgeNumber = Int(badgeValue);
+            break
+        case 30:
+            GeTuiSdk.resetBadge()
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0;
             break
         default: break
         }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestViewController">
             <connections>
                 <outlet property="aliasTextField" destination="NNi-uI-NYv" id="ebd-Wq-xUo"/>
+                <outlet property="badgeTextField" destination="C4H-Zz-Wbw" id="qne-5a-mpp"/>
                 <outlet property="baseScrollView" destination="Uiy-Pl-k1E" id="m9F-pv-aab"/>
                 <outlet property="deviceTokenTextField" destination="nmT-0F-ZY0" id="X3i-nK-e0M"/>
                 <outlet property="messageTextField" destination="Wrt-rV-vL1" id="TM8-Cf-ADg"/>
@@ -29,7 +30,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" id="y3u-sT-Ulf">
+                                <view contentMode="scaleToFill" id="y3u-sT-Ulf" userLabel="View - 更多功能">
                                     <rect key="frame" x="0.0" y="8" width="320" height="211"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -44,7 +45,7 @@
                                             <rect key="frame" x="8" y="29" width="304" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="RHN-I5-nXo"/>
                                             </connections>
@@ -100,12 +101,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" id="3Ob-G2-9JV">
+                                <view contentMode="scaleToFill" id="3Ob-G2-9JV" userLabel="View - 设置DeviceToken">
                                     <rect key="frame" x="0.0" y="227" width="320" height="106"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jw4-VB-VuA" userLabel="分割线">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
@@ -120,7 +121,7 @@
                                             <rect key="frame" x="80" y="38" width="232" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="sd0-yz-6Sr"/>
                                             </connections>
@@ -147,12 +148,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" id="u52-hr-o9b">
+                                <view contentMode="scaleToFill" id="u52-hr-o9b" userLabel="View - 设置标签">
                                     <rect key="frame" x="0.0" y="341" width="320" height="106"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FCW-S6-KjW" userLabel="分割线">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
@@ -186,7 +187,7 @@
                                             <rect key="frame" x="80" y="38" width="232" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="5u5-xA-KNd"/>
                                             </connections>
@@ -194,12 +195,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" id="fjC-Z0-TcP">
+                                <view contentMode="scaleToFill" id="fjC-Z0-TcP" userLabel="View - 别名绑定">
                                     <rect key="frame" x="0.0" y="455" width="320" height="144"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZoP-fQ-ecn" userLabel="分割线">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
@@ -214,7 +215,7 @@
                                             <rect key="frame" x="80" y="38" width="232" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="joe-5e-6EH"/>
                                             </connections>
@@ -253,12 +254,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" id="seW-B1-I0y">
+                                <view contentMode="scaleToFill" id="seW-B1-I0y" userLabel="View - sendMessage">
                                     <rect key="frame" x="0.0" y="607" width="320" height="106"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TgN-ia-CXQ" userLabel="分割线">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
@@ -273,7 +274,7 @@
                                             <rect key="frame" x="80" y="38" width="232" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="GJJ-gu-Oyr"/>
                                             </connections>
@@ -286,7 +287,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dLs-iW-YzN">
-                                            <rect key="frame" x="80" y="76" width="232" height="30"/>
+                                            <rect key="frame" x="88" y="57" width="232" height="49"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <state key="normal" title="sendMessage">
@@ -300,44 +301,48 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
-                                <view contentMode="scaleToFill" id="xyr-3n-ieY">
+                                <view contentMode="scaleToFill" id="yc9-Z3-qu3" userLabel="View - 设置角标">
                                     <rect key="frame" x="0.0" y="721" width="320" height="106"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ga0-qe-vQJ" userLabel="分割线">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="G56-el-eaN" userLabel="分割线">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.80000000000000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="自动运行" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="R7X-rL-QwB">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="设置角标" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="81Z-zj-U9y">
                                             <rect key="frame" x="20" y="9" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kMK-WE-UME">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="C4H-Zz-Wbw">
                                             <rect key="frame" x="80" y="38" width="232" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <state key="normal" title="频繁启动销毁SDK">
-                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                             <connections>
-                                                <action selector="clickActionButton:" destination="-1" eventType="touchUpInside" id="Bfl-wq-J6K"/>
+                                                <action selector="didEndOnExit:" destination="-1" eventType="editingDidEndOnExit" id="1DC-w6-Zze"/>
                                             </connections>
-                                        </button>
-                                        <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hpB-6Q-ywf">
-                                            <rect key="frame" x="80" y="76" width="232" height="30"/>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0oY-rZ-n7P">
+                                            <rect key="frame" x="0.0" y="42" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QQR-sR-4Dg">
+                                            <rect key="frame" x="80" y="71" width="232" height="30"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <state key="normal" title="随即调用SDK方法">
+                                            <state key="normal" title="setBadge">
                                                 <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="clickActionButton:" destination="-1" eventType="touchUpInside" id="he0-sc-sAx"/>
+                                                <action selector="clickActionButton:" destination="-1" eventType="touchUpInside" id="r89-Q6-try"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -351,7 +356,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="519" y="318"/>
+            <point key="canvasLocation" x="853" y="69"/>
         </view>
     </objects>
 </document>

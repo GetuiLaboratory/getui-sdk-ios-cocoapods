@@ -34,7 +34,7 @@
                 [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:delegate];
 
                 NSLog(@"\n\n>>>[GeTui]:%@\n\n", @"启动APP");
-            } else if ([GeTuiSdk status] == SdkStatusStarted || [GeTuiSdk status] == SdkStatusStarting) {
+            } else if ([GeTuiSdk status] == SdkStatusStarted) {
                 [GeTuiSdk destroy];
 
                 NSLog(@"\n\n>>>[GeTui]:%@\n\n", @"停止APP");
@@ -64,7 +64,7 @@
             break;
         }
         case 24: { // 注册DeviceToken
-            [GeTuiSdk registerDeviceToken:@""];
+            [GeTuiSdk registerDeviceToken:nil];
 
             NSLog(@"调用注册DeviceToken");
             break;
@@ -105,6 +105,19 @@
             NSLog(@"调用发送消息");
             break;
         }
+        case 29: {
+            int badgeValue = 1;
+            [GeTuiSdk setBadge:badgeValue];
+            [[UIApplication sharedApplication] setApplicationIconBadgeNumber:badgeValue];
+            break;
+        }
+        case 30: {
+            [GeTuiSdk resetBadge];
+            [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+            break;
+        }
+
+
         default:
             break;
     }

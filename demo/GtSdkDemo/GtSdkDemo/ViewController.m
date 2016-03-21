@@ -18,13 +18,13 @@
     [self initLogFile];
 
     mResponseView.editable = NO;
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         mResponseView.layoutManager.allowsNonContiguousLayout = NO;
     }
-#else
-    NSLog(@"ios4");
-#endif
+
+    [mAppIDView setText:kGtAppId];
+    [mAppKeyView setText:kGtAppKey];
+    [mAppSecretView setText:kGtAppSecret];
 
     NSString *offPushMode = [[NSUserDefaults standardUserDefaults] objectForKey:@"OffPushMode"];
     if (offPushMode) {
@@ -33,12 +33,8 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-    [mAppIDView setText:[AppDelegate getGtAppId]];
-    [mAppKeyView setText:[AppDelegate getGtAppKey]];
-    [mAppSecretView setText:[AppDelegate getGtAppSecret]];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,14 +50,14 @@
 - (void)updateStatusView:(AppDelegate *)delegate {
     if ([GeTuiSdk status] == SdkStatusStarted) {
         [mStatusView setText:@"已启动"];
-        [mStartupView setTitle:@"销毁" forState:UIControlStateNormal];
+        [mStartupView setTitle:@"停止" forState:UIControlStateNormal];
         [mClientIDView setText:[GeTuiSdk clientId]];
     } else if ([GeTuiSdk status] == SdkStatusStarting) {
         [mStatusView setText:@"正在启动"];
         [mStartupView setTitle:@"正在启动" forState:UIControlStateNormal];
         [mClientIDView setText:@""];
     } else {
-        [mStatusView setText:@"已销毁"];
+        [mStatusView setText:@"已停止"];
         [mStartupView setTitle:@"启动" forState:UIControlStateNormal];
         [mClientIDView setText:@""];
     }
@@ -69,11 +65,11 @@
 
 - (void)updateModeOffButton:(BOOL)isModeOff {
     if (isModeOff) {
-        [pushStatusLabel setText:@"销毁"];
+        [pushStatusLabel setText:@"关闭"];
         [offPushButton setTitle:@"开启推送" forState:UIControlStateNormal];
     } else {
         [pushStatusLabel setText:@"开启"];
-        [offPushButton setTitle:@"销毁推送" forState:UIControlStateNormal];
+        [offPushButton setTitle:@"关闭推送" forState:UIControlStateNormal];
     }
     isModeOff_ = isModeOff;
     [[NSUserDefaults standardUserDefaults] setObject:isModeOff_ ? @"1" : @"0" forKey:@"OffPushMode"];
@@ -81,7 +77,7 @@
 
 #pragma mark - 页面按钮点击事件
 
-/// 点击销毁推送按钮
+/// 点击关闭推送按钮
 - (IBAction)onSetModeButton:(id)sender {
     if ([GeTuiSdk status] == SdkStatusStarted) {
         [GeTuiSdk setPushModeForOff:!isModeOff_];
@@ -90,13 +86,13 @@
     }
 }
 
-/// 点击开始/销毁按钮
+/// 点击开始/关闭按钮
 - (IBAction)onStartupOrStop:(id)sender {
     AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     if ([GeTuiSdk status] == SdkStatusStoped) {
         [delegate startSdkWith:mAppIDView.text appKey:mAppKeyView.text appSecret:mAppSecretView.text];
     } else if ([GeTuiSdk status] == SdkStatusStarted || [GeTuiSdk status] == SdkStatusStarting) {
-        [GeTuiSdk destroy]; // 销毁SDK
+        [GeTuiSdk destroy]; // 停止SDK
     }
 }
 
@@ -108,31 +104,13 @@
 
 /// 点击更多按钮
 - (IBAction)onTestMore:(id)sender {
-    UIActionSheet *actionsView = [[UIActionSheet alloc] initWithTitle:nil
-                                                             delegate:self
-                                                    cancelButtonTitle:@"取消"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"更多功能测试", nil];
-    [actionsView showInView:self.view];
+    UIViewController *funcsView = [[TestViewController alloc] initWithNibName:@"TestViewController" bundle:nil];
+    [self.navigationController pushViewController:funcsView animated:YES];
 }
 
-/// 销毁键盘
+/// 关闭键盘
 - (IBAction)didKeyword:(id)sender {
     [self.view endEditing:YES];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0: {
-
-            UIViewController *funcsView = [[TestViewController alloc] initWithNibName:@"TestViewController" bundle:nil];
-            [self.navigationController pushViewController:funcsView animated:YES];
-
-            break;
-        }
-        default:
-            break;
-    }
 }
 
 #pragma mark - 日志

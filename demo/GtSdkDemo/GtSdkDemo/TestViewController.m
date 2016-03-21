@@ -18,6 +18,8 @@
 @property (retain, nonatomic) IBOutlet UITextField *tagsTextField;
 @property (retain, nonatomic) IBOutlet UITextField *aliasTextField;
 @property (retain, nonatomic) IBOutlet UITextField *messageTextField;
+@property (strong, nonatomic) IBOutlet UITextField *badgeTextField;
+
 
 @end
 
@@ -31,7 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self.baseScrollView setContentSize:CGSizeMake(self.view.bounds.size.width, 900)];
+    [self.baseScrollView setContentSize:CGSizeMake(self.view.bounds.size.width, 1100)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,13 +126,15 @@
 
             break;
         }
-        case 27: { // 频繁启动销毁SDK
-//            [ExceptionHandler startAutoRunSdk:@0];
-            [self showTos];
-            break;
-        }
-        case 28: { // 随即调用SDK方法
-//            [ExceptionHandler startAutoRunSdk:@1];
+        case 29: {
+
+            NSString *badgeText = [_badgeTextField text];
+            int badgeValue = [badgeText intValue];
+            badgeValue = badgeValue >= 0 ? badgeValue : 0;
+
+            [GeTuiSdk setBadge:badgeValue];
+            [[UIApplication sharedApplication] setApplicationIconBadgeNumber:badgeValue];
+
             [self showTos];
             break;
         }

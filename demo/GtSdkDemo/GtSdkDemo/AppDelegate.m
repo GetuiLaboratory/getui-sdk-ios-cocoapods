@@ -19,7 +19,6 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.viewController.title = [NSString stringWithFormat:@"个推开发平台测试客户端V%@", [GeTuiSdk version]];
@@ -30,9 +29,8 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [self.window makeKeyAndVisible];
 
     // [1]:使用APPID/APPKEY/APPSECRENT创建个推实例
-    // 注：该代码写法仅适用演示Demo，正式集成可简化，请参考“集成Demo”
     // 该方法需要在主线程中调用
-    [self startSdkWith:[AppDelegate getGtAppId] appKey:[AppDelegate getGtAppKey] appSecret:[AppDelegate getGtAppSecret]];
+    [self startSdkWith:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret];
 
     // [2]:注册APNS
     [self registerRemoteNotification];
@@ -43,8 +41,6 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
         NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
         [_viewController logMsg:record];
     }
-
-    //    [ExceptionHandler installExceptionHandler];
 
     return YES;
 }
@@ -118,7 +114,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"deviceToken:%@", token);
+    NSLog(@"\n>>>[DeviceToken Success]:%@\n\n", token);
 
     // [3]:向个推服务器注册deviceToken
     [GeTuiSdk registerDeviceToken:token];
@@ -126,22 +122,12 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 /** 远程通知注册失败委托 */
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    // [3-EXT]:如果APNS注册失败，通知个推服务器
-    [GeTuiSdk registerDeviceToken:@""];
     [_viewController logMsg:[NSString stringWithFormat:@"didFailToRegisterForRemoteNotificationsWithError:%@", [error localizedDescription]]];
 }
 
 #pragma mark - APP运行中接收到通知(推送)处理
 
-/** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台) */
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-
-    // [4-EXT]:处理APN
-    NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
-    [_viewController logMsg:record];
-}
-
-/** APP已经接收到“远程”通知(推送) - 透传推送消息  */
+/** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台)  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
 
     // [4-EXT]:处理APN
@@ -153,86 +139,14 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 #pragma mark - 启动GeTuiSdk
 
-/**
- 获取个推的AppId、AppKey、AppSecret
- 注：该代码写法仅适用演示Demo，正式集成可简化，请参考“集成Demo”
- */
-+ (NSString *)getGtAppId {
-    NSString *reValue = kGtAppId;
-
-    // 添加额外代码，方便测试修改App配置
-    NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
-    NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
-    if (configs) {
-        // SDK测试使用的appid
-        NSString *appid = configs[@"com.getui.kGTAppId"];
-        if (appid && [appid isKindOfClass:[NSString class]] && appid.length) {
-            reValue = appid;
-        }
-    }
-
-    return reValue;
-}
-+ (NSString *)getGtAppKey {
-    NSString *reValue = kGtAppKey;
-
-    // 添加额外代码，方便测试修改App配置
-    NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
-    NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
-    if (configs) {
-        // SDK测试使用的appkey
-        NSString *appkey = configs[@"com.getui.kGTAppKey"];
-        if (appkey && [appkey isKindOfClass:[NSString class]] && appkey.length) {
-            reValue = appkey;
-        }
-    }
-
-    return reValue;
-}
-+ (NSString *)getGtAppSecret {
-    NSString *reValue = kGtAppSecret;
-
-    // 添加额外代码，方便测试修改App配置
-    NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
-    NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
-    if (configs) {
-        // SDK测试使用的appid
-        NSString *appsecret = configs[@"com.getui.kGTAppSecret"];
-        if (appsecret && [appsecret isKindOfClass:[NSString class]] && appsecret.length) {
-            reValue = appsecret;
-        }
-    }
-
-    return reValue;
-}
-
 - (void)startSdkWith:(NSString *)appID appKey:(NSString *)appKey appSecret:(NSString *)appSecret {
-
-    // 添加额外代码，方便测试修改App配置
-    NSString *configPath = [[NSBundle mainBundle] pathForResource:@"gtsdk" ofType:@"plist"];
-    NSDictionary *configs = [NSDictionary dictionaryWithContentsOfFile:configPath];
-    if (configs) {
-        // SDK测试使用的appid
-        NSString *appid = configs[@"com.getui.kGTAppId"];
-        if (appid && [appid isKindOfClass:[NSString class]] && appid.length) {
-            appID = appid;
-        }
-
-        NSString *appkey = configs[@"com.getui.kGTAppKey"];
-        if (appkey && [appkey isKindOfClass:[NSString class]] && appkey.length) {
-            appKey = appkey;
-        }
-
-        NSString *appsecret = configs[@"com.getui.kGTAppSecret"];
-        if (appsecret && [appsecret isKindOfClass:[NSString class]] && appsecret.length) {
-            appSecret = appsecret;
-        }
-    }
-
     //[1-1]:通过 AppId、 appKey 、appSecret 启动SDK
     //该方法需要在主线程中调用
     [GeTuiSdk startSdkWithAppId:appID appKey:appKey appSecret:appSecret delegate:self];
+
+    //[1-2]:设置是否后台运行开关
     [GeTuiSdk runBackgroundEnable:YES];
+    //[1-3]:设置电子围栏功能，开启LBS定位服务 和 是否允许SDK 弹出用户定位请求
     [GeTuiSdk lbsLocationEnable:YES andUserVerify:YES];
 }
 
@@ -245,13 +159,12 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 }
 
 /** SDK收到透传消息回调 */
-- (void)GeTuiSdkDidReceivePayload:(NSString *)payloadId andTaskId:(NSString *)taskId andMessageId:(NSString *)aMsgId andOffLine:(BOOL)offLine fromApplication:(NSString *)appId {
+- (void)GeTuiSdkDidReceivePayloadData:(NSData *)payloadData andTaskId:(NSString *)taskId andMsgId:(NSString *)msgId andOffLine:(BOOL)offLine fromGtAppId:(NSString *)appId {
     // [4]: 收到个推消息
-    NSData *payload = [GeTuiSdk retrivePayloadById:payloadId];
     NSString *payloadMsg = nil;
-    if (payload) {
-        payloadMsg = [[NSString alloc] initWithBytes:payload.bytes
-                                              length:payload.length
+    if (payloadData) {
+        payloadMsg = [[NSString alloc] initWithBytes:payloadData.bytes
+                                              length:payloadData.length
                                             encoding:NSUTF8StringEncoding];
     }
 
@@ -259,16 +172,10 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     [_viewController logMsg:record];
 
     NSString *msg = [NSString stringWithFormat:@"%@ : %@%@", [self formateTime:[NSDate date]], payloadMsg, offLine ? @"<离线消息>" : @""];
-    NSLog(@"GexinSdkReceivePayload : %@, taskId: %@, msgId :%@", msg, taskId, aMsgId);
+    NSLog(@"GexinSdkReceivePayload : %@, taskId: %@, msgId :%@", msg, taskId, msgId);
 
-    /**
-     *汇报个推自定义事件
-     *actionId：用户自定义的actionid，int类型，取值90001-90999。
-     *taskId：下发任务的任务ID。
-     *msgId： 下发任务的消息ID。
-     *返回值：BOOL，YES表示该命令已经提交，NO表示该命令未提交成功。注：该结果不代表服务器收到该条命令
-     **/
-    [GeTuiSdk sendFeedbackMessage:90001 taskId:taskId msgId:aMsgId];
+    // 汇报个推自定义事件
+    [GeTuiSdk sendFeedbackMessage:90001 taskId:taskId msgId:msgId];
 }
 
 /** SDK收到sendMessage消息回调 */
