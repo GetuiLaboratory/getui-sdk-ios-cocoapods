@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "GTSDK"
-  s.version      = "1.4.2"
+  s.version      = "1.4.3-noidfa"
   s.summary      = "个推iOS SDK Cocoa Pods集成库"
 
   s.description  = <<-DESC
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/GetuiLaboratory/getui-sdk-ios-cocoapods.git", :tag => "1.4.2" }
+  s.source       = { :git => "https://github.com/GetuiLaboratory/getui-sdk-ios-cocoapods.git", :tag => "1.4.3-noidfa" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -104,8 +104,8 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  s.preserve_paths = "libGeTuiSdk-1.4.2.a"
-  s.ios.vendored_library = "libGeTuiSdk-1.4.2.a"
+  s.preserve_paths = "libGeTuiSdk-1.4.3-noidfa.a"
+  s.ios.vendored_library = "libGeTuiSdk-1.4.3-noidfa.a"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','CoreBluetooth','Security','JavaScriptCore'
   s.ios.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','CoreBluetooth','Security','JavaScriptCore'
   # s.library   = "sqlite3"
-  s.ios.libraries = 'z','sqlite3.0'
+  s.ios.libraries = 'z','sqlite3.0','c++'
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

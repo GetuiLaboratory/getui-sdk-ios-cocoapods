@@ -11,13 +11,13 @@
 
 @interface TestViewController ()
 
-@property (retain, nonatomic) IBOutlet UIScrollView *baseScrollView;
+@property (strong, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
-@property (retain, nonatomic) IBOutlet UITextField *showMsgTextField;
-@property (retain, nonatomic) IBOutlet UITextField *deviceTokenTextField;
-@property (retain, nonatomic) IBOutlet UITextField *tagsTextField;
-@property (retain, nonatomic) IBOutlet UITextField *aliasTextField;
-@property (retain, nonatomic) IBOutlet UITextField *messageTextField;
+@property (strong, nonatomic) IBOutlet UITextField *showMsgTextField;
+@property (strong, nonatomic) IBOutlet UITextField *deviceTokenTextField;
+@property (strong, nonatomic) IBOutlet UITextField *tagsTextField;
+@property (strong, nonatomic) IBOutlet UITextField *aliasTextField;
+@property (strong, nonatomic) IBOutlet UITextField *messageTextField;
 @property (strong, nonatomic) IBOutlet UITextField *badgeTextField;
 
 

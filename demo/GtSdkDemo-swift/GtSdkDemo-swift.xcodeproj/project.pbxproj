@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EB5A48D1CCF651F00B8E6B9 /* libGeTuiSdk-1.4.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB5A48C1CCF651F00B8E6B9 /* libGeTuiSdk-1.4.2.a */; };
 		9543589C1BCB9646004E33DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589B1BCB9646004E33DF /* AppDelegate.swift */; };
 		9543589E1BCB9646004E33DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589D1BCB9646004E33DF /* ViewController.swift */; };
 		954358A11BCB9646004E33DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9543589F1BCB9646004E33DF /* Main.storyboard */; };
@@ -22,18 +21,19 @@
 		955254A71C5A0AE7001FA844 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A61C5A0AE7001FA844 /* JavaScriptCore.framework */; };
 		955254A91C5A0AED001FA844 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A81C5A0AED001FA844 /* libz.dylib */; };
 		955254AB1C5A0AF3001FA844 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254AA1C5A0AF3001FA844 /* libsqlite3.dylib */; };
+		95668BD91D07F83D00698DBB /* libGeTuiSdk-1.4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BD81D07F83D00698DBB /* libGeTuiSdk-1.4.3.a */; };
+		95668BDB1D07F85E00698DBB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BDA1D07F85E00698DBB /* libc++.tbd */; };
 		957829D71C97EDA00043EA9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957829D61C97EDA00043EA9F /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0EB5A48B1CCF651F00B8E6B9 /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		0EB5A48C1CCF651F00B8E6B9 /* libGeTuiSdk-1.4.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.4.2.a"; sourceTree = "<group>"; };
 		954358981BCB9646004E33DF /* GtSdkDemo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GtSdkDemo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9543589B1BCB9646004E33DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9543589D1BCB9646004E33DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		954358A01BCB9646004E33DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954358A21BCB9646004E33DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954358A71BCB9646004E33DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954358AE1BCB971A004E33DF /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
 		954358B11BCB9AAD004E33DF /* GtSdkDemo-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GtSdkDemo-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		954358B91BCB9CA8004E33DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -45,6 +45,8 @@
 		955254A61C5A0AE7001FA844 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		955254A81C5A0AED001FA844 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		955254AA1C5A0AF3001FA844 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		95668BD81D07F83D00698DBB /* libGeTuiSdk-1.4.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.4.3.a"; sourceTree = "<group>"; };
+		95668BDA1D07F85E00698DBB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		957829D61C97EDA00043EA9F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -53,8 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95668BDB1D07F85E00698DBB /* libc++.tbd in Frameworks */,
 				955254AB1C5A0AF3001FA844 /* libsqlite3.dylib in Frameworks */,
-				0EB5A48D1CCF651F00B8E6B9 /* libGeTuiSdk-1.4.2.a in Frameworks */,
 				955254A91C5A0AED001FA844 /* libz.dylib in Frameworks */,
 				954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */,
 				954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */,
@@ -64,6 +66,7 @@
 				954358BE1BCB9CB7004E33DF /* CoreTelephony.framework in Frameworks */,
 				954358BC1BCB9CAE004E33DF /* AVFoundation.framework in Frameworks */,
 				954358BA1BCB9CA8004E33DF /* CoreLocation.framework in Frameworks */,
+				95668BD91D07F83D00698DBB /* libGeTuiSdk-1.4.3.a in Frameworks */,
 				954358B81BCB9CA1004E33DF /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,16 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EB5A48A1CCF651F00B8E6B9 /* GtSdkLib */ = {
-			isa = PBXGroup;
-			children = (
-				0EB5A48B1CCF651F00B8E6B9 /* GeTuiSdk.h */,
-				0EB5A48C1CCF651F00B8E6B9 /* libGeTuiSdk-1.4.2.a */,
-			);
-			name = GtSdkLib;
-			path = ../../GtSdkLib;
-			sourceTree = "<group>";
-		};
 		9543588F1BCB9646004E33DF = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +94,7 @@
 		9543589A1BCB9646004E33DF /* GtSdkDemo-swift */ = {
 			isa = PBXGroup;
 			children = (
-				0EB5A48A1CCF651F00B8E6B9 /* GtSdkLib */,
+				954358AD1BCB971A004E33DF /* GtSdkLib */,
 				9543589B1BCB9646004E33DF /* AppDelegate.swift */,
 				9543589D1BCB9646004E33DF /* ViewController.swift */,
 				9543589F1BCB9646004E33DF /* Main.storyboard */,
@@ -112,9 +105,20 @@
 			path = "GtSdkDemo-swift";
 			sourceTree = "<group>";
 		};
+		954358AD1BCB971A004E33DF /* GtSdkLib */ = {
+			isa = PBXGroup;
+			children = (
+				95668BD81D07F83D00698DBB /* libGeTuiSdk-1.4.3.a */,
+				954358AE1BCB971A004E33DF /* GeTuiSdk.h */,
+			);
+			name = GtSdkLib;
+			path = ../../GtSdkLib;
+			sourceTree = "<group>";
+		};
 		954358B61BCB9C7B004E33DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95668BDA1D07F85E00698DBB /* libc++.tbd */,
 				955254AA1C5A0AF3001FA844 /* libsqlite3.dylib */,
 				955254A81C5A0AED001FA844 /* libz.dylib */,
 				954358C31BCB9CD4004E33DF /* libz.tbd */,
@@ -313,9 +317,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志鸿 林 (D348EPU457)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志鸿 林 (D348EPU457)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
 				INFOPLIST_FILE = "GtSdkDemo-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -335,9 +339,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志鸿 林 (D348EPU457)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志鸿 林 (D348EPU457)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
 				INFOPLIST_FILE = "GtSdkDemo-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

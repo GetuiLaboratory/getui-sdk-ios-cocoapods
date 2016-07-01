@@ -175,7 +175,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     NSLog(@"GexinSdkReceivePayload : %@, taskId: %@, msgId :%@", msg, taskId, msgId);
 
     // 汇报个推自定义事件
-    [GeTuiSdk sendFeedbackMessage:90001 taskId:taskId msgId:msgId];
+    [GeTuiSdk sendFeedbackMessage:90001 andTaskId:taskId andMsgId:msgId];
 }
 
 /** SDK收到sendMessage消息回调 */

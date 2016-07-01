@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EB5A4811CCF418300B8E6B9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB5A4801CCF418300B8E6B9 /* AdSupport.framework */; };
-		0EB5A4851CCF645400B8E6B9 /* libGeTuiSdk-1.4.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB5A4841CCF645400B8E6B9 /* libGeTuiSdk-1.4.2.a */; };
 		9530F45B1C03215A00A8D1D9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */; };
 		955254A31C5A09E7001FA844 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A21C5A09E7001FA844 /* libz.dylib */; };
 		955254A51C5A09EE001FA844 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A41C5A09EE001FA844 /* libsqlite3.dylib */; };
@@ -28,6 +26,8 @@
 		955D37C81BCE58F20056559A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D37C71BCE58F20056559A /* libz.tbd */; };
 		955D37CF1BCE5A3F0056559A /* test1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 955D37CD1BCE5A3F0056559A /* test1.wav */; };
 		955D37D01BCE5A3F0056559A /* test2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 955D37CE1BCE5A3F0056559A /* test2.wav */; };
+		95668BC51D07EE4400698DBB /* libGeTuiSdk-1.4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BC41D07EE4400698DBB /* libGeTuiSdk-1.4.3.a */; };
+		95668BCA1D07EFC500698DBB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BC91D07EFC500698DBB /* libc++.tbd */; };
 		957829DD1C97EE320043EA9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957829DC1C97EE320043EA9F /* Security.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +45,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0EB5A4801CCF418300B8E6B9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		0EB5A4831CCF645400B8E6B9 /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		0EB5A4841CCF645400B8E6B9 /* libGeTuiSdk-1.4.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.4.2.a"; sourceTree = "<group>"; };
 		9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		955254A21C5A09E7001FA844 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		955254A41C5A09EE001FA844 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -72,6 +69,9 @@
 		955D37C71BCE58F20056559A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		955D37CD1BCE5A3F0056559A /* test1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test1.wav; sourceTree = "<group>"; };
 		955D37CE1BCE5A3F0056559A /* test2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test2.wav; sourceTree = "<group>"; };
+		955D37D31BCE5B350056559A /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
+		95668BC41D07EE4400698DBB /* libGeTuiSdk-1.4.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.4.3.a"; sourceTree = "<group>"; };
+		95668BC91D07EFC500698DBB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		957829DC1C97EE320043EA9F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -80,18 +80,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95668BCA1D07EFC500698DBB /* libc++.tbd in Frameworks */,
 				955254A51C5A09EE001FA844 /* libsqlite3.dylib in Frameworks */,
 				955254A31C5A09E7001FA844 /* libz.dylib in Frameworks */,
 				955D37C81BCE58F20056559A /* libz.tbd in Frameworks */,
 				955D37C61BCE58EC0056559A /* libsqlite3.tbd in Frameworks */,
-				0EB5A4811CCF418300B8E6B9 /* AdSupport.framework in Frameworks */,
 				9530F45B1C03215A00A8D1D9 /* JavaScriptCore.framework in Frameworks */,
 				957829DD1C97EE320043EA9F /* Security.framework in Frameworks */,
-				0EB5A4851CCF645400B8E6B9 /* libGeTuiSdk-1.4.2.a in Frameworks */,
 				955D37C41BCE58E40056559A /* SystemConfiguration.framework in Frameworks */,
 				955D37C21BCE58DD0056559A /* CoreTelephony.framework in Frameworks */,
 				955D37C01BCE58D50056559A /* AVFoundation.framework in Frameworks */,
 				955D37BE1BCE58C90056559A /* CoreLocation.framework in Frameworks */,
+				95668BC51D07EE4400698DBB /* libGeTuiSdk-1.4.3.a in Frameworks */,
 				955D37BC1BCE58C10056559A /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,16 +99,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EB5A4821CCF645400B8E6B9 /* GtSdkLib */ = {
-			isa = PBXGroup;
-			children = (
-				0EB5A4831CCF645400B8E6B9 /* GeTuiSdk.h */,
-				0EB5A4841CCF645400B8E6B9 /* libGeTuiSdk-1.4.2.a */,
-			);
-			name = GtSdkLib;
-			path = ../../GtSdkLib;
-			sourceTree = "<group>";
-		};
 		955D378B1BCE54D50056559A = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +119,7 @@
 		955D37961BCE54D50056559A /* GtSdkDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0EB5A4821CCF645400B8E6B9 /* GtSdkLib */,
+				955D37D21BCE5B350056559A /* GtSdkLib */,
 				955D379A1BCE54D50056559A /* AppDelegate.h */,
 				955D379B1BCE54D50056559A /* AppDelegate.m */,
 				955D379D1BCE54D50056559A /* ViewController.h */,
@@ -157,7 +147,7 @@
 		955D37B91BCE58910056559A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0EB5A4801CCF418300B8E6B9 /* AdSupport.framework */,
+				95668BC91D07EFC500698DBB /* libc++.tbd */,
 				955254A41C5A09EE001FA844 /* libsqlite3.dylib */,
 				955254A21C5A09E7001FA844 /* libz.dylib */,
 				955D37C71BCE58F20056559A /* libz.tbd */,
@@ -181,6 +171,16 @@
 				955D37CE1BCE5A3F0056559A /* test2.wav */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		955D37D21BCE5B350056559A /* GtSdkLib */ = {
+			isa = PBXGroup;
+			children = (
+				95668BC41D07EE4400698DBB /* libGeTuiSdk-1.4.3.a */,
+				955D37D31BCE5B350056559A /* GeTuiSdk.h */,
+			);
+			name = GtSdkLib;
+			path = ../../GtSdkLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,8 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志鸿 林 (D348EPU457)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志鸿 林 (D348EPU457)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
 				INFOPLIST_FILE = GtSdkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -379,8 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 志鸿 林 (D348EPU457)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 志鸿 林 (D348EPU457)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
 				INFOPLIST_FILE = GtSdkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
