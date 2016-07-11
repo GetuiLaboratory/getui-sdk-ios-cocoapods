@@ -96,13 +96,6 @@ typedef enum {
  */
 + (void)setAllowedRotateUiOrientations:(NSArray *)orientations;
 
-/**
- *  设置Crash捕捉启用（默认值：YES）
- *  备注：该方法需要在未启动SDK之前调用
- *
- *  @param isEnable 是否启动Crash捕获
- */
-+ (void)setCrashCatchEnable:(BOOL)isEnable;
 
 #pragma mark -
 
