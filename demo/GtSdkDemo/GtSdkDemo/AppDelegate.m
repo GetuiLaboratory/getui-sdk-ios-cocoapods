@@ -10,13 +10,7 @@
 #import "ViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-#define NotifyActionKey "NotifyAction"
-NSString *const NotificationCategoryIdent = @"ACTIONABLE";
-NSString *const NotificationActionOneIdent = @"ACTION_ONE";
-NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
-
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -28,27 +22,35 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     self.window.rootViewController = _naviController;
     [self.window makeKeyAndVisible];
 
-    // [1]:使用APPID/APPKEY/APPSECRENT创建个推实例
-    // 该方法需要在主线程中调用
-    [self startSdkWith:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret];
+    // [ GTSdk ]：是否允许APP后台运行
+    //    [GeTuiSdk runBackgroundEnable:YES];
 
-    // [2]:注册APNS
+    // [ GTSdk ]：是否运行电子围栏Lbs功能和是否SDK主动请求用户定位
+    [GeTuiSdk lbsLocationEnable:YES andUserVerify:YES];
+
+    // [ GTSdk ]：自定义渠道
+    [GeTuiSdk setChannelId:@"GT-Channel"];
+
+    // [ GTSdk ]：使用APPID/APPKEY/APPSECRENT启动个推
+    [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
+
+    // 注册APNs - custom method - 开发者自定义的方法
     [self registerRemoteNotification];
 
-    // [2-EXT]: 获取启动时收到的APN数据
-    NSDictionary *userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-    if (userInfo) {
-        NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
-        [_viewController logMsg:record];
-    }
-
     return YES;
+}
+
+- (NSString *)formateTime:(NSDate *)date {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm:ss"];
+    NSString *dateTime = [formatter stringFromDate:date];
+    return dateTime;
 }
 
 #pragma mark - background fetch  唤醒
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 
-    //[5] Background Fetch 恢复SDK 运行
+    // [ GTSdk ]：Background Fetch 恢复SDK 运行
     [GeTuiSdk resume];
 
     completionHandler(UIBackgroundFetchResultNewData);
@@ -61,36 +63,9 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
 #ifdef __IPHONE_8_0
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-        //IOS8 新的通知机制category注册
-        UIMutableUserNotificationAction *action1;
-        action1 = [[UIMutableUserNotificationAction alloc] init];
-        [action1 setActivationMode:UIUserNotificationActivationModeBackground];
-        [action1 setTitle:@"取消"];
-        [action1 setIdentifier:NotificationActionOneIdent];
-        [action1 setDestructive:NO];
-        [action1 setAuthenticationRequired:NO];
 
-        UIMutableUserNotificationAction *action2;
-        action2 = [[UIMutableUserNotificationAction alloc] init];
-        [action2 setActivationMode:UIUserNotificationActivationModeBackground];
-        [action2 setTitle:@"回复"];
-        [action2 setIdentifier:NotificationActionTwoIdent];
-        [action2 setDestructive:NO];
-        [action2 setAuthenticationRequired:NO];
-
-        UIMutableUserNotificationCategory *actionCategory;
-        actionCategory = [[UIMutableUserNotificationCategory alloc] init];
-        [actionCategory setIdentifier:NotificationCategoryIdent];
-        [actionCategory setActions:@[ action1, action2 ]
-                        forContext:UIUserNotificationActionContextDefault];
-
-        NSSet *categories = [NSSet setWithObject:actionCategory];
-        UIUserNotificationType types = (UIUserNotificationTypeAlert |
-                                        UIUserNotificationTypeSound |
-                                        UIUserNotificationTypeBadge);
-
-        UIUserNotificationSettings *settings;
-        settings = [UIUserNotificationSettings settingsForTypes:types categories:categories];
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 
@@ -116,7 +91,7 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSLog(@"\n>>>[DeviceToken Success]:%@\n\n", token);
 
-    // [3]:向个推服务器注册deviceToken
+    // [ GTSdk ]：向个推服务器注册deviceToken
     [GeTuiSdk registerDeviceToken:token];
 }
 
@@ -130,75 +105,66 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 /** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台)  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
 
-    // [4-EXT]:处理APN
+    // [ GTSdk ]：将收到的APNs信息传给个推统计
+    [GeTuiSdk handleRemoteNotification:userInfo];
+
+    // 显示APNs信息到页面
     NSString *record = [NSString stringWithFormat:@"[APN]%@, %@", [NSDate date], userInfo];
     [_viewController logMsg:record];
 
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
-#pragma mark - 启动GeTuiSdk
-
-- (void)startSdkWith:(NSString *)appID appKey:(NSString *)appKey appSecret:(NSString *)appSecret {
-    //[1-1]:通过 AppId、 appKey 、appSecret 启动SDK
-    //该方法需要在主线程中调用
-    [GeTuiSdk startSdkWithAppId:appID appKey:appKey appSecret:appSecret delegate:self];
-
-    //[1-2]:设置是否后台运行开关
-    [GeTuiSdk runBackgroundEnable:YES];
-    //[1-3]:设置电子围栏功能，开启LBS定位服务 和 是否允许SDK 弹出用户定位请求
-    [GeTuiSdk lbsLocationEnable:YES andUserVerify:YES];
-}
-
 #pragma mark - GeTuiSdkDelegate
 
 /** SDK启动成功返回cid */
 - (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
-    // [4-EXT-1]: 个推SDK已注册，返回clientId
-    NSLog(@">>>[GeTuiSdk RegisterClient]:%@", clientId);
+    // [ GTSdk ]：个推SDK已注册，返回clientId
+    NSLog(@">>[GTSdk RegisterClient]:%@", clientId);
 }
 
 /** SDK收到透传消息回调 */
 - (void)GeTuiSdkDidReceivePayloadData:(NSData *)payloadData andTaskId:(NSString *)taskId andMsgId:(NSString *)msgId andOffLine:(BOOL)offLine fromGtAppId:(NSString *)appId {
-    // [4]: 收到个推消息
+    // [ GTSdk ]：汇报个推自定义事件(反馈透传消息)
+    [GeTuiSdk sendFeedbackMessage:90001 andTaskId:taskId andMsgId:msgId];
+
+    // 数据转换
     NSString *payloadMsg = nil;
     if (payloadData) {
-        payloadMsg = [[NSString alloc] initWithBytes:payloadData.bytes
-                                              length:payloadData.length
-                                            encoding:NSUTF8StringEncoding];
+        payloadMsg = [[NSString alloc] initWithBytes:payloadData.bytes length:payloadData.length encoding:NSUTF8StringEncoding];
     }
 
+    // 页面显示日志
     NSString *record = [NSString stringWithFormat:@"%d, %@, %@%@", ++_lastPayloadIndex, [self formateTime:[NSDate date]], payloadMsg, offLine ? @"<离线消息>" : @""];
     [_viewController logMsg:record];
 
+    // 控制台打印日志
     NSString *msg = [NSString stringWithFormat:@"%@ : %@%@", [self formateTime:[NSDate date]], payloadMsg, offLine ? @"<离线消息>" : @""];
-    NSLog(@"GexinSdkReceivePayload : %@, taskId: %@, msgId :%@", msg, taskId, msgId);
-
-    // 汇报个推自定义事件
-    [GeTuiSdk sendFeedbackMessage:90001 andTaskId:taskId andMsgId:msgId];
+    NSLog(@">>[GTSdk ReceivePayload]:%@, taskId: %@, msgId :%@", msg, taskId, msgId);
 }
 
 /** SDK收到sendMessage消息回调 */
 - (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result {
-    // [4-EXT]:发送上行消息结果反馈
+    // 页面显示：上行消息结果反馈
     NSString *record = [NSString stringWithFormat:@"Received sendmessage:%@ result:%d", messageId, result];
     [_viewController logMsg:record];
 }
 
 /** SDK遇到错误回调 */
 - (void)GeTuiSdkDidOccurError:(NSError *)error {
-    // [EXT]:个推错误报告，集成步骤发生的任何错误都在这里通知，如果集成后，无法正常收到消息，查看这里的通知。
+    // 页面显示：个推错误报告，集成步骤发生的任何错误都在这里通知，如果集成后，无法正常收到消息，查看这里的通知。
     [_viewController logMsg:[NSString stringWithFormat:@">>>[GexinSdk error]:%@", [error localizedDescription]]];
 }
 
 /** SDK运行状态通知 */
 - (void)GeTuiSDkDidNotifySdkState:(SdkStatus)aStatus {
-    // [EXT]:通知SDK运行状态
+    // 页面显示更新通知SDK运行状态
     [_viewController updateStatusView:self];
 }
 
-//SDK设置推送模式回调
+/** SDK设置推送模式回调  */
 - (void)GeTuiSdkDidSetPushMode:(BOOL)isModeOff error:(NSError *)error {
+    // 页面显示错误信息
     if (error) {
         [_viewController logMsg:[NSString stringWithFormat:@">>>[SetModeOff error]: %@", [error localizedDescription]]];
         return;
@@ -206,18 +172,12 @@ NSString *const NotificationActionTwoIdent = @"ACTION_TWO";
 
     [_viewController logMsg:[NSString stringWithFormat:@">>>[GexinSdkSetModeOff]: %@", isModeOff ? @"开启" : @"关闭"]];
 
+    // 页面更新按钮事件
     UIViewController *vc = _naviController.topViewController;
     if ([vc isKindOfClass:[ViewController class]]) {
         ViewController *nextController = (ViewController *) vc;
         [nextController updateModeOffButton:isModeOff];
     }
-}
-
-- (NSString *)formateTime:(NSDate *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"HH:mm:ss"];
-    NSString *dateTime = [formatter stringFromDate:date];
-    return dateTime;
 }
 
 @end

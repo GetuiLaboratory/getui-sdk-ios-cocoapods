@@ -15,8 +15,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self initLogFile];
-
     mResponseView.editable = NO;
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         mResponseView.layoutManager.allowsNonContiguousLayout = NO;
@@ -90,7 +88,7 @@
 - (IBAction)onStartupOrStop:(id)sender {
     AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     if ([GeTuiSdk status] == SdkStatusStoped) {
-        [delegate startSdkWith:mAppIDView.text appKey:mAppKeyView.text appSecret:mAppSecretView.text];
+        [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:delegate];
     } else if ([GeTuiSdk status] == SdkStatusStarted || [GeTuiSdk status] == SdkStatusStarting) {
         [GeTuiSdk destroy]; // 停止SDK
     }
@@ -120,60 +118,6 @@
     [mResponseView setText:response];
 
     [mResponseView scrollRangeToVisible:NSMakeRange([mResponseView.text length], 0)];
-
-    [self log:aMsg]; // 写文件
-}
-
-#pragma mark - 本地日志写入事件
-
-- (void)initLogFile {
-    @autoreleasepool {
-        NSString *logFilePath = [self getFileDataPath];
-
-        if ([[NSFileManager defaultManager] fileExistsAtPath:logFilePath]) {
-            _file = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
-        } else {
-            if ([[NSFileManager defaultManager] createFileAtPath:logFilePath contents:nil attributes:nil]) {
-                _file = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
-            }
-        }
-    }
-}
-
-- (void)log:(NSString *)aLogMsg {
-    NSLog(@"%@", aLogMsg);
-
-    dispatch_queue_t dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-    dispatch_async(dispatchQueue, ^(void) {
-        if (_file) {
-            [_file seekToEndOfFile];
-            [_file writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
-
-            if ([aLogMsg isEqualToString:@"\n"]) {
-                [_file writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
-            } else {
-                NSData *data = [aLogMsg dataUsingEncoding:NSUTF8StringEncoding];
-                [_file writeData:data];
-            }
-        }
-    });
-}
-
-- (NSString *)getFileDataPath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSMutableString *path = [[NSMutableString alloc] initWithString:documentsDirectory];
-    [path appendString:[NSString stringWithFormat:@"/payload_msg_log_%@.txt", [self formateTime:[NSDate date]]]];
-    return path;
-}
-
-
-- (NSString *)formateTime:(NSDate *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateTime = [formatter stringFromDate:date];
-    return dateTime;
 }
 
 @end

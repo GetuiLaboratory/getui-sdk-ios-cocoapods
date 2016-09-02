@@ -18,10 +18,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    // 通过 appId、 appKey 、appSecret 启动SDK，注：该方法需要在主线程中调用
+    // [ GTSdk ]：是否允许APP后台运行
+    //    [GeTuiSdk runBackgroundEnable:YES];
+
+    // [ GTSdk ]：是否运行电子围栏Lbs功能和是否SDK主动请求用户定位
+    [GeTuiSdk lbsLocationEnable:YES andUserVerify:YES];
+
+    // [ GTSdk ]：自定义渠道
+    [GeTuiSdk setChannelId:@"GT-Channel"];
+
+    // [ GTSdk ]：使用APPID/APPKEY/APPSECRENT创建个推实例
     [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
 
-    // 注册APNS
+    // 注册APNs - custom method - 开发者自定义的方法
     [self registerUserNotification];
 
     return YES;
@@ -48,6 +57,8 @@
         // 定义用户通知设置
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
 
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+
         // 注册用户通知 - 根据用户通知设置
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     } else { // iOS8.0 以前远程推送设置方式
@@ -59,14 +70,6 @@
     }
 }
 
-#pragma mark - 用户通知(推送)回调 _IOS 8.0以上使用
-
-/** 已登记用户通知 */
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    // 注册远程通知（推送）
-    [application registerForRemoteNotifications];
-}
-
 #pragma mark - 远程通知(推送)回调
 
 /** 远程通知注册成功委托 */
@@ -75,7 +78,7 @@
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSLog(@"\n>>>[DeviceToken Success]:%@\n\n", token);
 
-    // [3]:向个推服务器注册deviceToken
+    // [ GTSdk ]：向个推服务器注册deviceToken
     [GeTuiSdk registerDeviceToken:token];
 }
 
@@ -86,18 +89,14 @@
 
 #pragma mark - APP运行中接收到通知(推送)处理
 
-/** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台) */
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    application.applicationIconBadgeNumber = 0; // 标签
-
-    NSLog(@"\n>>>[Receive RemoteNotification]:%@\n\n", userInfo);
-}
-
 /** APP已经接收到“远程”通知(推送) - 透传推送消息  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
 
-    // 处理APN
-    NSLog(@"\n>>>[Receive RemoteNotification - Background Fetch]:%@\n\n", userInfo);
+    // [ GTSdk ]：将收到的APNs信息传给个推统计
+    [GeTuiSdk handleRemoteNotification:userInfo];
+
+    // 控制台打印接收APNs信息
+    NSLog(@"\n>>>[Receive RemoteNotification]:%@\n\n", userInfo);
 
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -107,50 +106,53 @@
 /** SDK启动成功返回cid */
 - (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
     // [4-EXT-1]: 个推SDK已注册，返回clientId
-    NSLog(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
+    NSLog(@"\n>>[GTSdk RegisterClient]:%@\n\n", clientId);
 }
 
 /** SDK遇到错误回调 */
 - (void)GeTuiSdkDidOccurError:(NSError *)error {
     // [EXT]:个推错误报告，集成步骤发生的任何错误都在这里通知，如果集成后，无法正常收到消息，查看这里的通知。
-    NSLog(@"\n>>>[GexinSdk error]:%@\n\n", [error localizedDescription]);
+    NSLog(@"\n>>[GTSdk error]:%@\n\n", [error localizedDescription]);
 }
 
 
 /** SDK收到透传消息回调 */
 - (void)GeTuiSdkDidReceivePayloadData:(NSData *)payloadData andTaskId:(NSString *)taskId andMsgId:(NSString *)msgId andOffLine:(BOOL)offLine fromGtAppId:(NSString *)appId {
+    // [ GTSdk ]：汇报个推自定义事件(反馈透传消息)
+    [GeTuiSdk sendFeedbackMessage:90001 andTaskId:taskId andMsgId:msgId];
 
-    // [4]: 收到个推消息
+    // 数据转换
     NSString *payloadMsg = nil;
     if (payloadData) {
         payloadMsg = [[NSString alloc] initWithBytes:payloadData.bytes length:payloadData.length encoding:NSUTF8StringEncoding];
     }
 
+    // 控制台打印日志
     NSString *msg = [NSString stringWithFormat:@"taskId=%@,messageId:%@,payloadMsg:%@%@", taskId, msgId, payloadMsg, offLine ? @"<离线消息>" : @""];
-    NSLog(@"\n>>>[GexinSdk ReceivePayload]:%@\n\n", msg);
+    NSLog(@"\n>>[GTSdk ReceivePayload]:%@\n\n", msg);
 }
 
 /** SDK收到sendMessage消息回调 */
 - (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result {
-    // [4-EXT]:发送上行消息结果反馈
+    // 发送上行消息结果反馈
     NSString *msg = [NSString stringWithFormat:@"sendmessage=%@,result=%d", messageId, result];
-    NSLog(@"\n>>>[GexinSdk DidSendMessage]:%@\n\n", msg);
+    NSLog(@"\n>>[GTSdk DidSendMessage]:%@\n\n", msg);
 }
 
 /** SDK运行状态通知 */
 - (void)GeTuiSDkDidNotifySdkState:(SdkStatus)aStatus {
-    // [EXT]:通知SDK运行状态
-    NSLog(@"\n>>>[GexinSdk SdkState]:%u\n\n", aStatus);
+    // 通知SDK运行状态
+    NSLog(@"\n>>[GTSdk SdkState]:%u\n\n", aStatus);
 }
 
 /** SDK设置推送模式回调 */
 - (void)GeTuiSdkDidSetPushMode:(BOOL)isModeOff error:(NSError *)error {
     if (error) {
-        NSLog(@"\n>>>[GexinSdk SetModeOff Error]:%@\n\n", [error localizedDescription]);
+        NSLog(@"\n>>[GTSdk SetModeOff Error]:%@\n\n", [error localizedDescription]);
         return;
     }
 
-    NSLog(@"\n>>>[GexinSdk SetModeOff]:%@\n\n", isModeOff ? @"开启" : @"关闭");
+    NSLog(@"\n>>[GTSdk SetModeOff]:%@\n\n", isModeOff ? @"开启" : @"关闭");
 }
 
 @end

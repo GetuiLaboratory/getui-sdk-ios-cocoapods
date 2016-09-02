@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9511DB361D781A690084A324 /* libGeTuiSdk-1.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9511DB351D781A690084A324 /* libGeTuiSdk-1.5.0.a */; };
 		9530F45B1C03215A00A8D1D9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */; };
 		955254A31C5A09E7001FA844 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A21C5A09E7001FA844 /* libz.dylib */; };
 		955254A51C5A09EE001FA844 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A41C5A09EE001FA844 /* libsqlite3.dylib */; };
@@ -26,7 +27,6 @@
 		955D37C81BCE58F20056559A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D37C71BCE58F20056559A /* libz.tbd */; };
 		955D37CF1BCE5A3F0056559A /* test1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 955D37CD1BCE5A3F0056559A /* test1.wav */; };
 		955D37D01BCE5A3F0056559A /* test2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 955D37CE1BCE5A3F0056559A /* test2.wav */; };
-		95668BC51D07EE4400698DBB /* libGeTuiSdk-1.4.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BC41D07EE4400698DBB /* libGeTuiSdk-1.4.3.a */; };
 		95668BCA1D07EFC500698DBB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BC91D07EFC500698DBB /* libc++.tbd */; };
 		957829DD1C97EE320043EA9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957829DC1C97EE320043EA9F /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9511DB351D781A690084A324 /* libGeTuiSdk-1.5.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.5.0.a"; sourceTree = "<group>"; };
 		9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		955254A21C5A09E7001FA844 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		955254A41C5A09EE001FA844 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -70,7 +71,6 @@
 		955D37CD1BCE5A3F0056559A /* test1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test1.wav; sourceTree = "<group>"; };
 		955D37CE1BCE5A3F0056559A /* test2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test2.wav; sourceTree = "<group>"; };
 		955D37D31BCE5B350056559A /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
-		95668BC41D07EE4400698DBB /* libGeTuiSdk-1.4.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.4.3.a"; sourceTree = "<group>"; };
 		95668BC91D07EFC500698DBB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		957829DC1C97EE320043EA9F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -89,9 +89,9 @@
 				957829DD1C97EE320043EA9F /* Security.framework in Frameworks */,
 				955D37C41BCE58E40056559A /* SystemConfiguration.framework in Frameworks */,
 				955D37C21BCE58DD0056559A /* CoreTelephony.framework in Frameworks */,
+				9511DB361D781A690084A324 /* libGeTuiSdk-1.5.0.a in Frameworks */,
 				955D37C01BCE58D50056559A /* AVFoundation.framework in Frameworks */,
 				955D37BE1BCE58C90056559A /* CoreLocation.framework in Frameworks */,
-				95668BC51D07EE4400698DBB /* libGeTuiSdk-1.4.3.a in Frameworks */,
 				955D37BC1BCE58C10056559A /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +176,7 @@
 		955D37D21BCE5B350056559A /* GtSdkLib */ = {
 			isa = PBXGroup;
 			children = (
-				95668BC41D07EE4400698DBB /* libGeTuiSdk-1.4.3.a */,
+				9511DB351D781A690084A324 /* libGeTuiSdk-1.5.0.a */,
 				955D37D31BCE5B350056559A /* GeTuiSdk.h */,
 			);
 			name = GtSdkLib;
@@ -211,13 +211,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "赵伟";
+				ORGANIZATIONNAME = "Gexin Interactive (Beijing) Network Technology Co.,LTD.";
 				TargetAttributes = {
 					955D37931BCE54D50056559A = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 3MJY223U56;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -365,11 +368,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../GtSdkLib",
+					"/Users/zhaowei/Documents/SourceTree/Gt-iOS-SDK/getui-sdk-ios/mdp/GtSdkLib",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "30589834-7fe6-4e8d-b9f0-f8f7f9fc4024";
+				PROVISIONING_PROFILE = "9d0b3656-21b9-43b0-9d51-22d1f703ed2b";
 			};
 			name = Debug;
 		};
@@ -384,11 +388,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../GtSdkLib",
+					"/Users/zhaowei/Documents/SourceTree/Gt-iOS-SDK/getui-sdk-ios/mdp/GtSdkLib",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "30589834-7fe6-4e8d-b9f0-f8f7f9fc4024";
+				PROVISIONING_PROFILE = "9d0b3656-21b9-43b0-9d51-22d1f703ed2b";
 			};
 			name = Release;
 		};

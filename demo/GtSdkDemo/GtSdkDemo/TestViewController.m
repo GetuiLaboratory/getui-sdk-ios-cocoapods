@@ -95,13 +95,13 @@
             break;
         }
         case 23: { // 绑定别名
-            [GeTuiSdk bindAlias:_aliasTextField.text];
+            [GeTuiSdk bindAlias:_aliasTextField.text andSequenceNum:[NSString stringWithFormat:@"%@-sign", _aliasTextField.text]];
 
             [self showTos];
             break;
         }
         case 24: { // 取消绑定别名
-            [GeTuiSdk unbindAlias:_aliasTextField.text];
+            [GeTuiSdk unbindAlias:_aliasTextField.text andSequenceNum:[NSString stringWithFormat:@"%@-sign", _aliasTextField.text]];
 
             [self showTos];
             break;

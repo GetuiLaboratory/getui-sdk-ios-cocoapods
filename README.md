@@ -3,9 +3,7 @@
 
 ## podfile 配置
 ``` java
-source 'https://github.com/GetuiLaboratory/Specs.git'
-
 platform :ios, "7.0"
-pod 'getui-sdk-ios-cocoapods'
+pod 'GTSDK'
 
 ```

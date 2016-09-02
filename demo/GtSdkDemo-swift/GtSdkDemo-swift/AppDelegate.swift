@@ -21,10 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // 通过 appId、 appKey 、appSecret 启动SDK，注：该方法需要在主线程中调用
+        // [ GTSdk ]：是否允许APP后台运行
+//        GeTuiSdk.runBackgroundEnable(true);
+        
+        // [ GTSdk ]：是否运行电子围栏Lbs功能和是否SDK主动请求用户定位
+        GeTuiSdk.lbsLocationEnable(true, andUserVerify: true);
+        
+        // [ GTSdk ]：自定义渠道
+        GeTuiSdk.setChannelId("GT-Channel");
+        
+        // [ GTSdk ]：使用APPID/APPKEY/APPSECRENT启动个推
         GeTuiSdk.startSdkWithAppId(kGtAppId, appKey: kGtAppKey, appSecret: kGtAppSecret, delegate: self);
         
-        // 注册Apns
+        // 注册APNs - custom method - 开发者自定义的方法
         self.registerUserNotification(application);
         
         return true
@@ -52,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate {
         var token = deviceToken.description.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "<>"));
         token = token.stringByReplacingOccurrencesOfString(" ", withString: "")
             
-        // [3]:向个推服务器注册deviceToken
+        // [ GTSdk ]：向个推服务器注册deviceToken
         GeTuiSdk.registerDeviceToken(token);
 
         NSLog("\n>>>[DeviceToken Success]:%@\n\n",token);
@@ -70,6 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate {
         application.applicationIconBadgeNumber = 0;        // 标签
         
         NSLog("\n>>>[Receive RemoteNotification]:%@\n\n",userInfo);
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        // [ GTSdk ]：将收到的APNs信息传给个推统计
+        GeTuiSdk.handleRemoteNotification(userInfo);
+        
+        NSLog("\n>>>[Receive RemoteNotification]:%@\n\n",userInfo);
+        completionHandler(UIBackgroundFetchResult.NewData);
     }
     
     // MARK: - GeTuiSdkDelegate

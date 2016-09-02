@@ -79,13 +79,13 @@ class ViewController: UIViewController {
             break
             
         case 26:           // 绑定别名
-            GeTuiSdk.bindAlias("个推研发")
+            GeTuiSdk.bindAlias("个推", andSequenceNum:"92db2eefd8c0a9c8");
             
             NSLog("调用绑定别名")
             
             break
         case 27:          // 取消绑定别名
-            GeTuiSdk.unbindAlias("个推研发")
+            GeTuiSdk.unbindAlias("个推研发", andSequenceNum:"92db2eefd8c0a9c8");
             
             NSLog("调用取消绑定别名")
             

@@ -25,6 +25,4 @@
 @property (strong, nonatomic) ViewController *viewController;
 @property (assign, nonatomic) int lastPayloadIndex;
 
-- (void)startSdkWith:(NSString *)appID appKey:(NSString *)appKey appSecret:(NSString *)appSecret;
-
 @end

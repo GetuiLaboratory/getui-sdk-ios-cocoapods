@@ -82,13 +82,13 @@
             break;
         }
         case 26: { // 绑定别名
-            [GeTuiSdk bindAlias:@"个推"];
+            [GeTuiSdk bindAlias:@"个推" andSequenceNum:@"805318ab532e18c6c"];
 
             NSLog(@"调用绑定别名");
             break;
         }
         case 27: { // 取消绑定别名
-            [GeTuiSdk unbindAlias:@"个推"];
+            [GeTuiSdk unbindAlias:@"个推" andSequenceNum:@"805318ab532e18c6c"];
 
             NSLog(@"调用取消绑定别名");
             break;
