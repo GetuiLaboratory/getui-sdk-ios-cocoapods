@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "GTSDK"
-  s.version      = "1.5.0-noidfa"
+  s.version      = "1.5.0"
   s.summary      = "个推iOS SDK Cocoa Pods集成库"
 
   s.description  = <<-DESC
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/GetuiLaboratory/getui-sdk-ios-cocoapods.git", :tag => "1.5.0-noidfa" }
+  s.source       = { :git => "https://github.com/GetuiLaboratory/getui-sdk-ios-cocoapods.git", :tag => "1.5.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -104,8 +104,8 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
 
-  s.preserve_paths = "libGeTuiSdk-1.5.0-noidfa.a"
-  s.ios.vendored_library = "libGeTuiSdk-1.5.0-noidfa.a"
+  s.preserve_paths = "libGeTuiSdk-1.5.0.a"
+  s.ios.vendored_library = "libGeTuiSdk-1.5.0.a"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
