@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9511DB361D781A690084A324 /* libGeTuiSdk-1.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9511DB351D781A690084A324 /* libGeTuiSdk-1.5.0.a */; };
+		0E1CAF3A1DD9AF5800C8DBB7 /* libGtExtensionSdk-1.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CAF391DD9AF5800C8DBB7 /* libGtExtensionSdk-1.0.0.a */; };
+		0E1CAF441DD9AFD400C8DBB7 /* libGeTuiSdk-1.5.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CAF431DD9AFD400C8DBB7 /* libGeTuiSdk-1.5.3.a */; };
+		0EBC15071DAB794A002BA975 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC15061DAB794A002BA975 /* NotificationService.m */; };
+		0EBC150B1DAB794A002BA975 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0EBC15031DAB794A002BA975 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0ECFC4E61DAB8350008AF424 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D37C71BCE58F20056559A /* libz.tbd */; };
+		0ECFC4E71DAB8356008AF424 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D37C51BCE58EC0056559A /* libsqlite3.tbd */; };
 		9530F45B1C03215A00A8D1D9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */; };
-		955254A31C5A09E7001FA844 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A21C5A09E7001FA844 /* libz.dylib */; };
-		955254A51C5A09EE001FA844 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A41C5A09EE001FA844 /* libsqlite3.dylib */; };
 		955D37991BCE54D50056559A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D37981BCE54D50056559A /* main.m */; };
 		955D379C1BCE54D50056559A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D379B1BCE54D50056559A /* AppDelegate.m */; };
 		955D379F1BCE54D50056559A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955D379E1BCE54D50056559A /* ViewController.m */; };
@@ -31,7 +34,28 @@
 		957829DD1C97EE320043EA9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957829DC1C97EE320043EA9F /* Security.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0EBC15091DAB794A002BA975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 955D378C1BCE54D50056559A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EBC15021DAB794A002BA975;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		0EBC150F1DAB794A002BA975 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0EBC150B1DAB794A002BA975 /* NotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95260DD11BE1E0D300DC5072 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +69,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9511DB351D781A690084A324 /* libGeTuiSdk-1.5.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.5.0.a"; sourceTree = "<group>"; };
+		0E1CAF391DD9AF5800C8DBB7 /* libGtExtensionSdk-1.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGtExtensionSdk-1.0.0.a"; path = "../../GtSdkLib/libGtExtensionSdk-1.0.0.a"; sourceTree = "<group>"; };
+		0E1CAF431DD9AFD400C8DBB7 /* libGeTuiSdk-1.5.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGeTuiSdk-1.5.3.a"; path = "../../GtSdkLib/libGeTuiSdk-1.5.3.a"; sourceTree = "<group>"; };
+		0EBC15031DAB794A002BA975 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EBC15051DAB794A002BA975 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		0EBC15061DAB794A002BA975 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		0EBC15081DAB794A002BA975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0ECFC4EA1DAB848F008AF424 /* libGeTuiSdk-1.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.5.2.a"; sourceTree = "<group>"; };
+		9506CD981DB5F80300746B3F /* GeTuiExtSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiExtSdk.h; sourceTree = "<group>"; };
+		9506CD991DB5F80300746B3F /* libGtExtensionSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGtExtensionSdk.a; sourceTree = "<group>"; };
 		9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		955254A21C5A09E7001FA844 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		955254A41C5A09EE001FA844 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		955D37941BCE54D50056559A /* GtSdkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GtSdkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955D37981BCE54D50056559A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		955D379A1BCE54D50056559A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,23 +103,32 @@
 		955D37D31BCE5B350056559A /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
 		95668BC91D07EFC500698DBB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		957829DC1C97EE320043EA9F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		95A0BD181D98BD4B00543BB7 /* GtSdkDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GtSdkDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0EBC15001DAB794A002BA975 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1CAF3A1DD9AF5800C8DBB7 /* libGtExtensionSdk-1.0.0.a in Frameworks */,
+				0ECFC4E71DAB8356008AF424 /* libsqlite3.tbd in Frameworks */,
+				0ECFC4E61DAB8350008AF424 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		955D37911BCE54D50056559A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95668BCA1D07EFC500698DBB /* libc++.tbd in Frameworks */,
-				955254A51C5A09EE001FA844 /* libsqlite3.dylib in Frameworks */,
-				955254A31C5A09E7001FA844 /* libz.dylib in Frameworks */,
+				0E1CAF441DD9AFD400C8DBB7 /* libGeTuiSdk-1.5.3.a in Frameworks */,
 				955D37C81BCE58F20056559A /* libz.tbd in Frameworks */,
+				95668BCA1D07EFC500698DBB /* libc++.tbd in Frameworks */,
 				955D37C61BCE58EC0056559A /* libsqlite3.tbd in Frameworks */,
 				9530F45B1C03215A00A8D1D9 /* JavaScriptCore.framework in Frameworks */,
 				957829DD1C97EE320043EA9F /* Security.framework in Frameworks */,
 				955D37C41BCE58E40056559A /* SystemConfiguration.framework in Frameworks */,
 				955D37C21BCE58DD0056559A /* CoreTelephony.framework in Frameworks */,
-				9511DB361D781A690084A324 /* libGeTuiSdk-1.5.0.a in Frameworks */,
 				955D37C01BCE58D50056559A /* AVFoundation.framework in Frameworks */,
 				955D37BE1BCE58C90056559A /* CoreLocation.framework in Frameworks */,
 				955D37BC1BCE58C10056559A /* CoreBluetooth.framework in Frameworks */,
@@ -99,10 +138,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EBC15041DAB794A002BA975 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				0EBC15051DAB794A002BA975 /* NotificationService.h */,
+				0EBC15061DAB794A002BA975 /* NotificationService.m */,
+				0EBC15081DAB794A002BA975 /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 		955D378B1BCE54D50056559A = {
 			isa = PBXGroup;
 			children = (
 				955D37961BCE54D50056559A /* GtSdkDemo */,
+				0EBC15041DAB794A002BA975 /* NotificationService */,
 				955D37B91BCE58910056559A /* Frameworks */,
 				955D37951BCE54D50056559A /* Products */,
 			);
@@ -112,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				955D37941BCE54D50056559A /* GtSdkDemo.app */,
+				0EBC15031DAB794A002BA975 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +170,7 @@
 		955D37961BCE54D50056559A /* GtSdkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				95A0BD181D98BD4B00543BB7 /* GtSdkDemo.entitlements */,
 				955D37D21BCE5B350056559A /* GtSdkLib */,
 				955D379A1BCE54D50056559A /* AppDelegate.h */,
 				955D379B1BCE54D50056559A /* AppDelegate.m */,
@@ -147,10 +199,10 @@
 		955D37B91BCE58910056559A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95668BC91D07EFC500698DBB /* libc++.tbd */,
-				955254A41C5A09EE001FA844 /* libsqlite3.dylib */,
-				955254A21C5A09E7001FA844 /* libz.dylib */,
+				0E1CAF431DD9AFD400C8DBB7 /* libGeTuiSdk-1.5.3.a */,
+				0E1CAF391DD9AF5800C8DBB7 /* libGtExtensionSdk-1.0.0.a */,
 				955D37C71BCE58F20056559A /* libz.tbd */,
+				95668BC91D07EFC500698DBB /* libc++.tbd */,
 				955D37C51BCE58EC0056559A /* libsqlite3.tbd */,
 				957829DC1C97EE320043EA9F /* Security.framework */,
 				9530F45A1C03215A00A8D1D9 /* JavaScriptCore.framework */,
@@ -176,7 +228,9 @@
 		955D37D21BCE5B350056559A /* GtSdkLib */ = {
 			isa = PBXGroup;
 			children = (
-				9511DB351D781A690084A324 /* libGeTuiSdk-1.5.0.a */,
+				9506CD981DB5F80300746B3F /* GeTuiExtSdk.h */,
+				9506CD991DB5F80300746B3F /* libGtExtensionSdk.a */,
+				0ECFC4EA1DAB848F008AF424 /* libGeTuiSdk-1.5.2.a */,
 				955D37D31BCE5B350056559A /* GeTuiSdk.h */,
 			);
 			name = GtSdkLib;
@@ -186,6 +240,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0EBC15021DAB794A002BA975 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EBC150E1DAB794A002BA975 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				0EBC14FF1DAB794A002BA975 /* Sources */,
+				0EBC15001DAB794A002BA975 /* Frameworks */,
+				0EBC15011DAB794A002BA975 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 0EBC15031DAB794A002BA975 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		955D37931BCE54D50056559A /* GtSdkDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 955D37AB1BCE54D50056559A /* Build configuration list for PBXNativeTarget "GtSdkDemo" */;
@@ -194,10 +265,12 @@
 				955D37911BCE54D50056559A /* Frameworks */,
 				955D37921BCE54D50056559A /* Resources */,
 				95260DD11BE1E0D300DC5072 /* Embed Watch Content */,
+				0EBC150F1DAB794A002BA975 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0EBC150A1DAB794A002BA975 /* PBXTargetDependency */,
 			);
 			name = GtSdkDemo;
 			productName = GtSdkDemo;
@@ -210,12 +283,18 @@
 		955D378C1BCE54D50056559A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Gexin Interactive (Beijing) Network Technology Co.,LTD.";
 				TargetAttributes = {
+					0EBC15021DAB794A002BA975 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3MJY223U56;
+						ProvisioningStyle = Automatic;
+					};
 					955D37931BCE54D50056559A = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 3MJY223U56;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -241,11 +320,19 @@
 			projectRoot = "";
 			targets = (
 				955D37931BCE54D50056559A /* GtSdkDemo */,
+				0EBC15021DAB794A002BA975 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0EBC15011DAB794A002BA975 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		955D37921BCE54D50056559A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +348,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0EBC14FF1DAB794A002BA975 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EBC15071DAB794A002BA975 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		955D37901BCE54D50056559A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,7 +369,52 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0EBC150A1DAB794A002BA975 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EBC15021DAB794A002BA975 /* NotificationService */;
+			targetProxy = 0EBC15091DAB794A002BA975 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0EBC150C1DAB794A002BA975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 3MJY223U56;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../GtSdkLib";
+				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0EBC150D1DAB794A002BA975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3MJY223U56;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../GtSdkLib";
+				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		955D37A91BCE54D50056559A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -288,8 +428,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -332,8 +474,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -362,18 +506,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
+				CODE_SIGN_ENTITLEMENTS = GtSdkDemo/GtSdkDemo.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3MJY223U56;
 				INFOPLIST_FILE = GtSdkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../GtSdkLib",
-					"/Users/zhaowei/Documents/SourceTree/Gt-iOS-SDK/getui-sdk-ios/mdp/GtSdkLib",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d0b3656-21b9-43b0-9d51-22d1f703ed2b";
+				PROVISIONING_PROFILE = "2df9a42d-8089-40ec-a715-dd55a73a9393";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev: ent.com.getui.demo";
 			};
 			name = Debug;
 		};
@@ -382,24 +529,36 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
+				CODE_SIGN_ENTITLEMENTS = GtSdkDemo/GtSdkDemo.entitlements;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3MJY223U56;
 				INFOPLIST_FILE = GtSdkDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../GtSdkLib",
-					"/Users/zhaowei/Documents/SourceTree/Gt-iOS-SDK/getui-sdk-ios/mdp/GtSdkLib",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d0b3656-21b9-43b0-9d51-22d1f703ed2b";
+				PROVISIONING_PROFILE = "2df9a42d-8089-40ec-a715-dd55a73a9393";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev: ent.com.getui.demo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0EBC150E1DAB794A002BA975 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EBC150C1DAB794A002BA975 /* Debug */,
+				0EBC150D1DAB794A002BA975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		955D378F1BCE54D50056559A /* Build configuration list for PBXProject "GtSdkDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

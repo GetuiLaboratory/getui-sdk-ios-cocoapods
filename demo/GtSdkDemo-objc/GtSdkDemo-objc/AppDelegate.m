@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+#import <UserNotifications/UserNotifications.h>
+#endif
+
 @interface AppDelegate ()
 
 @end
@@ -31,7 +35,7 @@
     [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
 
     // 注册APNs - custom method - 开发者自定义的方法
-    [self registerUserNotification];
+    [self registerRemoteNotification];
 
     return YES;
 }
@@ -39,34 +43,43 @@
 
 #pragma mark - 用户通知(推送) _自定义方法
 
-/** 注册用户通知 */
-- (void)registerUserNotification {
-
+/** 注册远程通知 */
+- (void)registerRemoteNotification {
     /*
-     注册通知(推送)
-     申请App需要接受来自服务商提供推送消息
+     警告：Xcode8的需要手动开启“TARGETS -> Capabilities -> Push Notifications”
      */
 
-    // 判读系统版本是否是“iOS 8.0”以上
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ||
-        [UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
-
-        // 定义用户通知类型(Remote.远程 - Badge.标记 Alert.提示 Sound.声音)
-        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-
-        // 定义用户通知设置
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    /*
+        警告：该方法需要开发者自定义，以下代码根据APP支持的iOS系统不同，代码可以对应修改。
+        以下为演示代码，注意根据实际需要修改，注意测试支持的iOS系统都能获取到DeviceToken
+     */
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0 // Xcode 8编译会调用
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionCarPlay) completionHandler:^(BOOL granted, NSError *_Nullable error) {
+            if (!error) {
+                NSLog(@"request authorization succeeded!");
+            }
+        }];
 
         [[UIApplication sharedApplication] registerForRemoteNotifications];
-
-        // 注册用户通知 - 根据用户通知设置
+#else // Xcode 7编译会调用
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    } else { // iOS8.0 以前远程推送设置方式
-        // 定义远程通知类型(Remote.远程 - Badge.标记 Alert.提示 Sound.声音)
-        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound;
-
-        // 注册远程通知 -根据远程通知类型
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:myTypes];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+#endif
+    } else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        UIRemoteNotificationType apn_type = (UIRemoteNotificationType)(UIRemoteNotificationTypeAlert |
+                                                                       UIRemoteNotificationTypeSound |
+                                                                       UIRemoteNotificationTypeBadge);
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:apn_type];
     }
 }
 
@@ -87,7 +100,7 @@
     NSLog(@"\n>>>[DeviceToken Error]:%@\n\n", error.description);
 }
 
-#pragma mark - APP运行中接收到通知(推送)处理
+#pragma mark - APP运行中接收到通知(推送)处理 - iOS 10以下版本收到推送
 
 /** APP已经接收到“远程”通知(推送) - 透传推送消息  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
@@ -100,6 +113,30 @@
 
     completionHandler(UIBackgroundFetchResultNewData);
 }
+
+#pragma mark - iOS 10中收到推送消息
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+//  iOS 10: App在前台获取到通知
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+
+    NSLog(@"willPresentNotification：%@", notification.request.content.userInfo);
+
+    // 根据APP需要，判断是否要提示用户Badge、Sound、Alert
+    completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
+}
+
+//  iOS 10: 点击通知进入App时触发
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+
+    NSLog(@"didReceiveNotification：%@", response.notification.request.content.userInfo);
+
+    // [ GTSdk ]：将收到的APNs信息传给个推统计
+    [GeTuiSdk handleRemoteNotification:response.notification.request.content.userInfo];
+
+    completionHandler();
+}
+#endif
 
 #pragma mark - GeTuiSdkDelegate
 

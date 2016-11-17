@@ -20,16 +20,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clickActionButton(sender: AnyObject) {
+    @IBAction func clickActionButton(_ sender: AnyObject) {
         switch sender.tag {
         case 20:    // 启动/停止
             if (GeTuiSdk.status() == SdkStatusStoped) {
-                let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                GeTuiSdk .startSdkWithAppId(kGtAppId, appKey: kGtAppKey, appSecret: kGtAppSecret, delegate: delegate);
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                GeTuiSdk .start(withAppId: kGtAppId, appKey: kGtAppKey, appSecret: kGtAppSecret, delegate: delegate);
                 
                 NSLog("\n\n>>>[GeTui]:%@\n\n","启动APP");
             }else if (GeTuiSdk.status() == SdkStatusStarted) {
-                [GeTuiSdk.destroy()];
+                GeTuiSdk.destroy();
                 
                 NSLog("\n\n>>>[GeTui]:%@\n\n","停止APP");
             }
@@ -63,14 +63,12 @@ class ViewController: UIViewController {
             break
             
         case 25:      // 设置标签
-            let tagName: NSString = "个推,推送,iOS";
-            let tagNames: NSArray = tagName.componentsSeparatedByString(",");
-            
+            let tagNames:NSArray = ["个推","推送","iOS"]
             if (!GeTuiSdk.setTags(tagNames as [AnyObject])) {
                 let alertView: UIAlertView = UIAlertView();
                 alertView.title = "Failed";
                 alertView.message = "setTag failed";
-                alertView.addButtonWithTitle("OK");
+                alertView.addButton(withTitle: "OK");
                 alertView.show();
             }
             
@@ -96,7 +94,7 @@ class ViewController: UIViewController {
 
             do{
                 try
-                    GeTuiSdk.sendMessage(content.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+                    GeTuiSdk.sendMessage(content.data(using: String.Encoding.utf8, allowLossyConversion: false))
             } catch let error as NSError {
                 print("sendMessage With Error: \(error.description)")
             }
@@ -107,11 +105,11 @@ class ViewController: UIViewController {
         case 29:
             let badgeValue :UInt = 1
             GeTuiSdk.setBadge(badgeValue)
-            UIApplication.sharedApplication().applicationIconBadgeNumber = Int(badgeValue);
+            UIApplication.shared.applicationIconBadgeNumber = Int(badgeValue);
             break
         case 30:
             GeTuiSdk.resetBadge()
-            UIApplication.sharedApplication().applicationIconBadgeNumber = 0;
+            UIApplication.shared.applicationIconBadgeNumber = 0;
             break
         default: break
         }

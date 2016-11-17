@@ -3,3 +3,4 @@
 //
 
 #import "GeTuiSdk.h"
+#import "GeTuiExtSdk.h"

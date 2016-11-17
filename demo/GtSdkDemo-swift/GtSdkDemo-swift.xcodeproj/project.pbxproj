@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1CAF3E1DD9AF8D00C8DBB7 /* libGtExtensionSdk-1.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CAF3D1DD9AF8C00C8DBB7 /* libGtExtensionSdk-1.0.0.a */; };
+		0E1CAF401DD9AF9F00C8DBB7 /* libGeTuiSdk-1.5.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1CAF3F1DD9AF9F00C8DBB7 /* libGeTuiSdk-1.5.3.a */; };
+		0E7687701DAB88DC00B0F073 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76876F1DAB88DC00B0F073 /* NotificationService.swift */; };
+		0E7687741DAB88DC00B0F073 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E76876D1DAB88DB00B0F073 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0E7687791DAB88F400B0F073 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C31BCB9CD4004E33DF /* libz.tbd */; };
+		0E76877A1DAB88F900B0F073 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C11BCB9CCD004E33DF /* libsqlite3.tbd */; };
 		9543589C1BCB9646004E33DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589B1BCB9646004E33DF /* AppDelegate.swift */; };
 		9543589E1BCB9646004E33DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543589D1BCB9646004E33DF /* ViewController.swift */; };
 		954358A11BCB9646004E33DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9543589F1BCB9646004E33DF /* Main.storyboard */; };
@@ -19,21 +25,52 @@
 		954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C11BCB9CCD004E33DF /* libsqlite3.tbd */; };
 		954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 954358C31BCB9CD4004E33DF /* libz.tbd */; };
 		955254A71C5A0AE7001FA844 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A61C5A0AE7001FA844 /* JavaScriptCore.framework */; };
-		955254A91C5A0AED001FA844 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254A81C5A0AED001FA844 /* libz.dylib */; };
-		955254AB1C5A0AF3001FA844 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 955254AA1C5A0AF3001FA844 /* libsqlite3.dylib */; };
 		95668BDB1D07F85E00698DBB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95668BDA1D07F85E00698DBB /* libc++.tbd */; };
 		957829D71C97EDA00043EA9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957829D61C97EDA00043EA9F /* Security.framework */; };
-		95F4E4E51D78285000617A3D /* libGeTuiSdk-1.5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F4E4E41D78285000617A3D /* libGeTuiSdk-1.5.0.a */; };
+		95DFCD5F1D9A5FEB0020ACDE /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DFCD5E1D9A5FEB0020ACDE /* UserNotifications.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E7687721DAB88DC00B0F073 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954358901BCB9646004E33DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E76876C1DAB88DB00B0F073;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E7687631DAB885100B0F073 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0E7687741DAB88DC00B0F073 /* NotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0E1CAF3D1DD9AF8C00C8DBB7 /* libGtExtensionSdk-1.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGtExtensionSdk-1.0.0.a"; path = "../../GtSdkLib/libGtExtensionSdk-1.0.0.a"; sourceTree = "<group>"; };
+		0E1CAF3F1DD9AF9F00C8DBB7 /* libGeTuiSdk-1.5.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGeTuiSdk-1.5.3.a"; path = "../../GtSdkLib/libGeTuiSdk-1.5.3.a"; sourceTree = "<group>"; };
+		0E468EB21DAB8C0600350C78 /* GtSdkDemo-NotificationService-swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GtSdkDemo-NotificationService-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		0E7687651DAB887000B0F073 /* libGtExtensionSdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGtExtensionSdk.a; sourceTree = "<group>"; };
+		0E76876D1DAB88DB00B0F073 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E76876F1DAB88DC00B0F073 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		0E7687711DAB88DC00B0F073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EC1AD371DAB981E0037AF4F /* GeTuiExtSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiExtSdk.h; sourceTree = "<group>"; };
+		0EC1AD381DAB981E0037AF4F /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
+		0EC1AD391DAB981E0037AF4F /* libGeTuiSdk-1.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.5.2.a"; sourceTree = "<group>"; };
 		954358981BCB9646004E33DF /* GtSdkDemo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GtSdkDemo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9543589B1BCB9646004E33DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9543589D1BCB9646004E33DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		954358A01BCB9646004E33DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954358A21BCB9646004E33DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954358A71BCB9646004E33DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		954358AE1BCB971A004E33DF /* GeTuiSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeTuiSdk.h; sourceTree = "<group>"; };
 		954358B11BCB9AAD004E33DF /* GtSdkDemo-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GtSdkDemo-swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		954358B71BCB9CA1004E33DF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		954358B91BCB9CA8004E33DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -43,28 +80,36 @@
 		954358C11BCB9CCD004E33DF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		954358C31BCB9CD4004E33DF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		955254A61C5A0AE7001FA844 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		955254A81C5A0AED001FA844 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		955254AA1C5A0AF3001FA844 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		955F51A71D8F9158003061C8 /* GtSdkDemo-swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GtSdkDemo-swift.entitlements"; sourceTree = "<group>"; };
 		95668BDA1D07F85E00698DBB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		957829D61C97EDA00043EA9F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		95F4E4E41D78285000617A3D /* libGeTuiSdk-1.5.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGeTuiSdk-1.5.0.a"; sourceTree = "<group>"; };
+		95DFCD5E1D9A5FEB0020ACDE /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E76876A1DAB88DB00B0F073 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1CAF3E1DD9AF8D00C8DBB7 /* libGtExtensionSdk-1.0.0.a in Frameworks */,
+				0E76877A1DAB88F900B0F073 /* libsqlite3.tbd in Frameworks */,
+				0E7687791DAB88F400B0F073 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		954358951BCB9646004E33DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1CAF401DD9AF9F00C8DBB7 /* libGeTuiSdk-1.5.3.a in Frameworks */,
+				95DFCD5F1D9A5FEB0020ACDE /* UserNotifications.framework in Frameworks */,
 				95668BDB1D07F85E00698DBB /* libc++.tbd in Frameworks */,
-				955254AB1C5A0AF3001FA844 /* libsqlite3.dylib in Frameworks */,
-				955254A91C5A0AED001FA844 /* libz.dylib in Frameworks */,
 				954358C41BCB9CD4004E33DF /* libz.tbd in Frameworks */,
 				954358C21BCB9CCD004E33DF /* libsqlite3.tbd in Frameworks */,
 				957829D71C97EDA00043EA9F /* Security.framework in Frameworks */,
 				955254A71C5A0AE7001FA844 /* JavaScriptCore.framework in Frameworks */,
 				954358C01BCB9CC2004E33DF /* SystemConfiguration.framework in Frameworks */,
 				954358BE1BCB9CB7004E33DF /* CoreTelephony.framework in Frameworks */,
-				95F4E4E51D78285000617A3D /* libGeTuiSdk-1.5.0.a in Frameworks */,
 				954358BC1BCB9CAE004E33DF /* AVFoundation.framework in Frameworks */,
 				954358BA1BCB9CA8004E33DF /* CoreLocation.framework in Frameworks */,
 				954358B81BCB9CA1004E33DF /* CoreBluetooth.framework in Frameworks */,
@@ -74,10 +119,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E76876E1DAB88DB00B0F073 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				0E468EB21DAB8C0600350C78 /* GtSdkDemo-NotificationService-swift-Bridging-Header.h */,
+				0E76876F1DAB88DC00B0F073 /* NotificationService.swift */,
+				0E7687711DAB88DC00B0F073 /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
+		0EC1AD361DAB981E0037AF4F /* GtSdkLib */ = {
+			isa = PBXGroup;
+			children = (
+				0EC1AD371DAB981E0037AF4F /* GeTuiExtSdk.h */,
+				0EC1AD381DAB981E0037AF4F /* GeTuiSdk.h */,
+				0EC1AD391DAB981E0037AF4F /* libGeTuiSdk-1.5.2.a */,
+				0E7687651DAB887000B0F073 /* libGtExtensionSdk.a */,
+			);
+			name = GtSdkLib;
+			path = ../../GtSdkLib;
+			sourceTree = "<group>";
+		};
 		9543588F1BCB9646004E33DF = {
 			isa = PBXGroup;
 			children = (
 				9543589A1BCB9646004E33DF /* GtSdkDemo-swift */,
+				0E76876E1DAB88DB00B0F073 /* NotificationService */,
 				954358B61BCB9C7B004E33DF /* Frameworks */,
 				954358991BCB9646004E33DF /* Products */,
 			);
@@ -87,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				954358981BCB9646004E33DF /* GtSdkDemo-swift.app */,
+				0E76876D1DAB88DB00B0F073 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,7 +163,8 @@
 		9543589A1BCB9646004E33DF /* GtSdkDemo-swift */ = {
 			isa = PBXGroup;
 			children = (
-				954358AD1BCB971A004E33DF /* GtSdkLib */,
+				955F51A71D8F9158003061C8 /* GtSdkDemo-swift.entitlements */,
+				0EC1AD361DAB981E0037AF4F /* GtSdkLib */,
 				9543589B1BCB9646004E33DF /* AppDelegate.swift */,
 				9543589D1BCB9646004E33DF /* ViewController.swift */,
 				9543589F1BCB9646004E33DF /* Main.storyboard */,
@@ -105,24 +175,15 @@
 			path = "GtSdkDemo-swift";
 			sourceTree = "<group>";
 		};
-		954358AD1BCB971A004E33DF /* GtSdkLib */ = {
-			isa = PBXGroup;
-			children = (
-				95F4E4E41D78285000617A3D /* libGeTuiSdk-1.5.0.a */,
-				954358AE1BCB971A004E33DF /* GeTuiSdk.h */,
-			);
-			name = GtSdkLib;
-			path = ../../GtSdkLib;
-			sourceTree = "<group>";
-		};
 		954358B61BCB9C7B004E33DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95668BDA1D07F85E00698DBB /* libc++.tbd */,
-				955254AA1C5A0AF3001FA844 /* libsqlite3.dylib */,
-				955254A81C5A0AED001FA844 /* libz.dylib */,
+				0E1CAF3F1DD9AF9F00C8DBB7 /* libGeTuiSdk-1.5.3.a */,
+				0E1CAF3D1DD9AF8C00C8DBB7 /* libGtExtensionSdk-1.0.0.a */,
 				954358C31BCB9CD4004E33DF /* libz.tbd */,
+				95668BDA1D07F85E00698DBB /* libc++.tbd */,
 				954358C11BCB9CCD004E33DF /* libsqlite3.tbd */,
+				95DFCD5E1D9A5FEB0020ACDE /* UserNotifications.framework */,
 				957829D61C97EDA00043EA9F /* Security.framework */,
 				955254A61C5A0AE7001FA844 /* JavaScriptCore.framework */,
 				954358BF1BCB9CC2004E33DF /* SystemConfiguration.framework */,
@@ -138,6 +199,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E76876C1DAB88DB00B0F073 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E7687751DAB88DC00B0F073 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				0E7687691DAB88DB00B0F073 /* Sources */,
+				0E76876A1DAB88DB00B0F073 /* Frameworks */,
+				0E76876B1DAB88DB00B0F073 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 0E76876D1DAB88DB00B0F073 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		954358971BCB9646004E33DF /* GtSdkDemo-swift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 954358AA1BCB9646004E33DF /* Build configuration list for PBXNativeTarget "GtSdkDemo-swift" */;
@@ -145,10 +223,12 @@
 				954358941BCB9646004E33DF /* Sources */,
 				954358951BCB9646004E33DF /* Frameworks */,
 				954358961BCB9646004E33DF /* Resources */,
+				0E7687631DAB885100B0F073 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0E7687731DAB88DC00B0F073 /* PBXTargetDependency */,
 			);
 			name = "GtSdkDemo-swift";
 			productName = "GtSdkDemo-swift";
@@ -161,13 +241,21 @@
 		954358901BCB9646004E33DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Gexin Interactive (Beijing) Network Technology Co.,LTD.";
 				TargetAttributes = {
+					0E76876C1DAB88DB00B0F073 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3MJY223U56;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
 					954358971BCB9646004E33DF = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = BFA3ZNR7Q2;
+						DevelopmentTeam = 3MJY223U56;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -193,11 +281,19 @@
 			projectRoot = "";
 			targets = (
 				954358971BCB9646004E33DF /* GtSdkDemo-swift */,
+				0E76876C1DAB88DB00B0F073 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E76876B1DAB88DB00B0F073 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		954358961BCB9646004E33DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +306,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E7687691DAB88DB00B0F073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7687701DAB88DC00B0F073 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		954358941BCB9646004E33DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +324,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E7687731DAB88DC00B0F073 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E76876C1DAB88DB00B0F073 /* NotificationService */;
+			targetProxy = 0E7687721DAB88DC00B0F073 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9543589F1BCB9646004E33DF /* Main.storyboard */ = {
@@ -233,6 +345,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E7687761DAB88DC00B0F073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 3MJY223U56;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../GtSdkLib";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationService/GtSdkDemo-NotificationService-swift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0E7687771DAB88DC00B0F073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 3MJY223U56;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/../GtSdkLib";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "NotificationService/GtSdkDemo-NotificationService-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		954358A81BCB9646004E33DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -246,8 +402,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -290,8 +448,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -310,6 +470,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -317,10 +478,14 @@
 		954358AB1BCB9646004E33DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
+				CODE_SIGN_ENTITLEMENTS = "GtSdkDemo-swift/GtSdkDemo-swift.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "GtSdkDemo-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -328,21 +493,28 @@
 					"$(inherited)",
 					"$(SRCROOT)/../GtSdkLib",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d0b3656-21b9-43b0-9d51-22d1f703ed2b";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GtSdkDemo-swift/GtSdkDemo-swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		954358AC1BCB9646004E33DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dong Lin (Z4QDYJN7A4)";
+				CODE_SIGN_ENTITLEMENTS = "GtSdkDemo-swift/GtSdkDemo-swift.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "GtSdkDemo-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -350,16 +522,28 @@
 					"$(inherited)",
 					"$(SRCROOT)/../GtSdkLib",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ent.com.getui.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d0b3656-21b9-43b0-9d51-22d1f703ed2b";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "GtSdkDemo-swift/GtSdkDemo-swift-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E7687751DAB88DC00B0F073 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E7687761DAB88DC00B0F073 /* Debug */,
+				0E7687771DAB88DC00B0F073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		954358931BCB9646004E33DF /* Build configuration list for PBXProject "GtSdkDemo-swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
