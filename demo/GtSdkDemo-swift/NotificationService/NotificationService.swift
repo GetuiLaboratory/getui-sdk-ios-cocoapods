@@ -19,10 +19,16 @@ class NotificationService: UNNotificationServiceExtension {
         
         if let bestAttemptContent = bestAttemptContent {
             
-            GeTuiExtSdk.handelNotificationServiceRequest(request, withComplete: { 
+            print("----将APNs信息交由个推处理----");
+            
+            GeTuiExtSdk.handelNotificationServiceRequest(request, withAttachmentsComplete: { (attachments:Array?, errors:Array?) in
+                //TODO:用户可以在这里处理通知样式的修改，eg:修改标题
                 bestAttemptContent.title = "\(bestAttemptContent.title) [modified]"
+                bestAttemptContent.attachments = attachments as! [UNNotificationAttachment] // 设置通知中的多媒体附件
+                print("处理个推APNs展示遇到错误:\(errors)")
                 self.contentHandler!(bestAttemptContent)
             })
+            
         }
     }
     

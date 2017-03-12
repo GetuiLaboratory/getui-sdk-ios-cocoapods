@@ -22,13 +22,16 @@
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
     
+    NSLog(@"----将APNs信息交由个推处理----");
     
-    //通知个推服务器APNs信息送达
-    [GeTuiExtSdk handelNotificationServiceRequest:request withComplete:^{
+    [GeTuiExtSdk handelNotificationServiceRequest:request withAttachmentsComplete:^(NSArray *attachments, NSArray* errors) {
         
-        // Modify the notification content here...
+        //TODO:用户可以在这里处理通知样式的修改，eg:修改标题
         self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [modified]", self.bestAttemptContent.title];
-        self.contentHandler(self.bestAttemptContent);
+        self.bestAttemptContent.attachments = attachments; //设置通知中的多媒体附件
+        NSLog(@"处理个推APNs展示遇到错误：%@",errors); //如果APNs处理有错误，可以在这里查看相关错误详情
+        
+        self.contentHandler(self.bestAttemptContent); //展示推送的回调处理需要放到个推回执完成的回调中
     }];
 
 }

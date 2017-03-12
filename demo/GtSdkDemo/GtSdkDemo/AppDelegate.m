@@ -120,7 +120,7 @@
 
 #pragma mark - APP运行中接收到通知(推送)处理 - iOS 10以下版本收到推送
 
-/** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台)  */
+/** APP已经接收到“远程”通知(推送) - (App运行在后台)  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
 
     // [ GTSdk ]：将收到的APNs信息传给个推统计

@@ -86,7 +86,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate,UNUserNo
 
     /** 远程通知注册成功委托 */
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        var token = deviceToken.description.trimmingCharacters(in: CharacterSet(charactersIn: "<>"));
+        let deviceToken_ns = NSData.init(data: deviceToken);    // 转换成NSData类型
+        var token = deviceToken_ns.description.trimmingCharacters(in: CharacterSet(charactersIn: "<>"));
         token = token.replacingOccurrences(of: " ", with: "")
             
         // [ GTSdk ]：向个推服务器注册deviceToken
@@ -102,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GeTuiSdkDelegate,UNUserNo
     
     // MARK: - APP运行中接收到通知(推送)处理 - iOS 10 以下
 
-    /** APP已经接收到“远程”通知(推送) - (App运行在后台/App运行在前台) */
+    /** APP已经接收到“远程”通知(推送) - (App运行在后台) */
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         application.applicationIconBadgeNumber = 0;        // 标签
         
