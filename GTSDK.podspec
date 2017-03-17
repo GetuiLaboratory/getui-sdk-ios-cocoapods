@@ -24,13 +24,13 @@ Pod::Spec.new do |s|
   s.source_files  = 'GeTuiSdk.h','GeTuiExtSdk.h' 
 
   s.preserve_paths = 'libGeTuiSdk-1.6.2.0-noidfa.a','libGtExtensionSdk-1.1.0.a'
-  s.ios.vendored_library = 'libGeTuiSdk-1.6.2.0-noidfa.a','libGtExtensionSdk-1.1.0.a'
+  s.ios.vendored_library = 'libGeTuiSdk-1.6.2.0-noidfa.a'
 
   s.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','Security'
   s.ios.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','Security'
   s.weak_frameworks = 'UserNotifications'
   s.ios.weak_frameworks = 'UserNotifications'
-  s.ios.libraries = 'z','sqlite3','c++'
+  s.ios.libraries = 'z','sqlite3.0','c++'
 
   s.requires_arc = true
 
