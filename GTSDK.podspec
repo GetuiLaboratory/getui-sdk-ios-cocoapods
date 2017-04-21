@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
   s.name         = "GTSDK"
   # 版本号/库原代码的版本
-  s.version      = "1.6.3.0-noidfa"
+  s.version      = "1.6.3.0"
   # 简介
   s.summary      = "个推iOS SDK CocoaPods集成库"
 
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.source_files  = 'GeTuiSdk.h'
 
   # 使用了第三方静态库
-  s.ios.vendored_library = 'libGeTuiSdk-1.6.3.0-noidfa.a'
+  s.ios.vendored_library = 'libGeTuiSdk-1.6.3.0.a'
   #s.ios.vendored_libraries = ''
   #s.ios.vendored_frameworks = ''
 
