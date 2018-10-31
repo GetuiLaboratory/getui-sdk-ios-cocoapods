@@ -5,7 +5,6 @@ InputAppsecret=$3
 if [[ -z $InputAppid ]] || [[ -z $InputAppkey ]] || [[ -z $InputAppsecret ]]; then
   echo "appid appkey appSecret输入有误，请重新运行"
   exit
-  fi
 fi
 PACKAGENAME="xcworkspace"
 APPDELEGATE_H="AppDelegate.h"
@@ -56,30 +55,55 @@ ergodic() {
           do
             #echo $file
             if [ ${file} = $APPDELEGATE_H ]; then
-              sed -i '' "/#import <UIKit\/UIKit.h>/a\\
-		    $GTSDK \\
-        $APPID \\
-        $APPKEY \\
-        $APPSECRET \\
-		" $APPDELEGATE_H
+              ImportGTSDK=`sed -n '/<GTSDK\/GeTuiSdk.h>/=' $APPDELEGATE_H`
+              if [[ -n $ImportGTSDK ]]; then
+                echo GTSDK头文件导入成功
+              else
+                sed -i '' "/#import <UIKit\/UIKit.h>/a\\
+  		    $GTSDK \\
+  		" $APPDELEGATE_H
+              fi
 
-              sed -i '' "s/UIApplicationDelegate/&,GeTuiSdkDelegate/" $APPDELEGATE_H
+              ImportAppid=`sed -n '/kGtAppId/=' $APPDELEGATE_H`
+              if [[ -n $ImportAppid ]]; then
+                echo APPID导入成功
+              else
+                sed -i '' "/#import <GTSDK\/GeTuiSdk.h>/a\\
+  		    $APPID \\
+          $APPKEY \\
+          $APPSECRET \\
+  		" $APPDELEGATE_H
+              fi
+
+              ImportGTSDKDelegate=`sed -n '/GeTuiSdkDelegate/=' $APPDELEGATE_H`
+              if [[ -n $ImportGTSDKDelegate ]]; then
+                echo GeTuiSdkDelegate代理添加成功
+              else
+                sed -i '' "s/UIApplicationDelegate/&,GeTuiSdkDelegate/" $APPDELEGATE_H
+              fi
 
               echo ${APPDELEGATE_H}配置成功
 
             fi
 
+
             if [ ${file} = $APPDELEGATE_M ]; then
+              ImportUserNoti=`sed -n '/<UserNotifications\/UserNotifications.h>/=' $APPDELEGATE_M`
+              if [[ -n $ImportUserNoti ]]; then
+                echo UserNotifications头文件导入成功
+              else
                 sed -i '' "/#import \"AppDelegate.h\"/a\\
         $IF \\
         $USERNOTIFICATION \\
         $ENDIF \\
         " $APPDELEGATE_M
+              fi
 
                 echo ${APPDELEGATE_M}头文件配置成功
 
+
                 #需要判断didFinishLaunchingWithOptions这个方法是否存在,如果DidFinishLaunching大于0则存在，否则不存在
-                DidFinishLaunching=`sed -n '/didFinishLaunchingWithOptions:(NSDictionary /=' $APPDELEGATE_M`
+                DidFinishLaunching=`sed -n '/didFinishLaunchingWithOptions:(NSDictionary \*)launchOptions/=' $APPDELEGATE_M`
                 if [[ -n $DidFinishLaunching ]]; then
                   cat -n $APPDELEGATE_M  |tail -n +$DidFinishLaunching > termple.txt
                   DidFinish=`cat termple.txt |grep { |awk '{print $1}' |head -1`
@@ -134,7 +158,7 @@ ergodic() {
                 echo didRegisterForRemoteNotificationsWithDeviceToken方法配置完成
 
                 #需要判断didReceiveRemoteNotification这个方法是否存在，大于0则存在，否则不存在(ios 10以下版本收到推送)
-                DidReceiveRN=`sed -n '/didReceiveRemoteNotification/=' $APPDELEGATE_M`
+                DidReceiveRN=`sed -n '/didReceiveRemoteNotification:(NSDictionary \*)userInfo fetch/=' $APPDELEGATE_M`
                 if [[ -n $DidReceiveRN ]]; then
                   cat -n $APPDELEGATE_M |tail -n +$DidReceiveRN > termple.txt
                   DidReceiveRemoteNotification=`cat termple.txt |grep { |awk '{print $1}' |head -1`
