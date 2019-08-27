@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.4.1.0-noidfa
+//  GTSDK-Version: 2.4.1.0
 
 #import <Foundation/Foundation.h>
 

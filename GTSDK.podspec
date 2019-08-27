@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
   s.name         = "GTSDK"
   # 版本号/库原代码的版本
-  s.version      = "2.4.1.0-noidfa"
+  s.version      = "2.4.1.0"
   # 简介
   s.summary      = "个推iOS SDK CocoaPods集成库"
 
@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/GetuiLaboratory/getui-sdk-ios-cocoapods.git", :tag => s.version }
 
   # 支持的平台及版本
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
   # iOS支持的pod最低版本 / iOS对应的版本
-  s.ios.deployment_target = "7.0"
+  s.ios.deployment_target = "8.0"
 
   # 使用了第三方静态库
   # s.ios.vendored_library = ''
