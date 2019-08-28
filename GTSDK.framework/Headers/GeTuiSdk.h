@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.4.1.0
+//  GTSDK-Version: 2.4.1.0-noidfa
 
 #import <Foundation/Foundation.h>
 
@@ -25,7 +25,7 @@ typedef enum {
 @interface GeTuiSdk : NSObject
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
-#error "GeTuiSDK is requested iOS7 or iOS7 above version"
+#error "GeTuiSDK is requested iOS8 or iOS8 above version"
 #endif
 
 
@@ -92,6 +92,7 @@ typedef enum {
 /**
  *  向个推服务器注册DeviceToken
  *  备注：可以未启动SDK就调用该方法
+ *  注：Xcode11、iOS13 DeviceToken适配，至少使用“SDK-2.4.1.0”版本
  *
  *  @param deviceToken 推送时使用的deviceToken NSData
  *  @return deviceToken有效判断，YES.有效 NO.无效
@@ -112,6 +113,7 @@ typedef enum {
 /**
  *  向个推服务器注册VoipToken
  *  备注：可以未启动SDK就调用该方法
+ *  注：Xcode11、iOS13 DeviceToken适配，至少使用“SDK-2.4.1.0”版本
  *
  *  @param voipToken 推送时使用的voipToken NSData
  *  @return voipToken有效判断，YES.有效 NO.无效
