@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
   s.name         = "GTSDK"
   # 版本号/库原代码的版本
-  s.version      = "2.4.4.0"
+  s.version      = "2.4.5.0-noidfa"
   # 简介
   s.summary      = "个推iOS SDK CocoaPods集成库"
 
@@ -36,5 +36,5 @@ Pod::Spec.new do |s|
 
   # 是否使用ARC，如果指定具体文件，则具体的问题使用ARC
   s.requires_arc = true
-
+  
 end

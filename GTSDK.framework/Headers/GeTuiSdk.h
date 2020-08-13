@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.4.4.0
+//  GTSDK-Version: 2.4.5.0-noidfa
 
 #import <Foundation/Foundation.h>
 
@@ -254,7 +254,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 /**
  *  是否允许SDK 后台运行（默认值：NO）
  *  备注：可以未启动SDK就调用该方法
- *  警告：该功能会和音乐播放冲突，使用时请注意
+ *  警告：该功能会和音乐播放冲突，使用时请注意。 需开启Signing & Capabilities > Background Modes > Auido, Airplay and Picture in Picture。
  *
  *  @param isEnable 支持当APP进入后台后，个推是否运行,YES.允许
  */
