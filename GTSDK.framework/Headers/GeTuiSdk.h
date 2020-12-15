@@ -5,15 +5,15 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.4.6.0
+//  GTSDK-Version: 2.5.1.0
 
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, SdkStatus) {
-    SdkStatusStarting,  // 正在启动
-    SdkStatusStarted,   // 启动、在线
-    SdkStatusStoped,    // 停止
-    SdkStatusOffline,   // 离线
+    SdkStatusStarting, // 正在启动
+    SdkStatusStarted,  // 启动、在线
+    SdkStatusStoped,   // 停止
+    SdkStatusOffline,  // 离线
 };
 
 #define kGtResponseBindType @"bindAlias"
@@ -21,6 +21,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 
 //SDK Delegate 回调接口
 @protocol GeTuiSdkDelegate;
+
 
 @interface GeTuiSdk : NSObject
 
@@ -133,7 +134,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  *  @return 提交结果，YES表示尝试提交成功，NO表示尝试提交失败
  */
 + (BOOL)setTags:(NSArray *)tags;
- 
+
 /**
  *  给用户打标签, 后台可以根据标签进行推送
  *
@@ -150,9 +151,9 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  *
  *  SDK-1.4.0+
  *
- *  @param value 角标数值
+ *  @param badge 角标数值
  */
-+ (void)setBadge:(NSUInteger)value;
++ (void)setBadge:(NSUInteger)badge;
 
 /**
  *  复位角标，等同于"setBadge:0"
@@ -224,7 +225,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  *  @param webUrl applink Url
  *  @return applink 中用户的 payload 信息
  */
-+ (NSString*)handleApplinkFeedback:(NSURL* )webUrl;
++ (NSString *)handleApplinkFeedback:(NSURL *)webUrl;
 
 /**
  *  SDK发送上行消息结果
@@ -234,7 +235,16 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  *
  *  @return 消息的msgId
  */
-+ (NSString *)sendMessage:(NSData *)body error:(NSError **)error;
++ (NSString *)sendMessage:(NSData *)body error:(NSError **)error DEPRECATED_MSG_ATTRIBUTE("Please use -[GeTuiSdk sendMessage:]");
+
+/**
+*  SDK发送上行消息结果
+*
+*  @param body  需要发送的消息数据
+*
+*  @return 消息的msgId
+*/
++ (NSString *)sendMessage:(NSData *)body;
 
 /**
  *  上行第三方自定义回执actionid
@@ -311,14 +321,25 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 - (void)GeTuiSdkDidReceivePayloadData:(NSData *)payloadData andTaskId:(NSString *)taskId andMsgId:(NSString *)msgId andOffLine:(BOOL)offLine fromGtAppId:(NSString *)appId;
 
 /**
- *  SDK通知发送上行消息结果，收到sendMessage消息回调
+ *  SDK通知发送上行消息结果，收到sendMessage消息回调 (已废弃)
  *
  *  @param messageId “sendMessage:error:”返回的id
  *  @param result    成功返回1, 失败返回0
  *  说明: 当调用sendMessage:error:接口时，消息推送到个推服务器，服务器通过该接口通知sdk到达结果，result为 1 说明消息发送成功
  *  注意: 需第三方服务器接入个推,SendMessage 到达第三方服务器后返回 1
+ */;
+- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result DEPRECATED_MSG_ATTRIBUTE("Please use -[delegate GeTuiSdkDidSendMessage:msg result: error:]");
+
+/**
+ *  SDK通知发送上行消息结果，收到sendMessage消息回调
+ *
+ *  @param messageId “sendMessage:error:”返回的id
+ *  @param isSuccess    成功返回 YES, 失败返回 NO
+ *  @param aError       成功返回nil, 错误返回相应error信息
+ *  说明: 当调用sendMessage:error:接口时，消息推送到个推服务器，服务器通过该接口通知sdk到达结果，isSuccess为 YES 说明消息发送成功
+ *  注意: 需第三方服务器接入个推,SendMessage 到达第三方服务器后返回 1
  */
-- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result;
+- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(BOOL)isSuccess error:(NSError *)aError;
 
 /**
  *  SDK设置关闭推送模式回调
@@ -353,7 +374,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  * @param aSn     返回 queryTag 接口中携带的请求序列码，标识请求对应的结果返回
  * @param aError  成功返回nil,错误返回相应error信息
  */
-- (void)GetuiSdkDidQueryTag:(NSArray*)aTags sequenceNum:(NSString *)aSn error:(NSError *)aError;
+- (void)GetuiSdkDidQueryTag:(NSArray *)aTags sequenceNum:(NSString *)aSn error:(NSError *)aError;
 
 /**
  *  SDK遇到错误消息返回error
