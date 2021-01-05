@@ -5,9 +5,11 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.5.1.0
+//  GTSDK-Version: 2.5.2.0
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h>
 
 typedef NS_ENUM(NSUInteger, SdkStatus) {
     SdkStatusStarting, // 正在启动
@@ -22,6 +24,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 //SDK Delegate 回调接口
 @protocol GeTuiSdkDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface GeTuiSdk : NSObject
 
@@ -30,7 +33,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 #endif
 
 
-#pragma mark - 基本功能
+//MARK: -
 
 /**
  *  启动个推SDK
@@ -42,18 +45,13 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  */
 + (void)startSdkWithAppId:(NSString *)appid appKey:(NSString *)appKey appSecret:(NSString *)appSecret delegate:(id<GeTuiSdkDelegate>)delegate;
 
-/**
- *  销毁SDK，并且释放资源
- */
-+ (void)destroy;
 
-/**
- *  恢复SDK运行,IOS7 以后支持Background Fetch方式，后台定期更新数据,该接口需要在Fetch起来后被调用，保证SDK 数据获取。
- */
-+ (void)resume;
-
-
-#pragma mark -
+/// 注册远程通知
+/// 必须使用个推注册通知，否则可能无法获取APNs回调！！
+/// 注意！！！使用个推注册通知， 开发者无需关注DeviceToken相关逻辑，且仅需要关注个推APNs消息通知回调
+/// 若不使用此方法，开发者需要自行处理DeviceToken相关逻辑 和 重写系统APNs回调, 可参考Demo版本2.4.6.0 [https://www.getui.com/download/docs/getui/iOS/GETUI_IOS_SDK_2.4.6.0.zip]
+/// @param types UNAuthorizationOptions类型的通知选项
++ (void)registerRemoteNotification:(UNAuthorizationOptions)types;
 
 /**
  *  获取SDK版本号
@@ -77,29 +75,56 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  */
 + (SdkStatus)status;
 
-
-#pragma mark -
+/**
+ *  设置渠道
+ *  备注：SDK可以未启动就调用该方法
+ *
+ *  SDK-1.5.0+
+ *
+ *  @param aChannelId 渠道值，可以为空值
+ */
++ (void)setChannelId:(NSString *)aChannelId;
 
 /**
- *  向个推服务器注册DeviceToken
- *  备注：可以未启动SDK就调用该方法
+ *  设置关闭推送模式（默认值：NO）
+ *  需要SDK在线才能调用
  *
- *  @param deviceToken 推送时使用的deviceToken NSString
- *  @return deviceToken有效判断，YES.有效 NO.无效
+ *  @param isValue 消息推送开发，YES.关闭消息推送 NO.开启消息推送
+ *
+ *  SDK-1.2.1+
  *
  */
-+ (BOOL)registerDeviceToken:(NSString *)deviceToken;
++ (void)setPushModeForOff:(BOOL)isValue;
 
 /**
- *  向个推服务器注册DeviceToken
+ *  是否允许SDK 后台运行（默认值：NO）
  *  备注：可以未启动SDK就调用该方法
- *  注：Xcode11、iOS13 DeviceToken适配，至少使用“SDK-2.4.1.0”版本
+ *  警告：该功能会和音乐播放冲突，使用时请注意。 需开启Signing & Capabilities > Background Modes > Auido, Airplay and Picture in Picture。
  *
- *  @param deviceToken 推送时使用的deviceToken NSData
- *  @return deviceToken有效判断，YES.有效 NO.无效
- *
+ *  @param isEnable 支持当APP进入后台后，个推是否运行,YES.允许
  */
-+ (BOOL)registerDeviceTokenData:(NSData *)deviceToken;
++ (void)runBackgroundEnable:(BOOL)isEnable;
+
+/**
+ *  地理围栏功能，设置地理围栏是否运行
+ *  备注：SDK可以未启动就调用该方法
+ *
+ *  @param isEnable 设置地理围栏功能是否运行（默认值：NO）
+ *  @param isVerify 设置是否SDK主动弹出用户定位请求（默认值：NO）
+ */
++ (void)lbsLocationEnable:(BOOL)isEnable andUserVerify:(BOOL)isVerify;
+
+/**
+ *  清空下拉通知栏全部通知,并将角标置“0”，不显示角标
+ */
++ (void)clearAllNotificationForNotificationBar;
+
+/**
+ *  销毁SDK，并且释放资源
+ */
++ (void)destroy;
+
+//MARK: - 注册Token
 
 /**
  *  向个推服务器注册VoipToken
@@ -123,7 +148,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 + (BOOL)registerVoipTokenCredentials:(NSData *)voipToken;
 
 
-#pragma mark -
+//MARK: - 设置标签
 
 /**
  *  给用户打标签, 后台可以根据标签进行推送
@@ -145,6 +170,8 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  */
 + (BOOL)setTags:(NSArray *)tags andSequenceNum:(NSString *)aSn;
 
+//MARK: - 设置角标
+
 /**
  *  同步角标值到个推服务器
  *  该方法只是同步角标值到个推服务器，本地仍须调用setApplicationIconBadgeNumber函数
@@ -163,26 +190,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  */
 + (void)resetBadge;
 
-/**
- *  设置渠道
- *  备注：SDK可以未启动就调用该方法
- *
- *  SDK-1.5.0+
- *
- *  @param aChannelId 渠道值，可以为空值
- */
-+ (void)setChannelId:(NSString *)aChannelId;
-
-/**
- *  设置关闭推送模式（默认值：NO）
- *  需要SDK在线才能调用
- *
- *  @param isValue 消息推送开发，YES.关闭消息推送 NO.开启消息推送
- *
- *  SDK-1.2.1+
- *
- */
-+ (void)setPushModeForOff:(BOOL)isValue;
+//MARK: - 设置别名
 
 /**
  *  绑定别名功能:后台可以根据别名进行推送
@@ -204,7 +212,7 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 + (void)unbindAlias:(NSString *)alias andSequenceNum:(NSString *)aSn andIsSelf:(BOOL)isSelf;
 
 
-#pragma mark -
+//MARK: - 处理回执
 
 /**
  *  远程推送消息处理
@@ -259,35 +267,38 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 + (BOOL)sendFeedbackMessage:(NSInteger)actionId andTaskId:(NSString *)taskId andMsgId:(NSString *)msgId;
 
 
-#pragma mark -
+//MARK: - 已废弃
 
 /**
- *  是否允许SDK 后台运行（默认值：NO）
+ *  恢复SDK运行,IOS7 以后支持Background Fetch方式，后台定期更新数据,该接口需要在Fetch起来后被调用，保证SDK 数据获取。
+ */
++ (void)resume DEPRECATED_MSG_ATTRIBUTE("已废弃");
+
+/**
+ *  向个推服务器注册DeviceToken
  *  备注：可以未启动SDK就调用该方法
- *  警告：该功能会和音乐播放冲突，使用时请注意。 需开启Signing & Capabilities > Background Modes > Auido, Airplay and Picture in Picture。
  *
- *  @param isEnable 支持当APP进入后台后，个推是否运行,YES.允许
+ *  @param deviceToken 推送时使用的deviceToken NSString
+ *  @return deviceToken有效判断，YES.有效 NO.无效
+ *
  */
-+ (void)runBackgroundEnable:(BOOL)isEnable;
++ (BOOL)registerDeviceToken:(NSString *)deviceToken DEPRECATED_MSG_ATTRIBUTE("已废弃");
 
 /**
- *  地理围栏功能，设置地理围栏是否运行
- *  备注：SDK可以未启动就调用该方法
+ *  向个推服务器注册DeviceToken
+ *  备注：可以未启动SDK就调用该方法
+ *  注：Xcode11、iOS13 DeviceToken适配，至少使用“SDK-2.4.1.0”版本
  *
- *  @param isEnable 设置地理围栏功能是否运行（默认值：NO）
- *  @param isVerify 设置是否SDK主动弹出用户定位请求（默认值：NO）
+ *  @param deviceToken 推送时使用的deviceToken NSData
+ *  @return deviceToken有效判断，YES.有效 NO.无效
+ *
  */
-+ (void)lbsLocationEnable:(BOOL)isEnable andUserVerify:(BOOL)isVerify;
-
-/**
- *  清空下拉通知栏全部通知,并将角标置“0”，不显示角标
- */
-+ (void)clearAllNotificationForNotificationBar;
++ (BOOL)registerDeviceTokenData:(NSData *)deviceToken DEPRECATED_MSG_ATTRIBUTE("已废弃");
 
 @end
 
 
-#pragma mark - SDK Delegate
+//MARK: - SDK Delegate
 
 @protocol GeTuiSdkDelegate <NSObject>
 
@@ -305,9 +316,119 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
 /**
  *  SDK运行状态通知
  *
- *  @param aStatus 返回SDK运行状态
+ *  @param status 返回SDK运行状态
  */
-- (void)GeTuiSDkDidNotifySdkState:(SdkStatus)aStatus;
+- (void)GeTuiSDkDidNotifySdkState:(SdkStatus)status;
+
+/**
+ *  SDK遇到错误消息返回error
+ *
+ *  @param error SDK内部发生错误，通知第三方，返回错误
+ */
+- (void)GeTuiSdkDidOccurError:(NSError *)error;
+
+
+//MARK: - 通知回调
+
+/// 通知展示（iOS10及以上版本）
+/// @param center center
+/// @param notification notification
+/// @param completionHandler completionHandler
+- (void)GeTuiSdkNotificationCenter:(UNUserNotificationCenter *)center
+           willPresentNotification:(UNNotification * )notification
+             completionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+              __API_AVAILABLE(macos(10.14), ios(10.0), watchos(3.0), tvos(10.0));
+
+ 
+/// 收到通知信息
+/// @param userInfo apns通知内容
+/// @param center UNUserNotificationCenter（iOS10及以上版本）
+/// @param response UNNotificationResponse（iOS10及以上版本）
+/// @param completionHandler 用来在后台状态下进行操作（iOS10以下版本）
+- (void)GeTuiSdkDidReceiveNotification:(NSDictionary *)userInfo
+                    notificationCenter:(nullable UNUserNotificationCenter *)center
+                              response:(nullable UNNotificationResponse *)response
+                fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
+
+
+/// 收到透传消息
+/// @param userInfo    推送消息内容
+/// @param fromGetui   YES: 个推通道  NO：苹果apns通道
+/// @param offLine     是否是离线消息，YES.是离线消息
+/// @param appId       应用的appId
+/// @param taskId      推送消息的任务id
+/// @param msgId       推送消息的messageid
+/// @param completionHandler 用来在后台状态下进行操作（通过苹果apns通道的消息 才有此参数值）
+- (void)GeTuiSdkDidReceiveSlience:(NSDictionary *)userInfo
+                        fromGetui:(BOOL)fromGetui
+                          offLine:(BOOL)offLine
+                            appId:(nullable NSString *)appId
+                           taskId:(nullable NSString *)taskId
+                            msgId:(nullable NSString *)msgId
+           fetchCompletionHandler:(nullable void (^)(UIBackgroundFetchResult))completionHandler;
+
+
+- (void)GeTuiSdkNotificationCenter:(UNUserNotificationCenter *)center
+       openSettingsForNotification:(nullable UNNotification *)notification
+        __API_AVAILABLE(macos(10.14), ios(12.0)) __API_UNAVAILABLE(watchos, tvos);
+
+
+//MARK: - 发送上行消息
+/**
+ *  SDK通知发送上行消息结果，收到sendMessage消息回调
+ *
+ *  @param messageId “sendMessage:error:”返回的id
+ *  @param isSuccess    成功返回 YES, 失败返回 NO
+ *  @param aError       成功返回nil, 错误返回相应error信息
+ *  说明: 当调用sendMessage:error:接口时，消息推送到个推服务器，服务器通过该接口通知sdk到达结果，isSuccess为 YES 说明消息发送成功
+ *  注意: 需第三方服务器接入个推,SendMessage 到达第三方服务器后返回 1
+ */
+- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(BOOL)isSuccess error:(nullable NSError *)aError;
+
+
+//MARK: - 开关设置
+
+/**
+ *  SDK设置关闭推送模式回调
+ *
+ *  @param isModeOff 关闭模式，YES.服务器关闭推送功能 NO.服务器开启推送功能
+ *  @param error     错误回调，返回设置时的错误信息
+ */
+- (void)GeTuiSdkDidSetPushMode:(BOOL)isModeOff error:(nullable NSError *)error;
+
+
+//MARK: - 别名设置
+/**
+ *  SDK绑定、解绑回调
+ *
+ *  @param action       回调动作类型 kGtResponseBindType 或 kGtResponseUnBindType
+ *  @param isSuccess    成功返回 YES, 失败返回 NO
+ *  @param aSn          返回请求的序列码
+ *  @param aError       成功返回nil, 错误返回相应error信息
+ */
+- (void)GeTuiSdkDidAliasAction:(NSString *)action result:(BOOL)isSuccess sequenceNum:(NSString *)aSn error:(nullable NSError *)aError;
+
+
+//MARK: - 标签设置
+/**
+ *  设置标签回调
+ *
+ *  @param sequenceNum  请求的序列码
+ *  @param isSuccess    成功返回 YES, 失败返回 NO
+ *  @param aError       成功返回 nil, 错误返回相应error信息
+ */
+- (void)GeTuiSdkDidSetTagsAction:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)aError;
+
+/**
+ * 查询当前绑定tag结果返回
+ * @param aTags   当前绑定的 tag 信息
+ * @param aSn     返回 queryTag 接口中携带的请求序列码，标识请求对应的结果返回
+ * @param aError  成功返回nil,错误返回相应error信息
+ */
+- (void)GetuiSdkDidQueryTag:(NSArray *)aTags sequenceNum:(NSString *)aSn error:(nullable NSError *)aError;
+
+
+//MARK: - 已废弃
 
 /**
  *  SDK通知收到个推推送的透传消息
@@ -318,7 +439,11 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  *  @param offLine     是否是离线消息，YES.是离线消息
  *  @param appId       应用的appId
  */
-- (void)GeTuiSdkDidReceivePayloadData:(NSData *)payloadData andTaskId:(NSString *)taskId andMsgId:(NSString *)msgId andOffLine:(BOOL)offLine fromGtAppId:(NSString *)appId;
+- (void)GeTuiSdkDidReceivePayloadData:(NSData *)payloadData
+                            andTaskId:(NSString *)taskId
+                             andMsgId:(NSString *)msgId
+                           andOffLine:(BOOL)offLine
+                          fromGtAppId:(NSString *)appId DEPRECATED_MSG_ATTRIBUTE("使用GeTuiSdkDidReceiveSlience:fromGetui:offLine:appId:taskId:msgId:fetchCompletionHandler:");
 
 /**
  *  SDK通知发送上行消息结果，收到sendMessage消息回调 (已废弃)
@@ -330,57 +455,6 @@ typedef NS_ENUM(NSUInteger, SdkStatus) {
  */;
 - (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(int)result DEPRECATED_MSG_ATTRIBUTE("Please use -[delegate GeTuiSdkDidSendMessage:msg result: error:]");
 
-/**
- *  SDK通知发送上行消息结果，收到sendMessage消息回调
- *
- *  @param messageId “sendMessage:error:”返回的id
- *  @param isSuccess    成功返回 YES, 失败返回 NO
- *  @param aError       成功返回nil, 错误返回相应error信息
- *  说明: 当调用sendMessage:error:接口时，消息推送到个推服务器，服务器通过该接口通知sdk到达结果，isSuccess为 YES 说明消息发送成功
- *  注意: 需第三方服务器接入个推,SendMessage 到达第三方服务器后返回 1
- */
-- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(BOOL)isSuccess error:(NSError *)aError;
-
-/**
- *  SDK设置关闭推送模式回调
- *
- *  @param isModeOff 关闭模式，YES.服务器关闭推送功能 NO.服务器开启推送功能
- *  @param error     错误回调，返回设置时的错误信息
- */
-- (void)GeTuiSdkDidSetPushMode:(BOOL)isModeOff error:(NSError *)error;
-
-/**
- *  SDK绑定、解绑回调
- *
- *  @param action       回调动作类型 kGtResponseBindType 或 kGtResponseUnBindType
- *  @param isSuccess    成功返回 YES, 失败返回 NO
- *  @param aSn          返回请求的序列码
- *  @param aError       成功返回nil, 错误返回相应error信息
- */
-- (void)GeTuiSdkDidAliasAction:(NSString *)action result:(BOOL)isSuccess sequenceNum:(NSString *)aSn error:(NSError *)aError;
-
-/**
- *  设置标签回调
- *
- *  @param sequenceNum  请求的序列码
- *  @param isSuccess    成功返回 YES, 失败返回 NO
- *  @param aError       成功返回 nil, 错误返回相应error信息
- */
-- (void)GeTuiSdkDidSetTagsAction:(NSString *)sequenceNum result:(BOOL)isSuccess error:(NSError *)aError;
-
-/**
- * 查询当前绑定tag结果返回
- * @param aTags   当前绑定的 tag 信息
- * @param aSn     返回 queryTag 接口中携带的请求序列码，标识请求对应的结果返回
- * @param aError  成功返回nil,错误返回相应error信息
- */
-- (void)GetuiSdkDidQueryTag:(NSArray *)aTags sequenceNum:(NSString *)aSn error:(NSError *)aError;
-
-/**
- *  SDK遇到错误消息返回error
- *
- *  @param error SDK内部发生错误，通知第三方，返回错误
- */
-- (void)GeTuiSdkDidOccurError:(NSError *)error;
-
 @end
+
+NS_ASSUME_NONNULL_END
