@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.5.5.0
+//  GTSDK-Version: 2.5.6.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -84,6 +84,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param aChannelId 渠道值，可以为空值
  */
 + (void)setChannelId:(NSString *)aChannelId;
+
+/**
+ *  设置IDFA
+ *
+ *  SDK-2.5.6.0+
+ *
+ *  @param idfa idfa
+ */
++ (void)setIDFA:(NSString *)idfa;
 
 /**
  *  设置关闭推送模式（默认值：NO）
