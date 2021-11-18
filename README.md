@@ -10,5 +10,5 @@ pod 'GTSDK'
 
 ## Swift Package Manager 配置
 通过指定标签即可完成SPM配置，如：2.5.11.0-spm <br/>
-<img src="../Pics/spm.png" width="260px;"/> 
+<img src="../master/Pics/spm.png" width="750px;"/> 
 
