@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.6.3.0
+//  GTSDK-Version: 2.6.4.0-noidfa
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -42,9 +42,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param appKey    设置app的个推appKey，此appKey从个推网站获取
  *  @param appSecret 设置app的个推appSecret，此appSecret从个推网站获取
  *  @param delegate  回调代理delegate
+ *  @param launchOptions 传入didFinishLaunchingWithOptions中的launchOptions参数
  */
-+ (void)startSdkWithAppId:(NSString *)appid appKey:(NSString *)appKey appSecret:(NSString *)appSecret delegate:(id<GeTuiSdkDelegate>)delegate;
++ (void)startSdkWithAppId:(NSString *)appid appKey:(NSString *)appKey appSecret:(NSString *)appSecret delegate:(id<GeTuiSdkDelegate>)delegate launchingOptions:(NSDictionary * __nullable)launchOptions;
 
+
+/**
+ *  设置 App Groups Id (如有使用 iOS Extension SDK，请设置该值)
+ */
++ (void)setApplicationGroupIdentifier:(NSString*)identifier;
 
 /// 注册远程通知
 /// 必须使用个推注册通知，否则可能无法获取APNs回调！！
@@ -225,11 +231,15 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - 处理回执
 
 /**
- *  远程推送消息处理
+ *  远程推送消息处理（手动上报回执）
  *
  *  @param userInfo 远程推送消息
+ *
+ *  - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+ *
  */
 + (void)handleRemoteNotification:(NSDictionary *)userInfo;
+
 
 /**
  *  VOIP消息回执
@@ -249,20 +259,21 @@ NS_ASSUME_NONNULL_BEGIN
  *  SDK发送上行消息结果
  *
  *  @param body  需要发送的消息数据
- *  @param error 如果发送成功返回messageid，发送失败返回nil
  *
  *  @return 消息的msgId
  */
-+ (NSString *)sendMessage:(NSData *)body error:(NSError **)error DEPRECATED_MSG_ATTRIBUTE("Please use -[GeTuiSdk sendMessage:]");
++ (NSString *)sendMessage:(NSData *)body;
 
 /**
-*  SDK发送上行消息结果
-*
-*  @param body  需要发送的消息数据
-*
-*  @return 消息的msgId
+ *  SDK发送上行消息结果
+ *
+ *  @param body  需要发送的消息数据
+ *  @param taskId  任务ID, UUID String
+ *  @param error 错误信息
+ *
+ *  @return 如果发送成功返回messageid，发送失败返回nil
 */
-+ (NSString *)sendMessage:(NSData *)body;
++ (NSString *)sendMessage:(NSData *)body taskId:(NSString *)taskId error:(NSError **)error;
 
 /**
  *  上行第三方自定义回执actionid
@@ -304,6 +315,18 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 + (BOOL)registerDeviceTokenData:(NSData *)deviceToken DEPRECATED_MSG_ATTRIBUTE("已废弃");
+
+//MARK: - 已废弃
+
+/**
+ *  SDK发送上行消息结果
+ *
+ *  @param body  需要发送的消息数据
+ *  @param error 如果发送成功返回messageid，发送失败返回nil
+ *
+ *  @return 消息的msgId
+ */
++ (NSString *)sendMessage:(NSData *)body error:(NSError **)error DEPRECATED_MSG_ATTRIBUTE("Please use -[GeTuiSdk sendMessage:taskId:error:]");
 
 @end
 
@@ -362,7 +385,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /// 收到透传消息
-/// @param userInfo    推送消息内容
+/// @param userInfo    推送消息内容,  {"payload": 消息内容}
 /// @param fromGetui   YES: 个推通道  NO：苹果apns通道
 /// @param offLine     是否是离线消息，YES.是离线消息
 /// @param appId       应用的appId
