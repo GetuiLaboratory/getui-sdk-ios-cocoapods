@@ -108,18 +108,22 @@ make_dylib() {
 # Args:
 #   $1 - path to the xcframework.
 update_layout() {
-  local xcframework="${1}" plist="${xcframework}/Info.plist"
+  local xcframework="${1}"  plist="${xcframework}/Info.plist"
   mv "${xcframework}/ios-x86_64-simulator" "${xcframework}/ios-arm64_x86_64-simulator"
 
-  # patch info.plist to indicate arm64 support
-  #sed -i "" \
-    's|<string>ios-x86_64-simulator</string>|<string>ios-arm64_x86_64-simulator</string>|' \
-    "${plist}"
-  #sed -i "" \
-    's|<string>x86_64</string>|<string>x86_64</string>\n\t\t\t\t<string>arm64</string>|' \
-    "${plist}"
-}
+  
 
+#   patch info.plist to indicate arm64 support
+#   sed -i "" \
+#    's|<string>ios-x86_64-simulator</string>|<string>ios-arm64_x86_64-simulator</string>|' \
+#    "${plist}"
+#   sed -i "" \
+#    's|<string>x86_64</string>|<string>x86_64</string>\n\t\t\t\t<string>arm64</string>|' \
+#    "${plist}"
+}
+  
+    
+    
 main() {
   local xcframework
   while [[ "$#" -gt 0 ]]; do
