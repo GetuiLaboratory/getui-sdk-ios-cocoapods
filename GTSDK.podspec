@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
   s.name         = "GTSDK"
   # 版本号/库原代码的版本
-  s.version      = "2.7.0.0-noidfa"
+  s.version      = "2.7.0.0"
   # 简介
   s.summary      = "个推iOS SDK CocoaPods集成库"
 
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
   #s.ios.vendored_libraries = ''
   s.ios.vendored_frameworks = 'GTSDK.xcframework'
 
-  #s.dependency 'ZXSDK'
-  s.dependency 'ZXSDK-Noidfa'
+  s.dependency 'ZXSDK'
+  #s.dependency 'ZXSDK-Noidfa'
 
   # 所需的framework，多个用逗号隔开
   s.ios.frameworks = 'SystemConfiguration', 'CFNetwork','CoreTelephony','CoreLocation','AVFoundation','Security','AdSupport'
