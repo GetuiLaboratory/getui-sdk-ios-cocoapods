@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 2.7.2.1
+//  GTSDK-Version: 2.7.3.0-noidfa
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -141,6 +141,17 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)destroy;
 
 //MARK: - 注册Token
+
+/**
+ *  ActivityKit push支持（灵动岛等）
+ *  向个推服务器注册activityToken
+ *  备注：可以未启动SDK就调用该方法
+ *
+ *  @param activityToken  live Activity推送时使用的pushToken NSString
+ *  @return activityToken有效判断，YES.有效 NO.无效
+ *
+ */
++ (BOOL)registerActivityToken:(NSString *)activityToken;
 
 /**
  *  向个推服务器注册VoipToken
