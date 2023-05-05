@@ -2,5 +2,4 @@ framework module GTSDK {
   umbrella header "GeTuiSdk.h"
   export *
   module * { export * }
-  link "resolv"
 }
