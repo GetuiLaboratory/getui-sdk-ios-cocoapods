@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 3.0.2.0
+//  GTSDK-Version: 3.0.3.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -143,17 +143,6 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - 注册Token
 
 /**
- *  ActivityKit push支持（灵动岛等）
- *  向个推服务器注册activityToken
- *  备注：可以未启动SDK就调用该方法
- *
- *  @param activityToken  live Activity推送时使用的pushToken NSString
- *  @return activityToken有效判断，YES.有效 NO.无效
- *
- */
-+ (BOOL)registerActivityToken:(NSString *)activityToken;
-
-/**
  *  向个推服务器注册VoipToken
  *  备注：可以未启动SDK就调用该方法
  *
@@ -174,6 +163,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)registerVoipTokenCredentials:(NSData *)voipToken;
 
+/**
+ * 注册实时活动token（灵动岛）
+ *
+ * @param liveActivityId  业务id，用于绑定token的业务关系
+ * @param token liveActivity推送时使用的pushToken
+ * @param sn 请求序列码, 不为nil
+ * @return activityToken有效判断 或 重复请求
+ */
++ (BOOL)registerLiveActivity:(NSString *)liveActivityId activityToken:(NSString*)token sequenceNum:(NSString*)sn;
 
 //MARK: - 设置标签
 
@@ -192,10 +190,10 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param tags 别名数组
  *  tag: 只能包含中文字符、英文字母、0-9、+-*_.的组合（不支持空格）
- *  @param aSn  绑定序列码, 不为nil
+ *  @param sn  绑定序列码, 不为nil
  *  @return 提交结果，YES表示尝试提交成功，NO表示尝试提交失败
  */
-+ (BOOL)setTags:(NSArray *)tags andSequenceNum:(NSString *)aSn;
++ (BOOL)setTags:(NSArray *)tags andSequenceNum:(NSString *)sn;
 
 //MARK: - 设置角标
 
@@ -224,19 +222,19 @@ NS_ASSUME_NONNULL_BEGIN
  *  需要SDK在线才能调用
  *
  *  @param alias 别名字符串
- *  @param aSn   绑定序列码, 不为nil
+ *  @param sn   绑定序列码, 不为nil
  */
-+ (void)bindAlias:(NSString *)alias andSequenceNum:(NSString *)aSn;
++ (void)bindAlias:(NSString *)alias andSequenceNum:(NSString *)sn;
 
 /**
  *  取消绑定别名功能
  *  需要SDK在线才能调用
  *
  *  @param alias   别名字符串
- *  @param aSn     绑定序列码, 不为nil
+ *  @param sn     绑定序列码, 不为nil
  *  @param isSelf  是否只对当前cid有效，如果是true，只对当前cid做解绑；如果是false，对所有绑定该别名的cid列表做解绑
  */
-+ (void)unbindAlias:(NSString *)alias andSequenceNum:(NSString *)aSn andIsSelf:(BOOL)isSelf;
++ (void)unbindAlias:(NSString *)alias andSequenceNum:(NSString *)sn andIsSelf:(BOOL)isSelf;
 
 
 //MARK: - 处理回执
@@ -428,11 +426,11 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param messageId “sendMessage:error:”返回的id
  *  @param isSuccess    成功返回 YES, 失败返回 NO
- *  @param aError       成功返回nil, 错误返回相应error信息
+ *  @param error       成功返回nil, 错误返回相应error信息
  *  说明: 当调用sendMessage:error:接口时，消息推送到个推服务器，服务器通过该接口通知sdk到达结果，isSuccess为 YES 说明消息发送成功
  *  注意: 需第三方服务器接入个推,SendMessage 到达第三方服务器后返回 1
  */
-- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(BOOL)isSuccess error:(nullable NSError *)aError;
+- (void)GeTuiSdkDidSendMessage:(NSString *)messageId result:(BOOL)isSuccess error:(nullable NSError *)error;
 
 
 //MARK: - 开关设置
@@ -452,29 +450,48 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param action       回调动作类型 kGtResponseBindType 或 kGtResponseUnBindType
  *  @param isSuccess    成功返回 YES, 失败返回 NO
- *  @param aSn          返回请求的序列码
- *  @param aError       成功返回nil, 错误返回相应error信息
+ *  @param sn          返回请求的序列码
+ *  @param error       成功返回nil, 错误返回相应error信息
  */
-- (void)GeTuiSdkDidAliasAction:(NSString *)action result:(BOOL)isSuccess sequenceNum:(NSString *)aSn error:(nullable NSError *)aError;
+- (void)GeTuiSdkDidAliasAction:(NSString *)action result:(BOOL)isSuccess sequenceNum:(NSString *)sn error:(nullable NSError *)error;
 
 
 //MARK: - 标签设置
 /**
  *  设置标签回调
  *
- *  @param sequenceNum  请求的序列码
+ *  @param sequenceNum  请求序列码
  *  @param isSuccess    成功返回 YES, 失败返回 NO
- *  @param aError       成功返回 nil, 错误返回相应error信息
+ *  @param error       成功返回 nil, 错误返回相应error信息
  */
-- (void)GeTuiSdkDidSetTagsAction:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)aError;
+- (void)GeTuiSdkDidSetTagsAction:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)error;
 
 /**
  * 查询当前绑定tag结果返回
- * @param aTags   当前绑定的 tag 信息
- * @param aSn     返回 queryTag 接口中携带的请求序列码，标识请求对应的结果返回
- * @param aError  成功返回nil,错误返回相应error信息
+ * @param tags   当前绑定的 tag 信息
+ * @param sn     返回 queryTag 接口中携带的请求序列码，标识请求对应的结果返回
+ * @param error  成功返回nil,错误返回相应error信息
  */
-- (void)GetuiSdkDidQueryTag:(NSArray *)aTags sequenceNum:(NSString *)aSn error:(nullable NSError *)aError;
+- (void)GetuiSdkDidQueryTag:(NSArray *)tags sequenceNum:(NSString *)sn error:(nullable NSError *)error;
+
+
+//MARK: - 实时活动
+
+/// 设置实时活动Token回调（灵动岛）
+/// - Parameters:
+///   - sequenceNum: 请求序列码
+///   - isSuccess: 成功返回 YES, 失败返回 NO
+///   - error: 成功返回nil,错误返回相应error信息
+- (void)GeTuiSdkDidRegisterLiveActivity:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)error;
+
+
+//MARK: - 应用内弹窗
+
+// 展示回调
+- (void)GeTuiSdkPopupDidShow:(NSDictionary *)info;
+
+// 点击回调
+- (void)GeTuiSdkPopupDidClick:(NSDictionary *)info;
 
 
 //MARK: - 已废弃
