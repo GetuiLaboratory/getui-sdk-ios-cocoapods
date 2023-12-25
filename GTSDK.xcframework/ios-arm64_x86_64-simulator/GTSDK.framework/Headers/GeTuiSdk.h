@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 3.0.3.0
+//  GTSDK-Version: 3.0.4.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
