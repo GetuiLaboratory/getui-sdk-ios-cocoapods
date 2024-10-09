@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 3.0.6.2
+//  GTSDK-Version: 3.0.7.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -161,7 +161,21 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return voipToken有效判断，YES.有效 NO.无效
  *
  */
+
 + (BOOL)registerVoipTokenCredentials:(NSData *)voipToken;
+
+
+//MARK: - 注册实时活动Token
+
+/**
+ * 注册实时活动PushToStartToken（灵动岛）
+ *
+ * @param activityAttributes  实时活动的属性
+ * @param pushToStartToken 推送时使用的pushToStartToken
+ * @param sn 请求序列码, 不为nil
+ * @return pushToStartToken有效判断 或 重复请求
+ */
++ (BOOL)registerLiveActivity:(NSString *)activityAttributes pushToStartToken:(NSString*)pushToStartToken sequenceNum:(NSString*)sn;
 
 /**
  * 注册实时活动token（灵动岛）
@@ -476,6 +490,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //MARK: - 实时活动
+
+/// 设置实时活动PushToStartToken回调（灵动岛）
+/// - Parameters:
+///   - sequenceNum: 请求序列码
+///   - isSuccess: 成功返回 YES, 失败返回 NO
+///   - error: 成功返回nil,错误返回相应error信息
+- (void)GeTuiSdkDidRegisterPushToStartToken:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)error;
 
 /// 设置实时活动Token回调（灵动岛）
 /// - Parameters:

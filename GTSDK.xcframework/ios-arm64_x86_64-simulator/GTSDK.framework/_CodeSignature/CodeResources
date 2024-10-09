@@ -4,21 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/GBridgeHeader.h</key>
-		<data>
-		0C/4VU4Qag8tH9FKRX80hWv3Ugw=
-		</data>
-		<key>Headers/GBridgeTool.h</key>
-		<data>
-		4kRtEIFgz8kBk8IAy3aqNHVT7Ls=
-		</data>
 		<key>Headers/GeTuiSdk.h</key>
 		<data>
-		dIydLviFSuzZpJAnYdgjNrto36k=
+		cEL2jOksL5ZxDEbSw45WFBQLPec=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aBKs112Oyz86CWtzgvbqeHsPaxI=
+		COSEO93rJ5UniRYDNS/QK6B9U+8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -31,37 +23,15 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/GBridgeHeader.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0C/4VU4Qag8tH9FKRX80hWv3Ugw=
-			</data>
-			<key>hash2</key>
-			<data>
-			piqgqk55+CzoaCn0rldYw2WwuWATZBaGjmg49y62t3o=
-			</data>
-		</dict>
-		<key>Headers/GBridgeTool.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4kRtEIFgz8kBk8IAy3aqNHVT7Ls=
-			</data>
-			<key>hash2</key>
-			<data>
-			2x1LVhFYM9MVW1mYHWejOjJo2z7zVUy1+7LpP7l/je8=
-			</data>
-		</dict>
 		<key>Headers/GeTuiSdk.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dIydLviFSuzZpJAnYdgjNrto36k=
+			cEL2jOksL5ZxDEbSw45WFBQLPec=
 			</data>
 			<key>hash2</key>
 			<data>
-			zkw0EVasU8s/kh6zJkbybsDtTwdxSihenMFdfW8T3XU=
+			1cd+hB30u90QgOaI5Z1pITIZU0809lOImehiFFLX4e4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
