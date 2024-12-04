@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 3.0.8.0
+//  GTSDK-Version: 3.0.9.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -186,6 +186,16 @@ NS_ASSUME_NONNULL_BEGIN
  * @return activityToken有效判断 或 重复请求
  */
 + (BOOL)registerLiveActivity:(NSString *)liveActivityId activityToken:(NSString*)token sequenceNum:(NSString*)sn;
+
+//MARK: - 控制中心
+
+/// 注册控制中心小组件推送Token
+/// - Parameters:
+///   - tokens: token字典，key为kind，value为token
+///   - sn:序列化
+/// - Returns: tokens入参校验是否正确
++ (BOOL)registerControlsTokens:(NSDictionary *)tokens sequenceNum:(NSString*)sn;
+
 
 //MARK: - 设置标签
 
@@ -505,6 +515,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - error: 成功返回nil,错误返回相应error信息
 - (void)GeTuiSdkDidRegisterLiveActivity:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)error;
 
+//MARK: - 控制中心
+
+/// 控制中心注册token回调
+/// - Parameters:
+///   - sequenceNum: 请求序列码
+///   - isSuccess: 成功返回 YES, 失败返回 NO
+///   - error: 成功返回nil,错误返回相应error信息
+- (void)GeTuiSdkDidRegisterControlsTokens:(NSString *)sequenceNum result:(BOOL)isSuccess error:(nullable NSError *)error;
 
 //MARK: - 应用内弹窗
 

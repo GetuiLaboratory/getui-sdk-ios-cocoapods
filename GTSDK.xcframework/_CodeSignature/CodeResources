@@ -6,15 +6,15 @@
 	<dict>
 		<key>ios-arm64/GTSDK.framework/GTSDK</key>
 		<data>
-		l5+Q+I91D7rmE3TS7yb+zkZ+PqM=
+		SQdDcrCHKOyjXDtX3Wsx2kN+mDg=
 		</data>
 		<key>ios-arm64/GTSDK.framework/Headers/GeTuiSdk.h</key>
 		<data>
-		DlGKIVqjp7MnTOz1qqHqIvOd2fc=
+		hQjyW8eTEW7pqVAnheDhGwk6L0U=
 		</data>
 		<key>ios-arm64/GTSDK.framework/Info.plist</key>
 		<data>
-		o5XBXAi05KUFopB4zkkGXLklrUo=
+		zEbQIQ4yd384UdqGeFe6Y1MpsZk=
 		</data>
 		<key>ios-arm64/GTSDK.framework/Modules/module.modulemap</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeDirectory</key>
 		<data>
-		V83xHExAnLwd79pU0oJDREv3O0s=
+		g6YZjnNUJqFDgqEb29Yrm0kYUSo=
 		</data>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -34,27 +34,27 @@
 		</data>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		/DnIeyrzufs4x73Gc1qAku6Oahw=
+		aubzBFCtKGiMdiVsxNo/c5Rgaec=
 		</data>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		XPwczgD5Kb/6JQMSYQDSueBHlI0=
+		81M53wf8KjYGcjpSBoByJy/n7GM=
 		</data>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeSignature</key>
 		<data>
-		iBCqE0q39i4bu/p2ZL9c8wCfD0w=
+		j3IonmVOYEwtQgibAvKpXCRx2hw=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/GTSDK</key>
 		<data>
-		vfEF3s9JIyqgse4Cj+xIGksJLdk=
+		roktbhILNI2aTXoRlsKClCdV6FU=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/Headers/GeTuiSdk.h</key>
 		<data>
-		DlGKIVqjp7MnTOz1qqHqIvOd2fc=
+		hQjyW8eTEW7pqVAnheDhGwk6L0U=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/Info.plist</key>
 		<data>
-		ta09K0fAHCLmPBUo1gRLamjko2A=
+		jRDT5toSscKR3hTzV+ju4aPOX7k=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/Modules/module.modulemap</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeDirectory</key>
 		<data>
-		ca364kN2VsMkWCV0ZgaA5j61JcM=
+		6jrTmDTfNgjGVwX9XQ8+vclDitk=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -74,27 +74,27 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		JZdb4faYDaIswxyUdwYtkXJpS9M=
+		FbOhJz75oJAKiRUj5n+yZkwLALw=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		uZjdTivcHAsoMbrNPLcI3zkYQdQ=
+		EKRnNe8On88QfNDt8GuSF21yCdY=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeSignature</key>
 		<data>
-		wYYFu+qxUDpBHi46/FZbVgQ+RnM=
+		ixK+0i5jPKUzWw6bTySiAYgKORM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/GTSDK</key>
 		<data>
-		xdNmPNdk+KpNnZd2sD4UW6PG86o=
+		yEJEq4CHNmkKu1pRcGkDh3wvXA4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/Headers/GeTuiSdk.h</key>
 		<data>
-		DlGKIVqjp7MnTOz1qqHqIvOd2fc=
+		hQjyW8eTEW7pqVAnheDhGwk6L0U=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/Info.plist</key>
 		<data>
-		1IlNO3eray5SUzIWI47Y5CyZ/0w=
+		QzoD5ov4I9evYEGpKgDeqVGOIzg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/Modules/module.modulemap</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeDirectory</key>
 		<data>
-		F9o8XlWXK1TDJqhIyx1FtmWoc7A=
+		qs5Y8nNMJOSFPU2BCCRRFHo+zfM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -114,15 +114,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		M9rVxeAEP3mokfst2XKFIfS987I=
+		Y9KXn74xhpvuOpRMWXc4t1yhrmc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		b0x6vRxR+dWEi3VUMjMcTfVNpeA=
+		6jGEowpiZuDOweiItMT4NPoDsxo=
 		</data>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeSignature</key>
 		<data>
-		Cdi1QqiEeOKPMEKhxbptI8TQgKU=
+		pVbu+RD67MjgPyPy7wikbgbXQao=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -131,33 +131,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l5+Q+I91D7rmE3TS7yb+zkZ+PqM=
+			SQdDcrCHKOyjXDtX3Wsx2kN+mDg=
 			</data>
 			<key>hash2</key>
 			<data>
-			8wS3GJ7PjsPIk5R46BeNveKRePO7ne08jvVsSCIWUK0=
+			K7bZjbSQcOlUfNXe6lZ2ScIua6YIzx0xRrXRTi2+RGI=
 			</data>
 		</dict>
 		<key>ios-arm64/GTSDK.framework/Headers/GeTuiSdk.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DlGKIVqjp7MnTOz1qqHqIvOd2fc=
+			hQjyW8eTEW7pqVAnheDhGwk6L0U=
 			</data>
 			<key>hash2</key>
 			<data>
-			2LyXjJTfkGjfWzkuigdhx6O3bgxIqHx00Sj9LCO/ODE=
+			eTvm0D7nGHBpvSuYsua/wLp1Q0SVnfNRasQdYIY2W2M=
 			</data>
 		</dict>
 		<key>ios-arm64/GTSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			o5XBXAi05KUFopB4zkkGXLklrUo=
+			zEbQIQ4yd384UdqGeFe6Y1MpsZk=
 			</data>
 			<key>hash2</key>
 			<data>
-			/ay68uF6KnIwYoo3QUxnc0b4ossL3HrjE2bYZaDjjKE=
+			4VvS7hAyqfVVhhHmQw73PXD5sSdmqRm6HxinXUWxqqI=
 			</data>
 		</dict>
 		<key>ios-arm64/GTSDK.framework/Modules/module.modulemap</key>
@@ -186,11 +186,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			V83xHExAnLwd79pU0oJDREv3O0s=
+			g6YZjnNUJqFDgqEb29Yrm0kYUSo=
 			</data>
 			<key>hash2</key>
 			<data>
-			AkhohY/apmWbuSQOyBl/rnCfWS0/4KZFmjeZ1+brI7Q=
+			/E2mj0fL4CFQ+9UessED5+s6Gc0i90q5p6dzD9b3Heo=
 			</data>
 		</dict>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeRequirements</key>
@@ -208,66 +208,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/DnIeyrzufs4x73Gc1qAku6Oahw=
+			aubzBFCtKGiMdiVsxNo/c5Rgaec=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mo+hKqenEPF2JGk3adatwiWLNiPBBbqYmA3TlVe/KYU=
+			x4uVv4FyIhDxOXSSt2Y73afU3tsVcvSlOoV3BIKj5cw=
 			</data>
 		</dict>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XPwczgD5Kb/6JQMSYQDSueBHlI0=
+			81M53wf8KjYGcjpSBoByJy/n7GM=
 			</data>
 			<key>hash2</key>
 			<data>
-			mcxzcSu0s7+Vs0Z30uEoqY+BHxrhMDtXRoatdc3lL/Q=
+			0S6sLi3W9EpBA9G3EteHlyuDO4C+rstlc/AOTXilaIA=
 			</data>
 		</dict>
 		<key>ios-arm64/GTSDK.framework/_CodeSignature/CodeSignature</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iBCqE0q39i4bu/p2ZL9c8wCfD0w=
+			j3IonmVOYEwtQgibAvKpXCRx2hw=
 			</data>
 			<key>hash2</key>
 			<data>
-			8jyLPuRnTlw9Q8nDZVGutUpmSgCfiubsJNy9N90GveY=
+			F6A0kOMJL+d/o53WxSuraJtJ3RR1HCQJdj9TLFxKg7Y=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/GTSDK</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vfEF3s9JIyqgse4Cj+xIGksJLdk=
+			roktbhILNI2aTXoRlsKClCdV6FU=
 			</data>
 			<key>hash2</key>
 			<data>
-			L+BzpW13iB8QEW9xO/WHtKoais0iWqmtaqD2+dXO9Ms=
+			EmZb/zeyqy7rkq2BjECRgEUNQOQ0qtqrL01ONgbUYAY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/Headers/GeTuiSdk.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DlGKIVqjp7MnTOz1qqHqIvOd2fc=
+			hQjyW8eTEW7pqVAnheDhGwk6L0U=
 			</data>
 			<key>hash2</key>
 			<data>
-			2LyXjJTfkGjfWzkuigdhx6O3bgxIqHx00Sj9LCO/ODE=
+			eTvm0D7nGHBpvSuYsua/wLp1Q0SVnfNRasQdYIY2W2M=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ta09K0fAHCLmPBUo1gRLamjko2A=
+			jRDT5toSscKR3hTzV+ju4aPOX7k=
 			</data>
 			<key>hash2</key>
 			<data>
-			2yLZO+5OKIUSscVZj86xn5r5Da/QneuQE541SAhnWK8=
+			BUK9GojE0SOfBT/ykLrO5N3YUrLWMoTjIutqADy9JFg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/Modules/module.modulemap</key>
@@ -296,11 +296,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ca364kN2VsMkWCV0ZgaA5j61JcM=
+			6jrTmDTfNgjGVwX9XQ8+vclDitk=
 			</data>
 			<key>hash2</key>
 			<data>
-			sJVuTBZ1knMfSb6/hWgeHPdXALwXpuDvOcbmazJFVVQ=
+			zwqGyTHQfIyho3/P3XgaZmUJ+LQmOtVeFhNdN++hZwU=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeRequirements</key>
@@ -318,66 +318,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JZdb4faYDaIswxyUdwYtkXJpS9M=
+			FbOhJz75oJAKiRUj5n+yZkwLALw=
 			</data>
 			<key>hash2</key>
 			<data>
-			Tu5KBhujkFgH7PzcWEXQXi3v0u39SFA1xEV82ZVerNI=
+			1IYKES2Vebql1qxlj5RKmkOzVqDEKOrR+VW9x1Bx6C0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uZjdTivcHAsoMbrNPLcI3zkYQdQ=
+			EKRnNe8On88QfNDt8GuSF21yCdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ejIjJRdEX6h5S6IkC+20lbGNEvUDmY+CmSp4JLIeXdY=
+			E3aAR74LKVaXU/WCRhoP8DJWov7bfNIobOyz21F/kJI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/GTSDK.framework/_CodeSignature/CodeSignature</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wYYFu+qxUDpBHi46/FZbVgQ+RnM=
+			ixK+0i5jPKUzWw6bTySiAYgKORM=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZKmRSxe/kGhwZEVpjyN20+xCuzJoZuk1k6/DXoWtFyM=
+			UFUrVSPkkGHYL+LsMgACkx/1E2POAVfdLbbXzF5jJZY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/GTSDK</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xdNmPNdk+KpNnZd2sD4UW6PG86o=
+			yEJEq4CHNmkKu1pRcGkDh3wvXA4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YjQDugwJE3Lp3Zw8Zk6h/d/X/j4OyjYKGBTeJTlk9UQ=
+			WFhUL+SPmv7+szSKXm0Qy37NQQ4QmPT8y8/ge82sYcM=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/Headers/GeTuiSdk.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DlGKIVqjp7MnTOz1qqHqIvOd2fc=
+			hQjyW8eTEW7pqVAnheDhGwk6L0U=
 			</data>
 			<key>hash2</key>
 			<data>
-			2LyXjJTfkGjfWzkuigdhx6O3bgxIqHx00Sj9LCO/ODE=
+			eTvm0D7nGHBpvSuYsua/wLp1Q0SVnfNRasQdYIY2W2M=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1IlNO3eray5SUzIWI47Y5CyZ/0w=
+			QzoD5ov4I9evYEGpKgDeqVGOIzg=
 			</data>
 			<key>hash2</key>
 			<data>
-			zPF8ZNmRSP524Lvos8agAu09PgLVgKCLEHHX8+E/hq4=
+			eunttLh75De7QUosrTsglisi7B3ZYmyYgj89CFgmD9o=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/Modules/module.modulemap</key>
@@ -406,11 +406,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			F9o8XlWXK1TDJqhIyx1FtmWoc7A=
+			qs5Y8nNMJOSFPU2BCCRRFHo+zfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			fn8DUfFREu+imYJQGzPfp1KYHim98VduXCKJcmwZSPg=
+			4FHYfa5cYZ7UIh546Og8UpOxAPnuPeSXqIHQY15qa7U=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeRequirements</key>
@@ -428,33 +428,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			M9rVxeAEP3mokfst2XKFIfS987I=
+			Y9KXn74xhpvuOpRMWXc4t1yhrmc=
 			</data>
 			<key>hash2</key>
 			<data>
-			78szwPUYxHa0rg6uZusCt++M464R32DEEcetKGfayLI=
+			lXZRpkLhl7M0LBFFUS7icSSzIXEg2wJsCQSHQEh6Zus=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			b0x6vRxR+dWEi3VUMjMcTfVNpeA=
+			6jGEowpiZuDOweiItMT4NPoDsxo=
 			</data>
 			<key>hash2</key>
 			<data>
-			ijy1qnfnXpjnMGimJeFBr4q5MYOQqSVZo8iQE1ajMB4=
+			1ia/Tj74JjDLqQXfuJQCIKOmNN5eX4no/bnfb2X715M=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/GTSDK.framework/_CodeSignature/CodeSignature</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Cdi1QqiEeOKPMEKhxbptI8TQgKU=
+			pVbu+RD67MjgPyPy7wikbgbXQao=
 			</data>
 			<key>hash2</key>
 			<data>
-			0AKDXCNDKqi3zWjlohDxPginZeg9Fs3TzHuRGZRcypg=
+			IwyEjMBuwhIBp04YllaxLWEFlfZ5KDfXBB36NSz9wWs=
 			</data>
 		</dict>
 	</dict>
