@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 3.0.9.0
+//  GTSDK-Version: 3.0.10.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -208,6 +208,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 提交结果，YES表示尝试提交成功，NO表示尝试提交失败
  */
 + (BOOL)setTags:(NSArray *)tags;
+
+
+/// 查询tag
+/// @param sn 序列号
++ (BOOL)queryTag:(NSString *)sn;
 
 /**
  *  给用户打标签, 后台可以根据标签进行推送
