@@ -5,7 +5,7 @@
 //  Created by gexin on 15-5-5.
 //  Copyright (c) 2015年 Gexin Interactive (Beijing) Network Technology Co.,LTD. All rights reserved.
 //
-//  GTSDK-Version: 3.0.10.0
+//  GTSDK-Version: 3.1.0.0
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -267,6 +267,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //MARK: - 处理回执
+
+/// 处理UIScene场景连接时的启动参数
+/// @param connectionOptions 启动参数
+/// add at 3.1.0.0
++ (void)handleSceneWillConnectWithOptions:(UISceneConnectionOptions *)connectionOptions API_AVAILABLE(ios(13.0));
 
 /**
  *  远程推送消息处理（手动上报回执）
