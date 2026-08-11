@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/GeTuiSdk.h</key>
 		<data>
-		gGZBuQ72sHDa6BFtvgKdPuGLmq0=
+		ZuhbtL3jeDzpX1FOYd3wPJLbM/Y=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -27,11 +27,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gGZBuQ72sHDa6BFtvgKdPuGLmq0=
+			ZuhbtL3jeDzpX1FOYd3wPJLbM/Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			46zMVMdLFHgVH9rHWlc8hG7psMdkkVm3iXgE6yPVheo=
+			qqhCQywiwSG6L8RHBdp/trdX0il57fnMmUTKl+Wuvqw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
